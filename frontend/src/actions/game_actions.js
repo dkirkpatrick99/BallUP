@@ -16,9 +16,15 @@ export const recieveGames = games => ({
 });
 
 export const getGames = () => dispatch => {
-  return APIUtil.getGames().then( (games) => dispatch(recieveGames(GamepadPose)) )
+  return APIUtil.getGames().then( games => dispatch(recieveGames(games)) )
 };
 
-export const createGame = (game) => dispatch => {
-  return A
+export const getGame = gameId => dispatch => {
+  return APIUtil.getGame(gameId).then( game => dispatch(recieveGame(game)))
 }
+
+export const createGame = (game) => dispatch => {
+  return APIUtil.createGame(game).then( game => dispatch(recieveGame(game)))
+};
+
+
