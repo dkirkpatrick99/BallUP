@@ -15,6 +15,16 @@ const UserSchema = new Schema({
       type: String,
       required: true
     },
+    primary: {
+      type: String
+      
+    },
+    secondary: {
+      type: String
+    },
+    last: {
+      type: String
+    },
     date: {
       type: Date,
       default: Date.now
