@@ -9,30 +9,6 @@ const passport = require('passport');
 router.get("/test", (req, res) => res.json({ msg: "This is the game route" }));
 const validateGameInput = require('../../validation/games');
 
-
-// router.post('/creategame', (req, res) => {
-
-//     passport.authenticate('jwt', { session: false }),
-//     (req, res) => {
-//         const { errors, isValid } = validateGameInput(req.body);
-        
-//         if (!isValid) {
-//         return res.status(400).json(errors);
-//         }
-
-//     const newGame = new Game({
-//         user: req.user.id,
-//         location: req.body.location,
-//         time: req.body.time,
-//         game_date: req.body.game_date,
-//         players: [req.user]
-//     })
-
-//     newGame.save().then(game => res.json(game))
-
-//     }
-// );
-
 router.post('/creategame',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
@@ -44,6 +20,7 @@ router.post('/creategame',
   
       const newGame = new Game({
                 user: req.user.id,
+                title: req.body.title,
                 location: req.body.location,
                 time: req.body.time,
                 game_date: req.body.game_date,
