@@ -1,5 +1,5 @@
 import jwt_decode from 'jwt-decode';
-import * APIUtil from '../util/game_util';
+import * as APIUtil from '../util/game_util';
 
 export const RECIEVE_GAME = "RECIEVE_GAME";
 export const RECIEVE_GAMES = "RECIEVE_GAMES";
@@ -15,6 +15,10 @@ export const recieveGames = games => ({
   games
 });
 
-export const getGames = () => {
-  return APIUtil.
+export const getGames = () => dispatch => {
+  return APIUtil.getGames().then( (games) => dispatch(recieveGames(GamepadPose)) )
+};
+
+export const createGame = (game) => dispatch => {
+  return A
 }
