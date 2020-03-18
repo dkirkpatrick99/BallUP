@@ -8,12 +8,12 @@ class SignupForm extends React.Component {
             email: '',
             handle: '',
             password: '',
-            password2: '',
-            errors: {}
+            password2: ''
+            // errors: {}
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.clearedErrors = false;
+        // this.clearedErrors = false;
     }
 
     componentWillReceiveProps(nextProps) {
@@ -21,7 +21,7 @@ class SignupForm extends React.Component {
             this.props.history.push('/login');
         }
 
-        this.setState({ errors: nextProps.errors })
+        // this.setState({ errors: nextProps.errors })
     }
 
     update(field) {
@@ -39,20 +39,20 @@ class SignupForm extends React.Component {
             password2: this.state.password2
         };
 
-        this.props.signup(user, this.props.history);
+        this.props.signup(user);
     }
 
-    renderErrors() {
-        return (
-            <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {this.state.errors[error]}
-                    </li>
-                ))}
-            </ul>
-        );
-    }
+    // renderErrors() {
+    //     return (
+    //         <ul>
+    //             {Object.keys(this.state.errors).map((error, i) => (
+    //                 <li key={`error-${i}`}>
+    //                     {/* {this.state.errors[error]} */}
+    //                 </li>
+    //             ))}
+    //         </ul>
+    //     );
+    // }
 
     render() {
         return (
@@ -64,6 +64,12 @@ class SignupForm extends React.Component {
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
+                        />
+                        <br />
+                        <input type="text"
+                            value={this.state.handle}
+                            onChange={this.update('handle')}
+                            placeholder="Handle"
                         />
                         <br />
                         <input type="password"
@@ -79,7 +85,7 @@ class SignupForm extends React.Component {
                         />
                         <br />
                         <input type="submit" value="Submit" />
-                        {this.renderErrors()}
+                        {/* {this.renderErrors()} */}
                     </div>
                 </form>
             </div>
