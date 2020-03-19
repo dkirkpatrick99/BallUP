@@ -31,6 +31,8 @@ router.post('/creategame',
     }
   );
 
+
+
 router.get('/', (req, res) => {
     Game.find()
         .sort({ date: -1 })
