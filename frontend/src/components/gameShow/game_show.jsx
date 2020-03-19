@@ -10,9 +10,10 @@
 //     }
 
 
-//     // componentDidMount() {
-//     //     this.props.fetchGame(this.props.match.params.gameId)
-//     // }
+//     componentDidMount() {
+//         this.props.getGames(),
+//         this.props.getGame(this.props.match.params.gameId)
+//     }
 
 //     render() {
 
