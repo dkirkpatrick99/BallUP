@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         store = configureStore(preloadedState);
 
         const currentTime = Date.now() / 1000;
+    
 
         if (decodedUser.exp < currentTime) {
             store.dispatch(logout());
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         store = configureStore({});
     }
 
+    window.getState = store.getState
     const root = document.getElementById('root');
 
     ReactDOM.render(<Root store={store} />, root);
