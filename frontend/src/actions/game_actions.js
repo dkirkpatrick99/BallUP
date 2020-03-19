@@ -21,7 +21,7 @@ export const getGames = () => dispatch => {
 
 export const getGame = gameId => dispatch => {
   return APIUtil.getGame(gameId).then( game => dispatch(recieveGame(game)))
-}
+};
 
 export const createGame = (game) => dispatch => {
   return APIUtil.createGame(game).then( game => dispatch(recieveGame(game)))
