@@ -11,7 +11,7 @@ export const recieveGame = game => ({
 });
 
 export const recieveGames = games => ({
-  type: RECIEVE_GAME,
+  type: RECIEVE_GAMES,
   games
 });
 

@@ -1,12 +1,12 @@
-// import React from 'react'
+import React from 'react'
 
-// const GameShowItem = (props) => {
+const GameShowItem = (props) => {
 
-//     return (
-//         <div>
+    return (
+        <div>
             
-//         </div>
-//     )
-// }
+        </div>
+    )
+}
 
-// export default GameShowItem
+export default GameShowItem
