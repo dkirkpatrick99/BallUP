@@ -11,7 +11,7 @@ export const recieveGame = game => ({
 });
 
 export const recieveGames = games => ({
-  type: RECIEVE_GAME,
+  type: RECIEVE_GAMES,
   games
 });
 
@@ -27,4 +27,8 @@ export const createGame = (game) => dispatch => {
   return APIUtil.createGame(game).then( game => dispatch(recieveGame(game)))
 };
 
+export const updateGame = (game) => dispatch => {
+  debugger
+  return APIUtil.updateGame(game).then( game => dispatch(recieveGame(game)))
+};
 

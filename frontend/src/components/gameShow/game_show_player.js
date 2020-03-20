@@ -1,7 +1,14 @@
-// import React from 'react'
+import React from 'react'
 
-// const GameShowItem = (props) => {
+const GameShowItem = (props) => {
+    return (
+        <div>
+            {props.player.handle}
+        </div>
+    )
+}
 
+<<<<<<< HEAD
 //     return (
 //         <div>
             
@@ -10,3 +17,6 @@
 // }
 
 // export default GameShowItem
+=======
+export default GameShowItem
+>>>>>>> master

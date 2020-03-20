@@ -97,4 +97,11 @@ router.post("/register", (req, res) => {
       })
   })
 
+router.get('/', (req, res) => {
+  User.find()
+    .sort({ date: -1 })
+    .then(user => res.json(user))
+    .catch(err => res.status(404).json({ nogamesfound: 'No users found' }));
+});
+
 module.exports = router;

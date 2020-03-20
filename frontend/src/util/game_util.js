@@ -9,5 +9,10 @@ export const getGames = () => {
 };
 
 export const getGame = gameId => {
-  return axios.get(`/api/game/${gameId}`)
+  return axios.get(`/api/games/${gameId}`)
 };
+
+export const updateGame = game => {
+  debugger
+  return axios.patch(`/api/games/${game._id}`, game)
+}

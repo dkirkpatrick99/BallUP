@@ -5,8 +5,9 @@ const GameReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
     let newState = Object.assign({}, state);
     switch (action.type) {
         case RECIEVE_GAMES:
+            // return Object.assign({}, state, { [action.games.data.id]: action.currentUser });
             newState.all = action.games.data;
-            return newState;
+            return newState
         case RECIEVE_GAME:
             newState.new = action.game.data
             return newState;
