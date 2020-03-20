@@ -1,14 +1,16 @@
 // import { connect } from 'react-redux';
-// import { login } from '../../actions/session_actions';
+// import { getGame, getGames } from '../../actions/game_actions';
 // import GameShow from './game_show';
 
-// mSTP = (state, ownProps) => ({
+// const mSTP = (state, ownProps) => ({
+//     games: Object.values(state.games),
 //     game: state.games[ownProps.match.params.gameId],
 //     player: state.session.user
 // })
 
-// mDTP = dispatch => ({
-//     fetch 
+// const mDTP = dispatch => ({
+//     getGame: gameId => dispatch(getGame(gameId)),
+//     getGames: () => dispatch(getGames())
 // })
 
 // export default connect(mSTP, mDTP)(GameShow)
