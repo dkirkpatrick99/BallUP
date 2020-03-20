@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getGame, getGames, updateGame } from '../../actions/game_actions';
+import { getGame, getGames, updateGame, deleteGame } from '../../actions/game_actions';
 import { getUsers, getUser } from '../../actions/session_actions';
 import GameShow from './game_show';
 
@@ -18,7 +18,8 @@ const mDTP = dispatch => ({
     getGames: () => dispatch(getGames()),
     updateGame: (game) => dispatch(updateGame(game)),
     getUsers: () => dispatch(getUsers()),
-    getUser: userData => dispatch(getUser(userData))
+    getUser: userData => dispatch(getUser(userData)),
+    deleteGame: gameId => dispatch(deleteGame(gameId))
 })
 
 export default connect(mSTP, mDTP)(GameShow)
