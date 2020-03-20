@@ -13,6 +13,11 @@ export const getGame = gameId => {
 };
 
 export const updateGame = game => {
-  debugger
   return axios.patch(`/api/games/${game._id}`, game)
 }
+
+export const deleteGame = game => {
+  debugger
+  return axios.patch(`/api/games/${game}`)
+};
+

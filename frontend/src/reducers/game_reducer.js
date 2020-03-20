@@ -1,4 +1,8 @@
-import { RECIEVE_GAME, RECIEVE_GAMES } from '../actions/game_actions';
+import {
+  RECIEVE_GAME,
+  RECIEVE_GAMES,
+  REMOVE_GAME
+} from "../actions/game_actions";
 
 const GameReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
     Object.freeze(state);
@@ -10,6 +14,9 @@ const GameReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
             return newState
         case RECIEVE_GAME:
             newState.new = action.game.data
+            return newState;
+        case REMOVE_GAME:
+            debugger
             return newState;
         default:
             return state;
