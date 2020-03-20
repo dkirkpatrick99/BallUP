@@ -48,9 +48,20 @@ router.get('/:id', (req, res) => {
         );
 });
 
-
-
-
+// router.patch('/:id', (req, res) => {
+//   debugger 
+//   let game = Game.findById(req.params.id);
+//   delete game;
+//   req.body.save();
+//   res.json()
+// });
+  
+router.patch('/:id', (req, res) => {
+  debugger
+  Games.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then(game => res.json(game))
+    .catch(err => res.status(404).json(err))
+});
 
 
 module.exports = router;
