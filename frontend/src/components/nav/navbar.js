@@ -44,7 +44,7 @@ class NavBar extends React.Component {
                     <h1 className="splash-logo">BallUP</h1>
                 </div>
                     {this.getLinks()}
-                        <div className="hero">
+                        {/* <div className="hero">
                         </div>
                         <div className="tag-container">
                             <ul className="tag-list">
@@ -52,7 +52,7 @@ class NavBar extends React.Component {
                         <li><p id="sub-tag">Cool stuff describing why folks should join BallUP, and how clicking the button below will change their lives.</p></li> 
                             </ul>
                           <button className="signup-btn">Get Started</button>
-                        </div>
+                        </div> */}
                    </div>
         );
     }
