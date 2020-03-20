@@ -3,6 +3,7 @@ import * as APIUtil from '../util/game_util';
 
 export const RECIEVE_GAME = "RECIEVE_GAME";
 export const RECIEVE_GAMES = "RECIEVE_GAMES";
+export const REMOVE_GAME = "REMOVE_GAME";
 
 
 export const recieveGame = game => ({
@@ -14,6 +15,10 @@ export const recieveGames = games => ({
   type: RECIEVE_GAMES,
   games
 });
+
+export const deleteGame = () => ({
+  type: REMOVE_GAME
+})
 
 export const getGames = () => dispatch => {
   return APIUtil.getGames().then( games => dispatch(recieveGames(games)) )
@@ -28,7 +33,11 @@ export const createGame = (game) => dispatch => {
 };
 
 export const updateGame = (game) => dispatch => {
-  debugger
   return APIUtil.updateGame(game).then( game => dispatch(recieveGame(game)))
 };
+
+export const removeGame = (game) => dispatch => {
+  debugger
+  return APIUtil.deleteGame(game).then( () => dispatch(deleteGame()))
+}
 
