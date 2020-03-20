@@ -8,15 +8,4 @@ const GameShowItem = (props) => {
     )
 }
 
-<<<<<<< HEAD
-//     return (
-//         <div>
-            
-//         </div>
-//     )
-// }
-
-// export default GameShowItem
-=======
 export default GameShowItem
->>>>>>> master
