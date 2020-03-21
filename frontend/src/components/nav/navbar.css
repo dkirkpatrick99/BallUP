@@ -59,7 +59,7 @@
     position: absolute;
     background-image: url(../../public/splash-hero.png);
     width: 100%;
-    height: 615px;
+    height: 715px;
     top: 53px;
     background-position: center;
     background-repeat:no-repeat;
@@ -75,7 +75,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateY(20.5%);
+    transform: translateY(30.5%);
 }
 
 #tag {
@@ -85,11 +85,12 @@
     font-family: "Berthold Akzidenz Grotesk BE";
     font-size: 4.8vw;
     position: relative;
+    transform: translateX(4%);
     
 }
 
 #sub-tag {
-    transform: translateY(-150%);
+    transform: translateY(-150%) translateX(2%);
     right: 4%;
     color: white;
     font-family: "Berthold Akzidenz Grotesk BE";
