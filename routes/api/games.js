@@ -47,10 +47,16 @@ router.get('/:id', (req, res) => {
             res.status(404).json({ nogamefound: 'No game found with that ID' })
         );
 });
+  
+router.patch('/:id', (req, res) => {
+  Game.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then(game => res.json(game))
+    .catch(err => res.status(404).json(err))
+});
 
-
-
-
-
+router.delete('/id', (req, res) => {
+  Game.deleteOne({ _id: req.params.id })
+    }
+);
 
 module.exports = router;

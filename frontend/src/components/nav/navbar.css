@@ -1,0 +1,121 @@
+/* gray: #84857e */
+
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border: none;
+    max-height: 53px;
+    position: relative;
+}
+.splash-logo {
+    font-family: "Berthold Akzidenz Grotesk BE";
+    color: black;
+    font-size: 35px;
+}
+
+.navbar-right {
+    font-family: "Berthold Akzidenz Grotesk BE";
+    color: black;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.nav-shoes {
+    height: 80px;
+    transform: translateY(12px);
+
+}
+
+.navbar-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar-right :last-child{
+     margin-left: 12px;
+     padding-right: 20px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover {
+    color: goldenrod
+}
+
+
+.hero {
+    z-index: -1;
+    position: absolute;
+    background-image: url(../../public/splash-hero.png);
+    width: 100%;
+    height: 615px;
+    top: 53px;
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.tag-container {
+    width: 100%;
+    height: 585px;
+    z-index: 6;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(20.5%);
+}
+
+#tag {
+    /* transform: translateY(-50%); */
+    left: 4%;
+    color: white;
+    font-family: "Berthold Akzidenz Grotesk BE";
+    font-size: 4.8vw;
+    position: relative;
+    
+}
+
+#sub-tag {
+    transform: translateY(-150%);
+    right: 4%;
+    color: white;
+    font-family: "Berthold Akzidenz Grotesk BE";
+    font-size: 2vw;
+    position: relative;
+}
+
+.tag-list {
+    list-style: none;
+}
+
+.signup-btn {
+    z-index: 3;
+    position: absolute;
+    object-fit: cover;
+    transform: translateY(10vh);
+    font-family: "Berthold Akzidenz Grotesk BE";
+    font-size: 16px;
+    background-color: goldenrod;
+    color: black;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+
+}

@@ -1,14 +1,25 @@
-// import { connect } from 'react-redux';
-// import { login } from '../../actions/session_actions';
-// import GameShow from './game_show';
+import { connect } from 'react-redux';
+import { getGame, getGames, updateGame, deleteGame } from '../../actions/game_actions';
+import { getUsers, getUser } from '../../actions/session_actions';
+import GameShow from './game_show';
 
-// mSTP = (state, ownProps) => ({
-//     game: state.games[ownProps.match.params.gameId],
-//     player: state.session.user
-// })
+const mSTP = (state, ownProps) => {
+    
+    return {
+    games: Object.values(state.games.all),
+    game: state.games.all[ownProps.match.params.gameId],
+    player: state.session.user.data,
+    users: Object.values(state.games.all)
+    }
+}
 
-// mDTP = dispatch => ({
-//     fetch 
-// })
+const mDTP = dispatch => ({
+    getGame: gameId => dispatch(getGame(gameId)),
+    getGames: () => dispatch(getGames()),
+    updateGame: (game) => dispatch(updateGame(game)),
+    getUsers: () => dispatch(getUsers()),
+    getUser: userData => dispatch(getUser(userData)),
+    deleteGame: gameId => dispatch(deleteGame(gameId))
+})
 
-// export default connect(mSTP, mDTP)(GameShow)
+export default connect(mSTP, mDTP)(GameShow)

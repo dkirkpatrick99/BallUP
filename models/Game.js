@@ -7,6 +7,9 @@ const GameSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'users'
     },
+    title: {
+      type: String
+    },
     location: {
       type: String,
       required: true

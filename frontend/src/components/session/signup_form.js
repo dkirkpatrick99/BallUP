@@ -8,7 +8,10 @@ class SignupForm extends React.Component {
             email: '',
             handle: '',
             password: '',
-            password2: ''
+            password2: '',
+            first: '',
+            second: '',
+            third: ''
             // errors: {}
         };
 
@@ -18,7 +21,7 @@ class SignupForm extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.signedIn === true) {
-            this.props.history.push('/login');
+            this.props.history.push('/courts');
         }
 
         // this.setState({ errors: nextProps.errors })
@@ -36,7 +39,10 @@ class SignupForm extends React.Component {
             email: this.state.email,
             handle: this.state.handle,
             password: this.state.password,
-            password2: this.state.password2
+            password2: this.state.password2,
+            first: this.state.first,
+            second: this.state.second,
+            third: this.state.third
         };
 
         this.props.signup(user);
@@ -70,6 +76,24 @@ class SignupForm extends React.Component {
                             value={this.state.handle}
                             onChange={this.update('handle')}
                             placeholder="Handle"
+                        />
+                        <br />
+                        <input type="text"
+                            value={this.state.first}
+                            onChange={this.update('first')}
+                            placeholder="first"
+                        />
+                        <br />
+                        <input type="text"
+                            value={this.state.second}
+                            onChange={this.update('second')}
+                            placeholder="second"
+                        />
+                        <br />
+                        <input type="text"
+                            value={this.state.third}
+                            onChange={this.update('third')}
+                            placeholder="third"
                         />
                         <br />
                         <input type="password"
