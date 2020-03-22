@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+
 class SignupForm extends React.Component {
     constructor(props) {
         super(props);
@@ -60,11 +61,21 @@ class SignupForm extends React.Component {
     //     );
     // }
 
+
     render() {
+            debugger;
+        let postions = ["Point Guard", "Shooting Guard", "Small Forward",
+            "Power Forward", "Center"];
+        let secondaryPos = postions.filter( position =>
+                position !== this.state.first
+            )
+        let tertiaryPos = secondaryPos.filter ( postion =>
+                postion !== this.state.second
+            )
         return (
-            <div className="login-form-container">
+            <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit}>
-                    <div className="login-form">
+                    <div className="signup-form">
                         <br />
                         <input type="text"
                             value={this.state.email}
@@ -78,23 +89,26 @@ class SignupForm extends React.Component {
                             placeholder="Handle"
                         />
                         <br />
-                        <input type="text"
-                            value={this.state.first}
-                            onChange={this.update('first')}
-                            placeholder="first"
-                        />
+                        <select onChange={this.update('first')}>
+                            { postions.map( position => 
+                                <option value={position}
+                                >{position}</option>
+                            )}
+                        </select>
                         <br />
-                        <input type="text"
-                            value={this.state.second}
-                            onChange={this.update('second')}
-                            placeholder="second"
-                        />
-                        <br />
-                        <input type="text"
-                            value={this.state.third}
-                            onChange={this.update('third')}
-                            placeholder="third"
-                        />
+                        <select onChange={this.update('second')}>
+                            {secondaryPos.map(position =>
+                                <option value={position}
+                                >{position}</option>
+                            )}
+                        </select>
+                        <br/>
+                        <select onChange={this.update('third')}>
+                            {tertiaryPos.map(position =>
+                                <option value={position}
+                                >{position}</option>
+                            )}
+                        </select>
                         <br />
                         <input type="password"
                             value={this.state.password}
