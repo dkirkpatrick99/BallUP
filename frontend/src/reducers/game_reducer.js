@@ -16,7 +16,6 @@ const GameReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
             newState.new = action.game.data
             return newState;
         case REMOVE_GAME:
-            debugger
             return newState;
         default:
             return state;
