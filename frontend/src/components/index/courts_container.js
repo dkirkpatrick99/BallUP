@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import {getGames} from '../../actions/game_actions'
 
 const mapStateToProps = (state) => {
-    debugger
     return{
         games: Object.values(state.games.all)
     }

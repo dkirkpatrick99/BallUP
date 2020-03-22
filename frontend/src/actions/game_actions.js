@@ -37,7 +37,6 @@ export const updateGame = (game) => dispatch => {
 };
 
 export const removeGame = (game) => dispatch => {
-  debugger
   return APIUtil.deleteGame(game).then( () => dispatch(deleteGame()))
 }
 
