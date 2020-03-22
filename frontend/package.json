@@ -12,6 +12,7 @@
     "axios": "^0.19.2",
     "geocodio-library-node": "^1.1.0",
     "google-maps-react": "^2.0.2",
+    "jquery": "^3.4.1",
     "jwt-decode": "^2.2.0",
     "node-geocoder": "^3.25.1",
     "passport-jwt": "^4.0.0",

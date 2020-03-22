@@ -1,17 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './navbar.css'
+import $ from 'jquery';
+import LoginContainer from '../session/login_form_container'
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.logoutUser = this.logoutUser.bind(this);
         this.getLinks = this.getLinks.bind(this);
+        this.loginModal = this.loginModal.bind(this);
+        this.signupModal = this.signupModal.bind(this);
     }
 
     logoutUser(e) {
         e.preventDefault();
         this.props.logout();
+    }
+
+    loginModal(e) {
+        e.preventDefault();
+        $('.modal-background-closed').addClass('modal-background');
+        $('.modal-background-closed').removeClass('modal-background-closed');
+    }
+
+    signupModal(e) {
+        e.preventDefault();
+        $('.su-modal-background-closed').addClass('su-modal-background');
+        $('.su-modal-background-closed').removeClass('su-modal-background-closed');
     }
 
     getLinks() {
@@ -27,8 +43,8 @@ class NavBar extends React.Component {
         } else {
             return (
                 <ul className="navbar-right">
-                    <li><Link className='link' to={'/signup'}>Signup</Link></li>
-                    <li><Link className='link' to={'/login'}>Login</Link></li> 
+                    <li onClick={this.signupModal}>Signup</li>
+                    <li onClick={this.loginModal}>Login</li> 
                 </ul>
             );
         }
@@ -53,7 +69,7 @@ class NavBar extends React.Component {
                             </ul>
                           <button className="signup-btn">Get Started</button>
                         </div> */}
-                   </div>
+            </div>
         );
     }
 }

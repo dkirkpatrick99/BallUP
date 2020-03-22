@@ -10,8 +10,8 @@ import GameShowContainer from './gameShow/game_show_container';
 import SplashPage from './splash/splash';
 import CourtsContainer from './index/courts_container';
 
-const App = () => (
-    <div>
+const App = () => {
+    return (<div>
         <NavBarContainer />
         <Switch>
             <Route path="/games/:gameId" component={GameShowContainer}/>
@@ -20,7 +20,7 @@ const App = () => (
             <ProtectedRoute exact path="/courts" component={CourtsContainer} />
             <AuthRoute path="/" component={SplashPage} />
         </Switch>
-    </div>
-);
+    </div>)
+};
 
 export default App;
