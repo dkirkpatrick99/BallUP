@@ -1,6 +1,7 @@
-import React from "react";
+ import React from "react";
 // import { Map, GoogleApiWrapper } from 'google-maps-react';
-import MapContainer from '../map/map'
+import MapContainer from '../map/map';
+import GameItem from './game_item';
 
 class Courts extends React.Component {
     constructor(props) {
@@ -9,7 +10,8 @@ class Courts extends React.Component {
     }
 
     componentDidMount(){
-        this.props.getGames()
+        this.props.getGames();
+        this.props.getAdress('1109 N Highland St, Arlington VA')
     }
 
     // componentWillMount() {
@@ -17,9 +19,6 @@ class Courts extends React.Component {
     // }
 
     render() {
-
-        
-
         return (  
             <div>
                 <h1>Hello</h1>
@@ -32,8 +31,7 @@ class Courts extends React.Component {
                 {this.props.games.map( game => 
 
                     <ul>
-                        <li>{game.location}</li>
-                        <li>{game.time}</li>
+                        <GameItem game={game} />
                     </ul>
                     
                     )}

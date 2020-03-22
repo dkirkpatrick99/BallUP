@@ -11,12 +11,7 @@ class GameShow extends React.Component {
         this.removePlayer = this.removePlayer.bind(this)
         this.endGame = this.endGame.bind(this)
         this.startGame = this.startGame.bind(this)
-        this.state = {id: this.props.match.params.gameId, game: {}, teamOne: {
-            pointGaurd: '', shootingGaurd: '', smallForward: '', powerForward: '', center: '', total: 0
-        },
-        teamTwo: {
-            pointGaurd: '', shootingGaurd: '', smallForward: '', powerForward: '', center: '', total: 0
-        },}
+        this.state = {id: this.props.match.params.gameId, game: {}}
     }
 
     componentDidMount() {
@@ -28,7 +23,7 @@ class GameShow extends React.Component {
 
     addPlayer(e) {
         e.preventDefault();
-    
+    debugger
         this.state.game.players.push(this.props.player);
         this.props.updateGame(this.state.game);
     }
@@ -45,15 +40,47 @@ class GameShow extends React.Component {
     };
 
     startGame(e) {
-        // let count = 1;
-        // this.state.game.players.forEach(player => {
-        //     if (count % 2 !== 0) {
-        //         this.state.teamOne.push(player)
-        //     } else {
-        //         this.state.teamTwo.push(player)
-        //     };
-        //     count += 1
-        // });
+        e.preventDefault()
+        let team1 = {"center":0, "point gaurd":0, "power forward":0, "small forward":0, "shooting gaurd":0};
+        let team2 = {"center":0, "point gaurd":0, "power forward":0, "small forward":0, "shooting gaurd":0};
+        let mid = Math.floor(this.state.game.players.length / 2);
+        let playersArr1 = this.state.game.players.slice(0,mid);
+        let playersArr2 = this.state.game.players.slice(mid + 1);
+        let positions = ["center", "point gaurd", "power forward", "small forward", "shooting gaurd"];
+        
+        playersArr1.forEach((player) => {
+            if (team1[player.first] === 0) {
+                team1[player.first] = player.handle
+            } else if (team1[player.second] === 0) {
+                team1[player.second] = player.handle 
+            } else if (team1[player.third] === 0) {
+                team1[player.third] = player.handle 
+            } else {
+                positions.forEach((position) => {
+                    if (team1[position] === 0) {
+                        team1[position] = player.handle
+                    }
+                })
+            }
+        })
+
+        playersArr2.forEach((player) => {
+            if (team2[player.first] === 0) {
+                team2[player.first] = player.handle
+            } else if (team2[player.second] === 0) {
+                team2[player.second] = player.handle 
+            } else if (team2[player.third] === 0) {
+                team2[player.third] = player.handle 
+            } else {
+                positions.forEach((position) => {
+                    if (team2[position] === 0) {
+                        team2[position] = player.handle
+                    }
+                })
+            }
+        })
+        let teams = [team1, team2];
+        this.setState({players : teams})
     }
 
     endGame(e) {
@@ -65,6 +92,7 @@ class GameShow extends React.Component {
 
         let game = {players: []};
         this.props.games.forEach(g => {
+            
             if (g._id === this.state.id) {
                 game = g
                 this.state.game = game;
@@ -73,16 +101,16 @@ class GameShow extends React.Component {
 
         
 
-    if (game.players.length === 10) {
-        document.getElementsByClassName("add-player").style.display = "none";
-        document.getElementsByClassName("full-game").style.display = "block";
-        document.getElementsByClassName("owner-button").style.display = "none";
-    } 
+    // if (game.players.length === 10) {
+    //     document.getElementsByClassName("add-player").style.display = "none";
+    //     document.getElementsByClassName("full-game").style.display = "block";
+    //     document.getElementsByClassName("owner-button").style.display = "none";
+    // } 
     
-    if (game.players.includes(this.props.player)){
-        document.getElementsByClassName("add-player").style.display = "none";
-        document.getElementsByClassName("remove-player").style.display = "block";
-    }
+    // if (game.players.includes(this.props.player)){
+    //     document.getElementsByClassName("add-player").style.display = "none";
+    //     document.getElementsByClassName("remove-player").style.display = "block";
+    // }
 
     // if (game.players.first === this.props.player) {
     //     document.getElementsByClassName("add-player").style.display = "none";
