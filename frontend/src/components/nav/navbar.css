@@ -45,13 +45,14 @@
      padding-right: 20px;
 }
 
-.link {
+.navbar-right li {
     text-decoration: none;
     color: black;
 }
 
-.link:hover {
+.navbar-right li:hover {
     color: #a9a471;
+    cursor: pointer;
 }
 
 
@@ -123,7 +124,7 @@
 }
 
 .modal-background {
-    height: 400px;
+    height: 200px;
     width: 250px;
     position: fixed;
     z-index: 78;
@@ -131,4 +132,25 @@
     overflow-y: scroll;
     display: flex; 
     top: -20%;
+    transform: translateY(100%);
+}
+
+.modal-background-closed {
+    display: none;
+}
+
+.su-modal-background {
+    height: 300px;
+    width: 250px;
+    position: fixed;
+    z-index: 78;
+    background-color: white;
+    overflow-y: scroll;
+    display: flex; 
+    top: -20%;
+    transform: translateY(40%);
+}
+
+.su-modal-background-closed {
+    display: none;
 }
