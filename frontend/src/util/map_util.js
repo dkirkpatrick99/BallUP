@@ -9,15 +9,13 @@ export const getAdress = (adress) => {
 // import Geocodio from 'geocodio-library-node';
 // const geocoder = new Geocodio('92c642cce52736158878452858b9bb46e89755e');
 
+
+
 // export const getAdress = (adress) => {
 //   return geocoder.geocode(`${adress}`)
 //   .then(response => {
 //     console.log(response);
 //   })
-//   // .catch(err => {
-//   //   console.error(err);
-//   // }
-//   // );
 // };
 
 
