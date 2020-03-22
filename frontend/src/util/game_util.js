@@ -17,7 +17,6 @@ export const updateGame = game => {
 }
 
 export const deleteGame = game => {
-  debugger
   return axios.patch(`/api/games/${game}`)
 };
 

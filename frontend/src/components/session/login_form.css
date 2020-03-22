@@ -1,0 +1,12 @@
+.login-form {
+    height: 200px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form > input {
+    width: 70%
+}
