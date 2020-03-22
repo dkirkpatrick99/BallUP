@@ -1,4 +1,5 @@
 /* gray: #84857e */
+/* gold: #a9a471 */
 
 
 .navbar {
@@ -50,7 +51,7 @@
 }
 
 .link:hover {
-    color: goldenrod
+    color: #a9a471;
 }
 
 
@@ -109,8 +110,8 @@
     transform: translateY(10vh);
     font-family: "Berthold Akzidenz Grotesk BE";
     font-size: 16px;
-    background-color: goldenrod;
-    color: black;
+    background-color: black;
+    color: white;
     padding-left: 32px;
     padding-right: 32px;
     padding-top: 9px;
@@ -119,4 +120,15 @@
     outline: none;
     border: none;
 
+}
+
+.modal-background {
+    height: 400px;
+    width: 250px;
+    position: fixed;
+    z-index: 78;
+    background-color: white;
+    overflow-y: scroll;
+    display: flex; 
+    top: -20%;
 }
