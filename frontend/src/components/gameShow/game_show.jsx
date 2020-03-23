@@ -23,7 +23,6 @@ class GameShow extends React.Component {
 
     addPlayer(e) {
         e.preventDefault();
-    debugger
         this.state.game.players.push(this.props.player);
         this.props.updateGame(this.state.game);
     }

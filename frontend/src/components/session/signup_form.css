@@ -1,0 +1,23 @@
+.signup-form-container {
+    height: 600px;
+}
+
+.signup-form {
+    height: 550px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-24%);
+}
+
+input, select{
+    width: 70%
+}
+
+p {
+    font-size: 12px;
+    margin: 0%;
+    margin-bottom: 2px;
+}
