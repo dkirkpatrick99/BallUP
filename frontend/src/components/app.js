@@ -14,7 +14,7 @@ const App = () => {
     return (<div>
         <NavBarContainer />
         <Switch>
-            <Route path="/games/:gameId" component={GameShowContainer}/>
+            <ProtectedRoute path="/games/:gameId" component={GameShowContainer}/>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/courts" component={CourtsContainer} />

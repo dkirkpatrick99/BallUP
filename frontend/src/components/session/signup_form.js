@@ -10,9 +10,9 @@ class SignupForm extends React.Component {
             handle: '',
             password: '',
             password2: '',
-            first: 'Point Guard',
-            second: 'Point Guard',
-            third: 'Point Guard'
+            first: '',
+            second: '',
+            third: ''
             // errors: {}
         };
 
@@ -35,7 +35,6 @@ class SignupForm extends React.Component {
     }
 
     handleSubmit(e) {
-        debugger
         e.preventDefault();
         let user = {
             email: this.state.email,
@@ -48,7 +47,8 @@ class SignupForm extends React.Component {
         };
 
         this.props.signup(user)
-        .then(() => this.props.login({email: user.email, password: user.password })
+        .then(() => this.props.login({email: user.email, 
+            password: user.password }))
     }
 
     // renderErrors() {
@@ -65,6 +65,7 @@ class SignupForm extends React.Component {
 
 
     render() {
+            debugger;
         let postions = ["Point Guard", "Shooting Guard", "Small Forward",
             "Power Forward", "Center"];
         let secondaryPos = postions.filter( position =>
