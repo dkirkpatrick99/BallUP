@@ -171,3 +171,42 @@
 .su-modal-background-closed {
     display: none;
 }
+
+.navbar-right-loggedin {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-right-loggedin li:hover {
+    color: #a9a471;
+    cursor: pointer;
+}
+
+.navbar-right-loggedin li {
+    list-style: none;
+    text-decoration: none;
+    font-family: "Berthold Akzidenz Grotesk BE";
+    font-size: 25px;
+}
+
+.navbar-right-loggedin a {
+    text-decoration: none;
+    color: black;
+    padding: 0%;
+}
+
+.navbar-right-loggedin a:hover {
+    color: #a9a471;
+    cursor: pointer;
+}
+
+.navbar-right-loggedin :last-child{
+     margin-left: 12px;
+     padding-right: 20px;
+}
+
+.navbar-right-loggedin :first-child{
+     padding-right: 0;
+}

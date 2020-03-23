@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import GameShowPlayer from './game_show_player'
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 import MapContainer from '../map/map'
+import './show.css'
 
 class GameShow extends React.Component {
     constructor(props) {
@@ -120,7 +121,7 @@ class GameShow extends React.Component {
     // }
         
         return (
-            <div>
+            <div className="show">
                 <h2>{game.location}</h2>
                 <h2>{game.time}</h2>
                 <h2>{game.date}</h2>

@@ -1,0 +1,10 @@
+.show {
+    background-color: gray;
+    /* transform: translateY(30%); */
+    height: 100vh;
+}
+
+.show h2 {
+    margin: 0px;
+    padding-top: 30px;
+}

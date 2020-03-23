@@ -34,10 +34,10 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             return (
                 <div>
-                    <Link to={'/courts'}>All Courts</Link>
-                    {/* <Link to={'/profile'}>Profile</Link> */}
-                    {/* <Link to={'/new_tweet'}>Write a Tweet</Link> */}
-                    <button onClick={this.logoutUser}>Logout</button>
+                    <ul className="navbar-right-loggedin">
+                    <li><Link to={'/courts'}>Games</Link></li>
+                        <li onClick={this.logoutUser}>Logout</li> 
+                    </ul>
                 </div>
             );
         } else {
