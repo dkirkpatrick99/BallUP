@@ -4,7 +4,7 @@ import { getUsers, getUser } from '../../actions/session_actions';
 import GameShow from './game_show';
 
 const mSTP = (state, ownProps) => {
-    
+
     return {
     games: Object.values(state.games.all),
     game: state.games.all[ownProps.match.params.gameId],
