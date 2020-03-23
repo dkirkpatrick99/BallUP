@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import "./signup_form.css"
 
 
 class SignupForm extends React.Component {
@@ -65,11 +66,10 @@ class SignupForm extends React.Component {
 
 
     render() {
-            debugger;
         let postions = ["Point Guard", "Shooting Guard", "Small Forward",
             "Power Forward", "Center"];
         let secondaryPos = postions.filter( position =>
-                position !== this.state.first
+                position !== this.state.first && position !== this.state.third
             )
         let tertiaryPos = secondaryPos.filter ( postion =>
                 postion !== this.state.second
@@ -90,7 +90,8 @@ class SignupForm extends React.Component {
                             onChange={this.update('handle')}
                             placeholder="Handle"
                         />
-                        <br />
+                        <br/>
+                        <p>Select your 3 preferred positions:</p>
                         <select onChange={this.update('first')}>
                             { postions.map( position => 
                                 <option value={position}
