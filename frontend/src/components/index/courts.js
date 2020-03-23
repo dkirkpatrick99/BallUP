@@ -2,6 +2,7 @@
 // import { Map, GoogleApiWrapper } from 'google-maps-react';
 import MapContainer from '../map/map';
 import GameItem from './game_item';
+import { Link } from "react-router-dom";
 
 class Courts extends React.Component {
     constructor(props) {
@@ -19,6 +20,7 @@ class Courts extends React.Component {
     // }
 
     render() {
+        // debugger
         return (  
             <div>
                 <h1>Hello</h1>
@@ -29,9 +31,10 @@ class Courts extends React.Component {
                 <h1>Put the list of filtered games here</h1>
 
                 {this.props.games.map( game => 
-
                     <ul>
-                        <GameItem game={game} />
+                        <Link to={`/games/${game._id}`}>
+                            <GameItem game={game} />
+                        </Link>
                     </ul>
                     
                     )}
