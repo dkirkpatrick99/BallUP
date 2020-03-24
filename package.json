@@ -4,14 +4,14 @@
   "description": "Create teams for pickup basketball games",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "cd backend && npm install && node app.js",
     "server": "nodemon app.js --ignore './frontend/'",
     "server:debug": "nodemon --inspect app.js",
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
     "dev-debugger": "concurrently \"npm run server:debug\" \"npm run frontend\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
