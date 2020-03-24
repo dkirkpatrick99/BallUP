@@ -2,7 +2,7 @@
   "name": "ballup",
   "version": "1.0.0",
   "description": "Create teams for pickup basketball games",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "server": "nodemon app.js --ignore './frontend/'",
@@ -11,7 +11,7 @@
     "frontend": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
     "dev-debugger": "concurrently \"npm run server:debug\" \"npm run frontend\"",
-    "heroku-postbuild": "cd frontend NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
   },
   "repository": {
     "type": "git",
