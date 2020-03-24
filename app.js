@@ -10,7 +10,7 @@ const users = require("./routes/api/users");
 const games = require("./routes/api/games");
 
 mongoose
-  .connect(db, {
+  .connect('mongodb+srv://team:Z6IKOfKbiPYV42kD@cluster0-5wx9s.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true, useUnifiedTopology: true,
     useFindAndModify: false
   })
