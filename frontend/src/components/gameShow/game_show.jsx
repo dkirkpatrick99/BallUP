@@ -12,7 +12,7 @@ class GameShow extends React.Component {
         this.removePlayer = this.removePlayer.bind(this)
         this.endGame = this.endGame.bind(this)
         this.startGame = this.startGame.bind(this)
-        this.state = {id: this.props.match.params.gameId, game: {}}
+        this.state = {id: this.props.match.params.gameId, game: {}, players: [{},{}]}
     }
 
     componentDidMount() {
@@ -29,14 +29,15 @@ class GameShow extends React.Component {
     }
 
     removePlayer(e) {
-        // e.preventDefault();
-        // this.state.game.players.forEach(player => {
-        //     if (player.id !== this.props.player.id) {
-        //         newPlayers.push(player)
-        //     }
-        // });
-        // this.state.game.players = newPlayers
-        // this.props.updateGame(this.state.game);
+        e.preventDefault();
+        let newPlayers = [];
+        this.state.game.players.forEach(player => {
+            if (player.id !== this.props.player.id) {
+                newPlayers.push(player)
+            }
+        });
+        this.state.game.players = newPlayers
+        this.props.updateGame(this.state.game);
     };
 
     startGame(e) {
@@ -81,6 +82,7 @@ class GameShow extends React.Component {
         })
         let teams = [team1, team2];
         this.setState({players : teams})
+        debugger
     }
 
     endGame(e) {
@@ -141,14 +143,12 @@ class GameShow extends React.Component {
                     
                 </div>
 
-                {/* <div>
-                    <MapContainer />
-                </div> */}
                 <div>
                     <button className="owner-button start-game" onClick={this.startGame}>Start Game</button>
                     <button className="owner-button cancel-game" onClick={this.endGame}>Cancel Game</button>
                 </div>
                 <h1>{this.props.games.length}</h1>
+                <h1>This is how many people are on each team {this.state.players.length}</h1>
             </div>
         )
     }
