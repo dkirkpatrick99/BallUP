@@ -1,15 +1,15 @@
 .signup-form-container {
-    height: 600px;
+    height: 300px;
 }
 
 .signup-form {
-    height: 550px;
+    height: 350px;
     width: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateY(-24%);
+    transform: translateY(-14%);
 }
 
 input, select{
