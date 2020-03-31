@@ -152,20 +152,63 @@
     transform: translateY(100%);
 }
 
+.modal-background h1 {
+    font-family: "Berthold Akzidenz Grotesk BE";
+    position: absolute;
+    z-index: 80;
+    left: 10%;
+}
+
 .modal-background-closed {
     display: none;
+}
+
+.close-modal {
+    margin: 0;
+    z-index: 90;
+    position: absolute;
+    height: 200px;
+    width: 250px;
+    transform: translateX(90%) translateY(4px);
+    font-size: 17px;
+}
+
+.close-modal:hover {
+    cursor: pointer;
 }
 
 .su-modal-background {
     height: 300px;
     width: 250px;
     position: fixed;
+    padding-top: 78px;
     z-index: 78;
     background-color: white;
-    overflow-y: scroll;
     display: flex; 
     top: -20%;
-    transform: translateY(40%);
+    transform: translateY(37%);
+}
+
+.su-modal-background h1 {
+    font-family: "Berthold Akzidenz Grotesk BE";
+    position: absolute;
+    z-index: 80;
+    left: 10%;
+    transform: translateY(-80px);
+}
+
+.close-su-modal {
+    margin: 0;
+    z-index: 90;
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    transform: translateX(90%) translateY(-74px);
+    font-size: 17px;
+}
+
+.close-su-modal:hover {
+    cursor: pointer;
 }
 
 .su-modal-background-closed {

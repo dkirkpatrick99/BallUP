@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transform: translateY(20%);
 }
 
 .login-form > input {

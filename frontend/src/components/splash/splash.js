@@ -9,11 +9,15 @@ class Splash extends React.Component {
         super(props);
     }
 
-
-    signupModal(e) {
+    ModalClose(e) {
         e.preventDefault();
-        $('.su-modal-background-closed').addClass('su-modal-background');
-        $('.su-modal-background-closed').removeClass('su-modal-background-closed');
+        $('.modal-background').addClass('modal-background-closed');
+        $('.modal-background').removeClass('modal-background');
+    }
+    signupModalClose(e) {
+        e.preventDefault();
+        $('.su-modal-background').addClass('su-modal-background-closed');
+        $('.su-modal-background').removeClass('su-modal-background');
     }
 
     render(){
@@ -24,9 +28,17 @@ class Splash extends React.Component {
             </div>
             <div className="tag-container">
                     <div className="modal-background-closed">
+                        <p className="close-modal"
+                            onClick={this.ModalClose}
+                        >&times;</p>
+                        <h1>Login</h1>
                         <LoginContainer />
                     </div>
                     <div className="su-modal-background-closed">
+                        <p className="close-su-modal"
+                            onClick={this.signupModalClose}
+                        >&times;</p>
+                        <h1>Signup</h1>
                         <SignupContainer />
                     </div>
                 <ul className="tag-list">

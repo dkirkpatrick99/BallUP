@@ -30,6 +30,8 @@ class NavBar extends React.Component {
         $('.su-modal-background-closed').removeClass('su-modal-background-closed');
     }
 
+   
+
     getLinks() {
         if (this.props.loggedIn) {
             return (
