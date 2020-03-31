@@ -1,7 +1,7 @@
 import React from 'react';
 import Courts from './courts';
 import { connect } from 'react-redux';
-import {getGames} from '../../actions/game_actions';
+import {getGames, createGame} from '../../actions/game_actions';
 import {getAdress} from '../../actions/map_actions'
 
 const mapStateToProps = (state) => {
@@ -13,8 +13,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
     getGames: () => dispatch(getGames()),
-    getAdress: (adress) => dispatch(getAdress(adress))
-
+    getAdress: (adress) => dispatch(getAdress(adress)),
+    createGame: (game) => dispatch(createGame(game))
 })
 
 export default connect(
