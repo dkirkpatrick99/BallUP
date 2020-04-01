@@ -1,9 +1,12 @@
 import axios from 'axios';
 
 
-export const getAdress = (adress) => {
-  return axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,
-    +Mountain + View, +CA & key=AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s`
+export const getAddress = (address) => {
+  debugger
+  return axios.get(`https://maps.googleapis.com/maps/api/geocode/json`, {
+    address: '22 Main st Boston MA',
+    key: 'AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s'
+  }
 )};
 
 // import Geocodio from 'geocodio-library-node';
