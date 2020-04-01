@@ -4,7 +4,7 @@ import axios from 'axios';
 export const getAddress = (address) => {
   debugger
   return axios.get(`https://maps.googleapis.com/maps/api/geocode/json`, {
-    address: '22 Main st Boston MA',
+    address: address,
     key: 'AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s'
   }
 )};

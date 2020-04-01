@@ -7,7 +7,11 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 export class MapContain extends React.Component {
     constructor(props){
         super(props)
-        // this.state = {0: 123}
+        this.state = {key: 123}
+    }
+
+    componentDidMount() {
+        this.props.getAddress(this.props.location)
     }
 
     geocode() {
@@ -26,8 +30,8 @@ export class MapContain extends React.Component {
             console.log(response);
             var formattedAddress = response.data.results[0].geometry.location;
             console.log(formattedAddress)
-            debugger
-            this.setState = ({0: formattedAddress})
+            this.setState({key: 'test'})
+            
             console.log(this.state)
         })
     
@@ -43,7 +47,7 @@ export class MapContain extends React.Component {
             <div>
                 {/* <button onClick={this.geocode('22 Main st Boston MA')}></button> */}
                 <div>{this.geocode()}</div>
-                <div>{this.state}</div>
+                {/* <div>{this.state}</div> */}
             {/* <Map
             google={this.props.google}
             zoom={8}
