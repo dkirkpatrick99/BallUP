@@ -8,7 +8,6 @@ export const getMap = address => ({
 });
 
 export const getAddress = (address) => dispatch => {
-  debugger
   return APIUtil.getAddress(address)
     .then( (address) => dispatch(getMap(address)))
 }
