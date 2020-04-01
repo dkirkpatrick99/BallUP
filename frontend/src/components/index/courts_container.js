@@ -2,7 +2,7 @@ import React from 'react';
 import Courts from './courts';
 import { connect } from 'react-redux';
 import {getGames, createGame} from '../../actions/game_actions';
-import {getAddress} from '../../actions/map_actions'
+import { getAddress } from '../../actions/map_actions'
 
 const mapStateToProps = (state) => {
     return{

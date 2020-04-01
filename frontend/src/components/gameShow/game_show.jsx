@@ -12,7 +12,7 @@ class GameShow extends React.Component {
         this.removePlayer = this.removePlayer.bind(this)
         this.endGame = this.endGame.bind(this)
         this.startGame = this.startGame.bind(this)
-        this.state = {id: this.props.match.params.gameId, game: {}, players: [{},{}]}
+        this.state = {id: this.props.match.params.gameId, game: {}, players: [[], []]}
     }
 
     componentDidMount() {
@@ -80,9 +80,8 @@ class GameShow extends React.Component {
                 })
             }
         })
-        let teams = [team1, team2];
-        this.setState({players : teams})
-        debugger
+        let teams = [playersArr1, playersArr2];
+        this.setState({players: teams})
     }
 
     endGame(e) {
@@ -149,6 +148,21 @@ class GameShow extends React.Component {
                 </div>
                 <h1>{this.props.games.length}</h1>
                 <h1>This is how many people are on each team {this.state.players.length}</h1>
+                <h1>Team 1</h1>
+                <ul>
+                    {
+                        this.state.players[0].map(player => <li>{player.handle}</li>)
+                    }
+                </ul>
+                <br/>
+                <h1>Team 2</h1>
+                <ul>
+                    {
+                        this.state.players[1].map(player => <li>{player.handle}</li>)
+                    }
+                </ul>
+
+
             </div>
         )
     }
