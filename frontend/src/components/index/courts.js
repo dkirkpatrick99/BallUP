@@ -33,7 +33,7 @@ class Courts extends React.Component {
             title: this.state.title,
             location: this.state.location,
             time: this.state.time,
-            game_date: this.game_date,
+            game_date: this.state.game_date,
             players: []
         };
 

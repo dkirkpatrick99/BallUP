@@ -29,7 +29,6 @@ export const getGame = gameId => dispatch => {
 };
 
 export const createGame = (game) => dispatch => {
-  debugger
   return APIUtil.createGame(game).then( game => dispatch(recieveGame(game)))
 };
 

@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export const createGame = (game) => {
-  debugger
   return axios.post('/api/games/creategame', game)
 };
 

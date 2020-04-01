@@ -7,7 +7,7 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 export class MapContain extends React.Component {
     constructor(props){
         super(props)
-        this.state = {key: 0}
+        this.state.key = 0
     }
 
     componentDidMount() {
