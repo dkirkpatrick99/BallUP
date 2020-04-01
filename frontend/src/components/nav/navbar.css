@@ -85,9 +85,9 @@
     transform: translateY(30.5%);
 }
 
-#tag {
+.tag {
     /* transform: translateY(-50%); */
-    left: 4%;
+    left: -3%;
     color: white;
     font-family: "Berthold Akzidenz Grotesk BE";
     font-size: 4.8vw;
@@ -96,7 +96,7 @@
     
 }
 
-#sub-tag {
+.sub-tag {
     transform: translateY(-150%) translateX(2%);
     right: 4%;
     color: white;
@@ -123,8 +123,10 @@
     padding-top: 9px;
     padding-bottom: 9px;
     border-radius: 4px;
+    margin-top: 1%;
     outline: none;
     border: none;
+    width: 150px;
 }
 
 .tag-list {
@@ -150,22 +152,64 @@
     display: flex; 
     top: -20%;
     transform: translateY(100%);
+    padding-bottom: 15px;
+}
+
+.modal-background h1 {
+    font-family: "Berthold Akzidenz Grotesk BE";
+    position: absolute;
+    z-index: 80;
+    left: 10%;
 }
 
 .modal-background-closed {
     display: none;
 }
 
+.close-modal {
+    margin: 0;
+    z-index: 90;
+    position: absolute;
+    width: 250px;
+    transform: translateX(90%) translateY(4px);
+    font-size: 17px;
+}
+
+.close-modal:hover {
+    cursor: pointer;
+}
+
 .su-modal-background {
     height: 300px;
     width: 250px;
     position: fixed;
+    padding-top: 78px;
     z-index: 78;
     background-color: white;
-    overflow-y: scroll;
     display: flex; 
     top: -20%;
-    transform: translateY(40%);
+    transform: translateY(37%);
+}
+
+.su-modal-background h1 {
+    font-family: "Berthold Akzidenz Grotesk BE";
+    position: absolute;
+    z-index: 80;
+    left: 10%;
+    transform: translateY(-80px);
+}
+
+.close-su-modal {
+    margin: 0;
+    z-index: 90;
+    position: absolute;
+    width: 20px;
+    transform: translateX(225px) translateY(-74px);
+    font-size: 17px;
+}
+
+.close-su-modal:hover {
+    cursor: pointer;
 }
 
 .su-modal-background-closed {
@@ -209,4 +253,40 @@
 
 .navbar-right-loggedin :first-child{
      padding-right: 0;
+}
+
+input {
+    outline-color: black;
+    outline-width: 1px;
+    font-family: "Berthold Akzidenz Grotesk BE";
+    letter-spacing: 1px;
+}
+
+input:focus {
+    outline-style: solid;
+}
+
+input[type=submit] {
+    font-family: "Berthold Akzidenz Grotesk BE";
+}
+
+select {
+    font-family: "Berthold Akzidenz Grotesk BE";
+    letter-spacing: 1px;
+}
+
+label, button, option {
+    font-family: "Berthold Akzidenz Grotesk BE";
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.navbar-b, .hero-b, .tag-b, .sub-tag-b, .signup-btn-b {
+   filter: brightness(45%);
+   transition: .5s;
+}
+.navbar, .hero, .tag, .sub-tag, .signup-btn {
+   transition: .5s;
 }
