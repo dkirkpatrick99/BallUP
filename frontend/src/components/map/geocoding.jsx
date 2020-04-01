@@ -7,17 +7,17 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 export class MapContain extends React.Component {
     constructor(props){
         super(props)
-        this.state = {key: 123}
+        this.state = {key: 0}
     }
 
     componentDidMount() {
-        this.props.getAddress(this.props.location)
+        this.geocode(this.props.location)
     }
 
-    geocode() {
-        var location = '22 Main st Boston MA'
+    geocode(location) {
+        // var location = '22 Main st Boston MA'
         // this.props.getAddress(location)
-        let res = Axios.get('https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s',{
+        let res = Axios.get('https://maps.googleapis.com/maps/api/geocode/json',{
                 params: {
                         address: location,
                         key: 'AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s'
@@ -26,36 +26,29 @@ export class MapContain extends React.Component {
         )
     
         .then(response => {
-            
-            console.log(response);
             var formattedAddress = response.data.results[0].geometry.location;
-            console.log(formattedAddress)
-            this.setState({key: 'test'})
-            
-            console.log(this.state)
-        })
+            this.setState({key: formattedAddress})
+            })
     
     }
 
     render() {
-
+        if(this.state.key === 0) return null
+        // this.geocode()
         const mapStyles = {
             width: '50%',
             height: '50%',
           };
         return (
             <div>
-                {/* <button onClick={this.geocode('22 Main st Boston MA')}></button> */}
-                <div>{this.geocode()}</div>
-                {/* <div>{this.state}</div> */}
-            {/* <Map
+            <Map
             google={this.props.google}
             zoom={8}
             style={mapStyles}
-            initialCenter={this.state}
+            initialCenter={this.state.key}
             >
-            <Marker position={{ lat: 36.40, lng: -122.00}} />
-            </Map> */}
+            <Marker position={this.state.key}/>
+            </Map>
             </div>
         );
     }

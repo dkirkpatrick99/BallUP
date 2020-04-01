@@ -5,7 +5,6 @@ import {
 const MapReducer = (state = {}, action ) => {
   
   Object.freeze(state);
-  debugger
   let newState = Object.assign({}, state);
   switch (action.type) {
     case RECIEVE_ADDRESS:
