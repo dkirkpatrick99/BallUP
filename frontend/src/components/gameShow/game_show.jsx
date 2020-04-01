@@ -45,8 +45,9 @@ class GameShow extends React.Component {
         let team1 = {"center":0, "point gaurd":0, "power forward":0, "small forward":0, "shooting gaurd":0};
         let team2 = {"center":0, "point gaurd":0, "power forward":0, "small forward":0, "shooting gaurd":0};
         let mid = Math.floor(this.state.game.players.length / 2);
-        let playersArr1 = this.state.game.players.slice(0,mid);
-        let playersArr2 = this.state.game.players.slice(mid + 1);
+        debugger;
+        let playersArr1 = this.state.game.players.slice(0, mid);
+        let playersArr2 = this.state.game.players.slice(mid);
         let positions = ["center", "point gaurd", "power forward", "small forward", "shooting gaurd"];
         
         playersArr1.forEach((player) => {
