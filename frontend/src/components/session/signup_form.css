@@ -12,7 +12,7 @@
     transform: translateY(-14%);
 }
 
-input, select{
+input, select, button{
     width: 70%
 }
 
@@ -20,4 +20,15 @@ p {
     font-size: 12px;
     margin: 0%;
     margin-bottom: 2px;
+}
+
+select:focus {
+    outline-color: black;
+}
+
+.su-btn {
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    border: none;
 }
