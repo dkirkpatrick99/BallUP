@@ -22,12 +22,29 @@ class NavBar extends React.Component {
         e.preventDefault();
         $('.modal-background-closed').addClass('modal-background');
         $('.modal-background-closed').removeClass('modal-background-closed');
+        $('.su-modal-background').addClass('su-modal-background-closed');
+        $('.su-modal-background').removeClass('su-modal-background');
+
+        $('.navbar').addClass('navbar-b');
+        $('.hero').addClass('hero-b');
+        $('.tag').addClass('tag-b');
+        $('.sub-tag').addClass('sub-tag-b');
+        $('.signup-btn').addClass('signup-btn-b');
+        
     }
 
     signupModal(e) {
         e.preventDefault();
         $('.su-modal-background-closed').addClass('su-modal-background');
         $('.su-modal-background-closed').removeClass('su-modal-background-closed');
+        $('.modal-background').addClass('modal-background-closed');
+        $('.modal-background').removeClass('modal-background');
+
+        $('.navbar').addClass('navbar-b');
+        $('.hero').addClass('hero-b');
+        $('.tag').addClass('tag-b');
+        $('.sub-tag').addClass('sub-tag-b');
+        $('.signup-btn').addClass('signup-btn-b');
     }
 
    
@@ -56,8 +73,8 @@ class NavBar extends React.Component {
         return (
             <div className="navbar">
                 <div className="navbar-left">
-                    <Link to={'/courts'}><img className="nav-shoes" src="shoes512.png" alt="shoes"/></Link>
-                    <Link to={'/courts'}><img className="splash-logo" src="bu_logo.png"/></Link>
+                    <img className="nav-shoes" src="shoes512.png" alt="shoes"/>
+                    <img className="splash-logo" src="bu_logo.png"/>
                     
                 </div>
                     {this.getLinks()}

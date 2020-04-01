@@ -3,6 +3,7 @@
 import MapContainer from '../map/map';
 import GameItem from './game_item';
 import { Link } from "react-router-dom";
+import $ from 'jquery';
 import './index.css'
 
 class Courts extends React.Component {
@@ -20,7 +21,8 @@ class Courts extends React.Component {
 
     componentDidMount(){
         this.props.getGames();
-        this.props.getAdress('1109 N Highland St, Arlington VA')
+        this.props.getAdress('1109 N Highland St, Arlington VA');
+        $('.navbar').removeClass('navbar-b');
     }
 
     handleSumbit(e) {
@@ -59,9 +61,9 @@ class Courts extends React.Component {
                     </ul>
                     )}
                  </div>
-                {/* <div className="map">
+                <div className="map">
                     <MapContainer />
-                </div> */}
+                </div>
                 <form onSubmit={this.handleSumbit}>
                    <input type="text"
                         value={this.state.title}
