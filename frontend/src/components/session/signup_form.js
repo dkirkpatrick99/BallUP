@@ -11,9 +11,9 @@ class SignupForm extends React.Component {
             handle: '',
             password: '',
             password2: '',
-            first: '',
-            second: '',
-            third: ''
+            first: 'Point Guard',
+            second: 'Shooting Guard',
+            third: 'SmallForward'
             // errors: {}
         };
 
@@ -69,10 +69,10 @@ class SignupForm extends React.Component {
         let postions = ["Point Guard", "Shooting Guard", "Small Forward",
             "Power Forward", "Center"];
         let secondaryPos = postions.filter( position =>
-                position !== this.state.first && position !== this.state.third
+                position !== this.state.first
             )
-        let tertiaryPos = secondaryPos.filter ( postion =>
-                postion !== this.state.second
+        let tertiaryPos = postions.filter ( position =>
+            position !== this.state.first && position !== this.state.second
             )
         return (
             <div className="signup-form-container">
@@ -125,7 +125,8 @@ class SignupForm extends React.Component {
                             placeholder="Confirm Password"
                         />
                         <br />
-                        <input type="submit" value="Submit" />
+                        {/* <input type="submit" value="Submit" /> */}
+                        <button className="su-btn">Submit</button>
                         {/* {this.renderErrors()} */}
                     </div>
                 </form>

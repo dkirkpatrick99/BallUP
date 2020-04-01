@@ -1,18 +1,18 @@
 .signup-form-container {
-    height: 600px;
+    height: 300px;
 }
 
 .signup-form {
-    height: 550px;
+    height: 350px;
     width: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateY(-24%);
+    transform: translateY(-14%);
 }
 
-input, select{
+input, select, button{
     width: 70%
 }
 
@@ -20,4 +20,15 @@ p {
     font-size: 12px;
     margin: 0%;
     margin-bottom: 2px;
+}
+
+select:focus {
+    outline-color: black;
+}
+
+.su-btn {
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    border: none;
 }

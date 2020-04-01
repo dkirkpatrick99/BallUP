@@ -1,12 +1,14 @@
 import * as APIUtil from '../util/map_util';
 
-export const RECIEVE_ADRESS = 'RECIEVE_ADRESS';
+export const RECIEVE_ADDRESS = 'RECIEVE_ADDRESS';
 
-export const getMap = adress => ({
-  type: RECIEVE_ADRESS,
-  adress
+export const getMap = address => ({
+  type: RECIEVE_ADDRESS,
+  address
 });
 
-export const getAdress = (adress) => dispatch => {
-  return APIUtil.getAdress(adress).then( (res) => dispatch(getMap(adress)))
+export const getAddress = (address) => dispatch => {
+  
+  return APIUtil.getAddress(address)
+    .then( (res) => dispatch(getMap(address)))
 }
