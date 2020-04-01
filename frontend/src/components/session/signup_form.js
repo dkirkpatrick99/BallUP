@@ -13,7 +13,7 @@ class SignupForm extends React.Component {
             password2: '',
             first: 'Point Guard',
             second: 'Shooting Guard',
-            third: 'SmallForward'
+            third: 'Small Forward'
             // errors: {}
         };
 
