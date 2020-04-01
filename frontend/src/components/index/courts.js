@@ -21,7 +21,7 @@ class Courts extends React.Component {
 
     componentDidMount(){
         this.props.getGames();
-        this.props.getAdress('1109 N Highland St, Arlington VA');
+        this.props.getAddress('1109 N Highland St, Arlington VA');
         $('.navbar').removeClass('navbar-b');
     }
 

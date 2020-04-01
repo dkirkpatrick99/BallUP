@@ -10,5 +10,5 @@ export const getMap = address => ({
 export const getAddress = (address) => dispatch => {
   
   return APIUtil.getAddress(address)
-    .then( (res) => dispatch(getMap(address)))
+    .then( (address) => dispatch(getMap(address)))
 }
