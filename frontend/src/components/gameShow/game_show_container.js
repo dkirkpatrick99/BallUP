@@ -10,7 +10,7 @@ const mSTP = (state, ownProps) => {
     game: state.games.all[ownProps.match.params.gameId],
     player: state.session.user.data,
     users: Object.values(state.games.all),
-    location: '22 Main st Boston MA'
+    // location: '22 Main st Boston MA'
 
     }
 }
