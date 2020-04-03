@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Geocode from './geocoding'
 
 const mSTP = state => ({
-    location: '22 Main st Boston MA'
+    location: '768 Widgeon st Foster City CA'
 })
 
 const mDTP = dispatch => ({

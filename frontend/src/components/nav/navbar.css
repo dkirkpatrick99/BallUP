@@ -148,7 +148,6 @@
     position: fixed;
     z-index: 78;
     background-color: white;
-    overflow-y: scroll;
     display: flex; 
     top: -20%;
     transform: translateY(100%);

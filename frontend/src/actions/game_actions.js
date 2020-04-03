@@ -16,8 +16,10 @@ export const recieveGames = games => ({
   games
 });
 
-export const deleteGame = () => ({
-  type: REMOVE_GAME
+export const deleteGame = (gameId) => ({
+  type: REMOVE_GAME,
+  gameId
+
 })
 
 export const getGames = () => dispatch => {
@@ -36,7 +38,10 @@ export const updateGame = (game) => dispatch => {
   return APIUtil.updateGame(game).then( game => dispatch(recieveGame(game)))
 };
 
-export const removeGame = (game) => dispatch => {
-  return APIUtil.deleteGame(game).then( () => dispatch(deleteGame()))
+export const removeGame = (gameId) => dispatch => {
+  debugger;
+  return APIUtil.deleteGame(gameId)
+  .then( () =>  (dispatch(deleteGame(gameId))))
+  .catch (err => console.log('err'));
 }
 

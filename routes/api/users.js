@@ -15,7 +15,10 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
     res.json({
       id: req.user.id,
       handle: req.user.handle,
-      email: req.user.email
+      email: req.user.email,
+      first: req.user.first,
+      second: req.user.second,
+      third: req.user.third
     });
   })
 

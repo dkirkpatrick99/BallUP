@@ -5,7 +5,9 @@ import {
 } from "../actions/game_actions";
 
 const GameReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
+   
     Object.freeze(state);
+    // debugger;
     let newState = Object.assign({}, state);
     switch (action.type) {
         case RECIEVE_GAMES:
@@ -16,6 +18,8 @@ const GameReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
             newState.new = action.game.data
             return newState;
         case REMOVE_GAME:
+            debugger;
+            delete newState[action.gameId]
             return newState;
         default:
             return state;
