@@ -36,15 +36,15 @@ export class MapContainer extends React.Component {
             height: '50%',
           };
 
-        return (
-            <Map
-            google={this.props.google}
-            zoom={8}
-            style={mapStyles}
-            initialCenter={this.state.key}
-            >
-            <Marker position= {this.state.key}/>
-            </Map>
+        return ( <div></div>
+            // <Map
+            // google={this.props.google}
+            // zoom={8}
+            // style={mapStyles}
+            // initialCenter={{lat: 0, lng:0}}
+            // >
+            // <Marker position= {{lat: 0, lng:0}}/>
+            // </Map>
         );
     }
 

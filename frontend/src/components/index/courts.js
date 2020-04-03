@@ -37,7 +37,8 @@ class Courts extends React.Component {
             players: []
         };
 
-        this.props.createGame(game);
+        this.props.createGame(game)
+            .then(() => this.props.history.push('/'));
     }
 
     update(field) {

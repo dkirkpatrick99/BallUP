@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import GameShowPlayer from './game_show_player'
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 import MapContainer from '../map/map'
+import MapContain from '../map/geocoding'
 import './show.css'
 
 class GameShow extends React.Component {
@@ -16,16 +17,28 @@ class GameShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getGames()
-        // this.props.getGame(this.props.match.params.gameId),
-        this.props.getUsers()
-        this.props.getUser()
+        this.props.getGames();
+        this.props.getGame(this.props.match.params.gameId);
+        this.props.getUsers();
+        this.props.getUser();
     }
 
     addPlayer(e) {
         e.preventDefault();
-        this.state.game.players.push(this.props.player);
-        this.props.updateGame(this.state.game);
+        debugger;
+        let exists = false;
+
+        this.state.game.players.forEach( player => {
+            if (player.id === this.props.player.id || 
+                player._id === this.props.player.id) {
+                    exists = true;
+                }
+        })
+        if (exists === false){
+         this.state.game.players.push(this.props.player);
+         this.props.updateGame(this.state.game);
+        }
+        
     }
 
     removePlayer(e) {
@@ -42,13 +55,18 @@ class GameShow extends React.Component {
 
     startGame(e) {
         e.preventDefault()
-        let team1 = {"center":0, "point gaurd":0, "power forward":0, "small forward":0, "shooting gaurd":0};
-        let team2 = {"center":0, "point gaurd":0, "power forward":0, "small forward":0, "shooting gaurd":0};
+        let team1 = {
+            "Point Guard": 0, "Shooting Guard": 0, "Small Forward": 0, 
+            "Power Forward": 0, "Center": 0};
+
+        let team2 = {"Point Guard": 0, "Shooting Guard": 0,  
+             "Small Forward": 0, "Power Forward": 0, "Center": 0};
+
         let mid = Math.floor(this.state.game.players.length / 2);
-        debugger;
+        
         let playersArr1 = this.state.game.players.slice(0, mid);
         let playersArr2 = this.state.game.players.slice(mid);
-        let positions = ["center", "point gaurd", "power forward", "small forward", "shooting gaurd"];
+        let positions = ["Center", "Point Guard", "Power Forward", "Small Forward", "Shooting Guard"];
         
         playersArr1.forEach((player) => {
             if (team1[player.first] === 0) {
@@ -81,13 +99,18 @@ class GameShow extends React.Component {
                 })
             }
         })
-        let teams = [playersArr1, playersArr2];
+        let teams = [team1, team2];
         this.setState({players: teams})
     }
 
     endGame(e) {
         e.preventDefault();
-        this.props.deleteGame(this.state.game);
+        if (this.props.player.id == this.state.game.players[0]._id) {
+            this.props.removeGame(this.state.game._id)
+                .then(() => this.props.history.push('/'));
+        }
+        
+        
     }
 
     render() {
@@ -100,7 +123,7 @@ class GameShow extends React.Component {
                 this.state.game = game;
             }
         });
-
+        
         
 
     // if (game.players.length === 10) {
@@ -152,18 +175,22 @@ class GameShow extends React.Component {
                 <h1>Team 1</h1>
                 <ul>
                     {
-                        this.state.players[0].map(player => <li>{player.handle}</li>)
-                    }
+                            Object.keys(this.state.players[0]).map(position => 
+                            <li>{this.state.players[0][position]} {position}</li>)
+                        }
                 </ul>
                 <br/>
                 <h1>Team 2</h1>
                 <ul>
                     {
-                        this.state.players[1].map(player => <li>{player.handle}</li>)
+                            Object.keys(this.state.players[1]).map(position =>
+                            <li>{this.state.players[1][position]} {position}</li>)
                     }
                 </ul>
 
-
+                    <div >
+                        <MapContain />
+                    </div>
             </div>
         )
     }
