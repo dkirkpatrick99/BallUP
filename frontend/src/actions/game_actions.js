@@ -39,7 +39,7 @@ export const updateGame = (game) => dispatch => {
 };
 
 export const removeGame = (gameId) => dispatch => {
-  debugger;
+  
   return APIUtil.deleteGame(gameId)
   .then( () =>  (dispatch(deleteGame(gameId))))
   .catch (err => console.log('err'));

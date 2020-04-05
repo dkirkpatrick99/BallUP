@@ -17,15 +17,18 @@ const UserSchema = new Schema({
     },
     first: {
       type: String,
-      required: true
+      required: true,
+      unique: true
     },
     second: {
       type: String,
-      required: true
+      required: true,
+      unique: true
     },
     third: {
       type: String,
-      required: true
+      required: true,
+      unique: true
     },
     date: {
       type: Date,
