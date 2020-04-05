@@ -56,13 +56,13 @@ router.patch('/:id', (req, res) => {
 });
 
 // router.delete('/:id', (req, res) => {
-//   debugger;
+//   
 //   Game.deleteOne({ _id: req.params.id })
 //     }
 // );
 
 router.delete('/:id', function (req, res) {
-  debugger;
+  
   Game.findByIdAndRemove(req.params.id)
     .then(game => {
       res.json(game), res.sendStatus(200);

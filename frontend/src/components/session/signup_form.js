@@ -11,9 +11,9 @@ class SignupForm extends React.Component {
             handle: '',
             password: '',
             password2: '',
-            first: 'Point Guard',
-            second: 'Shooting Guard',
-            third: 'Small Forward'
+            first: '',
+            second: '',
+            third: ''
             // errors: {}
         };
 
@@ -63,13 +63,14 @@ class SignupForm extends React.Component {
     //         </ul>
     //     );
     // }
-
+    
 
     render() {
+        debugger;
         let postions = ["Point Guard", "Shooting Guard", "Small Forward",
             "Power Forward", "Center"];
         let secondaryPos = postions.filter( position =>
-                position !== this.state.first
+            position !== this.state.first
             )
         let tertiaryPos = postions.filter ( position =>
             position !== this.state.first && position !== this.state.second
@@ -93,6 +94,9 @@ class SignupForm extends React.Component {
                         <br/>
                         <p>Select your 3 preferred positions:</p>
                         <select onChange={this.update('first')}>
+                            <option value="none" selected disabled hidden>
+                                Select an Option
+                            </option>
                             { postions.map( position => 
                                 <option value={position}
                                 >{position}</option>
@@ -100,6 +104,9 @@ class SignupForm extends React.Component {
                         </select>
                         <br />
                         <select onChange={this.update('second')}>
+                            <option value="none" selected disabled hidden>
+                                Select an Option
+                            </option>
                             {secondaryPos.map(position =>
                                 <option value={position}
                                 >{position}</option>
@@ -107,6 +114,9 @@ class SignupForm extends React.Component {
                         </select>
                         <br/>
                         <select onChange={this.update('third')}>
+                            <option value="none" selected disabled hidden>
+                                Select an Option
+                            </option>
                             {tertiaryPos.map(position =>
                                 <option value={position}
                                 >{position}</option>

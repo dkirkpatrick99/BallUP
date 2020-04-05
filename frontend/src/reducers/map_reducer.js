@@ -8,7 +8,6 @@ const MapReducer = (state = {}, action ) => {
   let newState = Object.assign({}, state);
   switch (action.type) {
     case RECIEVE_ADDRESS:
-      debugger
       return action.address;
     default:
       return state;

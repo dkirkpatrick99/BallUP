@@ -17,7 +17,7 @@ export const updateGame = game => {
 }
 
 export const deleteGame = gameId => {
-  debugger;
+  
   return axios.delete(`/api/games/${gameId}`)
 };
 
