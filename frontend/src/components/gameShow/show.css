@@ -7,4 +7,34 @@
 .show h2 {
     margin: 0px;
     padding-top: 30px;
+
+}
+
+.flex-vid {
+    width: 100vw;
+}
+
+.video-box {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+#pickup-vid {
+    width:100%;
+}
+
+.game-info {
+    /* transform: translateY(-500%) translateX(1.25%); */
+    z-index: 2;
+    color: #a9a471;
+    position: absolute;
+    margin-top: 42px;
+    margin-left: 12px;
+}
+
+.game-info h2 {
+    padding: 0%;
+    font-family: "Berthold Akzidenz Grotesk BE";
 }
