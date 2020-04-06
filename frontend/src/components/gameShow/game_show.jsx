@@ -167,11 +167,23 @@ class GameShow extends React.Component {
     // }
         
         return (
+
             <div className="show">
-                <h2>{game.title}</h2>
-                <h2>{game.location}</h2>
-                <h2>{game.time}</h2>
-                <h2>{game.game_date}</h2>
+
+                <div className="flex-vid">
+                    <div className="video-box">
+                        <video id="pickup-vid" autoPlay loop muted>
+                            <source src="pickupBball2.mp4" type="video/mp4" />
+                        </video>
+                        <div className="game-info">
+                            <h2>{game.title}</h2>
+                            <h2>{game.location}</h2>
+                            <h2>{game.time}</h2>
+                            <h2>{game.game_date}</h2>
+                        </div>
+                    </div>
+                </div>
+              
                 <div>
                     
                     <div>
