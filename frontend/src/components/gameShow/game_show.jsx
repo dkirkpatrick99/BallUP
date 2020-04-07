@@ -175,7 +175,7 @@ class GameShow extends React.Component {
                         <video id="pickup-vid" autoPlay loop muted>
                             <source src="pickupBball2.mp4" type="video/mp4" />
                         </video>
-                        <div className="vid-objects">
+                        {/* <div className="vid-objects">
                             <div className="game-info">
                                 <h2>{game.title}</h2>
                                 <h2>{game.location}</h2>
@@ -192,9 +192,45 @@ class GameShow extends React.Component {
                                 </ul>
 
                             </div>
-                    </div>
+                    </div> */}
                     </div>
                     <div className="middle-content">
+                        <div className="showbox">
+                            <div className="showbox-left">
+                                <div className="grid">
+                                <div id="playes"><div><div id="p-title">Players
+                                </div></div>
+                               { game.players.map( (player) =>
+                                   <div > <div id="player">@<GameShowPlayer 
+                                   player={player} /></div>
+                                   </div>     
+                                        )}
+                                </div>
+                                    <div><div><div id="r-title">Rating
+                                    </div></div>
+                                {game.players.map((player) =>
+                                    <div ><div id="rating">@<GameShowPlayer
+                                        player={player} /></div>
+                                    </div>
+                                )}
+                                </div>
+                                </div>
+                            </div>
+                            
+                            <div className="showbox-right">
+                                <div className="showbox-right-top">
+                                    <div className="game-info">
+                                        <h2>{game.title}</h2>
+                                        <h2>{game.location}</h2>
+                                        <h2>{game.time}</h2>
+                                        <h2>{game.game_date}</h2>
+                                    </div>
+                                </div>
+                                <div className="showbox-right-bottom">
+                                    <div className="show-map">MAP</div>
+                                </div>
+                            </div>
+                        </div>
                         <div className="buttons">                           
                                     {/* <button className="full-game">This Game Is Full!</button> */}
                                 <button className="add-player player-button"
