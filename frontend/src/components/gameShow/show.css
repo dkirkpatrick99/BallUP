@@ -1,7 +1,7 @@
 .show {
     background-color: gray;
     /* transform: translateY(30%); */
-    height: 100vh;
+    height: 1000px;
 }
 
 .show h2 {
@@ -12,24 +12,39 @@
 
 .flex-vid {
     width: 100vw;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .video-box {
     width: 100%;
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
+    position: relative;
 }
 
 #pickup-vid {
     width:100%;
+    filter: brightness(70%);
+}
+
+.vid-objects {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .game-info {
     /* transform: translateY(-500%) translateX(1.25%); */
     z-index: 2;
     color: #a9a471;
-    position: absolute;
+    /* position: absolute; */
     margin-top: 42px;
     margin-left: 12px;
 }
@@ -37,4 +52,62 @@
 .game-info h2 {
     padding: 0%;
     font-family: "Berthold Akzidenz Grotesk BE";
+}
+
+.players {
+    height: inherit;
+    width: 350px;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(5, 0, 0, .8));
+    font-family: "Berthold Akzidenz Grotesk BE";
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border-left: 2px solid black; */
+    
+}
+
+#player-names{
+    z-index: 2;
+    height: inherit;
+    position: absolute;
+    color: white;
+    margin-top: 42px;
+    margin-right: 12px;
+    display: block;
+    object-fit: cover;
+    font-size: 2.3vmax;
+}
+
+.middle-content {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.buttons {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: inherit;
+    justify-content: center;
+    z-index: 2;
+    width: 100%;
+    margin-top: 8%;
+}
+
+.buttons button {
+    width: 40%;
+    background-color: white;
+    border: none;
+    margin-top: 2px;
+    color: black;
+    outline-style: none;
+}
+
+.buttons button:hover {
+    cursor: pointer;
+    background-color: gray;
 }
