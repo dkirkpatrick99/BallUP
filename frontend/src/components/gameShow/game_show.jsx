@@ -175,39 +175,40 @@ class GameShow extends React.Component {
                         <video id="pickup-vid" autoPlay loop muted>
                             <source src="pickupBball2.mp4" type="video/mp4" />
                         </video>
-                        <div className="game-info">
-                            <h2>{game.title}</h2>
-                            <h2>{game.location}</h2>
-                            <h2>{game.time}</h2>
-                            <h2>{game.game_date}</h2>
+                        <div className="vid-objects">
+                            <div className="game-info">
+                                <h2>{game.title}</h2>
+                                <h2>{game.location}</h2>
+                                <h2>{game.time}</h2>
+                                <h2>{game.game_date}</h2>
+                            </div>
+                            <div className="players">
+                                <ul id="player-names">
+                                    <h2>Players</h2>
+                                    {
+                                        game.players.map((player) => 
+                                        <GameShowPlayer player={player} />)
+                                    }
+                                </ul>
+
+                            </div>
+                    </div>
+                    </div>
+                    <div className="middle-content">
+                        <div className="buttons">                           
+                                    {/* <button className="full-game">This Game Is Full!</button> */}
+                                <button className="add-player player-button"
+                                    onClick={this.addPlayer}>Join This Game</button>
+                                <button className="remove-player player-button"
+                                    onClick={this.removePlayer}>Leave This Game</button>
+                                <button className="owner-button start-game"
+                                    onClick={this.startGame}>Select Teams</button>
+                                <button className="owner-button cancel-game"
+                                    onClick={this.endGame}>Cancel Game</button>
                         </div>
                     </div>
                 </div>
               
-                <div>
-                    
-                    <div>
-                        {/* <button className="full-game">This Game Is Full!</button> */}
-                        <button className="add-player player-button" 
-                        onClick={this.addPlayer}>Join This Game</button>
-                        <button className="remove-player player-button" 
-                        onClick={this.removePlayer}>Leave This Game</button>
-                    </div>
-                    <ul>
-                        { 
-                            game.players.map((player) => <GameShowPlayer player={player} />)
-                        }
-                        
-                    </ul>
-                    
-                </div>
-
-                <div>
-                    <button className="owner-button start-game" 
-                    onClick={this.startGame}>Select Teams</button>
-                    <button className="owner-button cancel-game" 
-                    onClick={this.endGame}>Cancel Game</button>
-                </div>
                 {/* <h1>{this.props.games.length}</h1> */}
                 {/* <h1>This is how many people are on each team {this.state.players.length}</h1> */}
 
