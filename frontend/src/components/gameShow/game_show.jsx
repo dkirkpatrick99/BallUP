@@ -6,6 +6,7 @@ import MapContainer from '../map/map';
 import MapContain from '../map/geocoding'
 import './show.css';
 import { teamNames1, teamNames2 } from './team_names'
+import $ from 'jquery'
 
 class GameShow extends React.Component {
     constructor(props) {
@@ -59,6 +60,12 @@ class GameShow extends React.Component {
     startGame(e) {
      e.preventDefault();
         if (this.state.game.players.length === 10) {
+            $(".grid").addClass("grid-b");
+            $(".showbox-right").addClass("showbox-right-b");
+            $(".showbox-right").removeClass("showbox-right");
+            $(".team1").addClass("team1-b");
+            $(".vs").addClass("vs-b");
+            $(".team2").addClass("team2-b");
             let team1 = {
                 "Point Guard": 0, "Shooting Guard": 0, "Small Forward": 0, 
                 "Power Forward": 0, "Center": 0};
@@ -230,6 +237,56 @@ class GameShow extends React.Component {
                                         )}
                                     </div>
                                 </div>
+
+                                <div className="team1">
+                                    <ul>
+                                        <h1>{this.firstTeam}</h1>
+                                        {
+                                        Object.keys(
+                                            this.state.players[0]).map(position =>
+                                            <li>{position} | @
+                                            {this.state.players[0][position]}
+                                                {/* <img id="ball-b"
+                                                    src="ball.png" alt="" />
+                                                    <span id="r-num-b">4.5</span>  */}
+                                                        
+                                            </li>)
+                                        }
+                                    </ul>
+                                </div>
+                                <div className="vs">VS.</div>
+                                <div className="team2">
+                                    <ul>
+                                        <h1>{this.secondTeam}</h1>
+                                        {
+                                            Object.keys(
+                                                this.state.players[1]).map(position =>
+                                                    <li>{position} | @
+                                            {this.state.players[1][position]}
+                                                        {/* <img id="ball-b"
+                                                    src="ball.png" alt="" />
+                                                    <span id="r-num-b">4.5</span>  */}
+
+                                                    </li>)
+                                        }
+                                    </ul>
+                                </div>
+                                {/* <div>
+                                <h1>{this.firstTeam}</h1>
+                                <ul>
+                                    {
+                                        Object.keys(this.state.players[0]).map(position =>
+                                            <li>{this.state.players[0][position]} {position}</li>)
+                                    }
+                                </ul>
+                                <h1>{this.secondTeam}</h1>
+                                <ul>
+                                    {
+                                        Object.keys(this.state.players[1]).map(position =>
+                                            <li>{this.state.players[1][position]} {position}</li>)
+                                    }
+                                </ul>
+                                </div> */}
                             </div>
                         </div>
                         <div className="buttons">                           
@@ -249,22 +306,6 @@ class GameShow extends React.Component {
                 {/* <h1>{this.props.games.length}</h1> */}
                 {/* <h1>This is how many people are on each team {this.state.players.length}</h1> */}
 
-
-                <h1>{this.firstTeam}</h1>
-                <ul>
-                    {
-                            Object.keys(this.state.players[0]).map(position => 
-                            <li>{this.state.players[0][position]} {position}</li>)
-                        }
-                </ul>
-                <br/>
-                <h1>{this.secondTeam}</h1>
-                <ul>
-                    {
-                            Object.keys(this.state.players[1]).map(position =>
-                            <li>{this.state.players[1][position]} {position}</li>)
-                    }
-                </ul>
 
                     <div >
                         <MapContain />

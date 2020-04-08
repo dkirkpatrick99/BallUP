@@ -4,7 +4,7 @@
 .show {
     background-color: gray;
     /* transform: translateY(30%); */
-    height: 1000px;
+    height: 200vh;
 }
 
 .show h2 {
@@ -115,8 +115,116 @@
     align-items: center;
     justify-content: center;
 }
+
+.showbox-right-b { 
+    background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(5, 0, 0, 0));
+    height: 100%;
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.team1 {
+    display: none;
+}
+.team1-b {
+    display: flex;
+    /* background-color: green; */
+    height: 45%;
+    width: 100%;
+    position: relative;
+    font-family: "Berthold Akzidenz Grotesk BE";
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    
+}
+
+.team1-b h1 {
+    font-size: 2vw;
+    margin: 0%;
+    padding: 0%;
+}
+
+.team1-b ul {
+    padding: 0%;
+    margin: 0%;
+    /* margin-left: 20px; */
+    /* width: 100%; */
+}
+
+.team1-b h1 {
+    /* margin-left: 20px; */
+}
+
+.team1-b li {
+    list-style: none;
+    font-size: 1.3vw;
+    padding: 0%;
+    margin: 0%;
+
+}
+.vs {
+    display: none;
+    color: white;
+}
+.vs-b {
+    display: flex;
+    height: 10%;
+    width: 100%;
+    position: relative;
+    font-family: "Berthold Akzidenz Grotesk BE";
+    font-size: 2.7vw;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.team2 {
+    display: none;
+}
+.team2-b {
+    display: flex;
+    /* background-color: red; */
+    height: 45%;
+    width: 100%;
+    position: relative;
+    font-family: "Berthold Akzidenz Grotesk BE";
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.team2-b h1 {
+    font-size: 2vw;
+    margin: 0%;
+    padding: 0%;
+    margin-right: 20px;
+}
+
+.team2-b ul {
+    margin: 0%;
+    margin-right: 20px;
+    padding: 0%;
+    
+}
+
+.team2-b li {
+    list-style: none;
+    font-size: 1.3vw;
+    padding: 0%;
+    margin: 0%;
+
+}
 .grid {
     display: flex;
+}
+
+.grid-b {
+    display: none;
 }
 
 #player, #p-title, #r-title, #rating {
@@ -143,10 +251,12 @@
     color: black;
 }
 
-#rating img {
+#ball {
     width: 1.8vw;
     position: absolute;
+    /* z-index:; */
 }
+
 
 #r-num {
     z-index: 1;
@@ -154,6 +264,20 @@
     font-family: "Berthold Akzidenz Grotesk BE";
 }
 
+#ball-b {
+    width: 1.8vw;
+    position: absolute;
+    margin-left: .66vw;
+    transform: translateY(-.5vh);
+
+}
+
+#r-num-b {
+    z-index: 1;
+    position: absolute;
+    margin-left: 1.15vw;
+    font-size: 1vw;
+}
 
 
 .showbox-left {
@@ -196,6 +320,7 @@
     z-index: 2;
     width: 100%;
     margin-top: 5.5vh;
+    margin-bottom: 0%;
 }
 
 .buttons button {
@@ -213,3 +338,4 @@
     background-color: gray;
     color: white;
 }
+
