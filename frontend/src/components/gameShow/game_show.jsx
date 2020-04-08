@@ -197,28 +197,7 @@ class GameShow extends React.Component {
                     <div className="middle-content">
                         <div className="showbox">
                             <div className="showbox-left">
-                                <div className="grid">
-                                <div id="playes"><div><div id="p-title">Players
-                                </div></div>
-                               { game.players.map( (player) =>
-                                   <div > <div id="player">@<GameShowPlayer 
-                                   player={player} /></div>
-                                   </div>     
-                                        )}
-                                </div>
-                                    <div><div><div id="r-title">Rating
-                                    </div></div>
-                                {game.players.map((player) =>
-                                    <div ><div id="rating">@<GameShowPlayer
-                                        player={player} /></div>
-                                    </div>
-                                )}
-                                </div>
-                                </div>
-                            </div>
-                            
-                            <div className="showbox-right">
-                                <div className="showbox-right-top">
+                                <div className="showbox-left-top">
                                     <div className="game-info">
                                         <h2>{game.title}</h2>
                                         <h2>{game.location}</h2>
@@ -226,8 +205,30 @@ class GameShow extends React.Component {
                                         <h2>{game.game_date}</h2>
                                     </div>
                                 </div>
-                                <div className="showbox-right-bottom">
+                                <div className="showbox-left-bottom">
                                     <div className="show-map">MAP</div>
+                                </div>
+                            </div>
+
+                            <div className="showbox-right">
+                                <div className="grid">
+                                    <div id="playes"><div><div id="p-title">Players
+                                </div></div>
+                                        {game.players.map((player) =>
+                                            <div > <div id="player">@<GameShowPlayer
+                                                player={player} /></div>
+                                            </div>
+                                        )}
+                                    </div>
+                                    <div><div><div id="r-title">Rating
+                                    </div></div>
+                                        {game.players.map((player) =>
+                                            <div ><div id="rating"><img id="ball"
+                                                src="ball.png" alt="" /><div id="r-num">
+                                                    4.5</div></div>
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         </div>

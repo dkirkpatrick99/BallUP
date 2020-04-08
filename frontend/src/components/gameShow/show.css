@@ -105,7 +105,7 @@
     flex-direction: row;
 }
 
-.showbox-left {
+.showbox-right {
     background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(5, 0, 0, 0));
     height: 100%;
     position: relative;
@@ -121,27 +121,43 @@
 
 #player, #p-title, #r-title, #rating {
     color: white;
-    background-image: linear-gradient( rgba(0, 0, 0, 1), rgba(0, 0, 0, .6), rgba(5, 0, 0, 0));
+    /* background-image: linear-gradient( rgba(0, 0, 0, 1), rgba(0, 0, 0, .6), rgba(5, 0, 0, 0)); */
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 9vw;
+    width: 5vw;
     height: 100%;
-    border: .3px solid white;
+    /* border: .3px solid white; */
     margin-left: 1px;
+    margin-top: 3%;
     padding: 1%;
-    font-size: 1.3vw;
+    font-size: 1.5vw;
     font-family: "Berthold Akzidenz Grotesk BE";
 }
 
 #p-title, #r-title {
     /* color: black; */
-    background-image: linear-gradient( #84857e, #84857e, rgba(5, 0, 0, 0));
+    /* background-image: linear-gradient( #84857e, #84857e, rgba(5, 0, 0, 0)); */
+}
+
+#rating {
+    color: black;
+}
+
+#rating img {
+    width: 1.8vw;
+    position: absolute;
+}
+
+#r-num {
+    z-index: 1;
+    color: white;
+    font-family: "Berthold Akzidenz Grotesk BE";
 }
 
 
 
-.showbox-right {
+.showbox-left {
     height: 100%;
     position: relative;
     width: 50%;
@@ -149,7 +165,7 @@
     flex-direction: column;
 }
 
-.showbox-right-top {
+.showbox-left-top {
     background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(5, 0, 0, 0));
     height: 50%;
     display: flex;
@@ -157,7 +173,7 @@
     justify-content: center;
 }
 
-.showbox-right-bottom {
+.showbox-left-bottom {
     background-image: linear-gradient( rgba(255, 255, 255, 0.5), rgba(5, 0, 0, 0));
     height: 50%;
     display: flex;
@@ -179,7 +195,7 @@
     justify-content: center;
     z-index: 2;
     width: 100%;
-    margin-top: 4%;
+    margin-top: 5.5vh;
 }
 
 .buttons button {
@@ -189,9 +205,11 @@
     margin-top: 2px;
     color: black;
     outline-style: none;
+    font-size: 1vw;
 }
 
 .buttons button:hover {
     cursor: pointer;
     background-color: gray;
+    color: white;
 }
