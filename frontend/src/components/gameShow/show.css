@@ -136,8 +136,7 @@
 }
 
 #p-title, #r-title {
-    /* color: black; */
-    /* background-image: linear-gradient( #84857e, #84857e, rgba(5, 0, 0, 0)); */
+    font-size: 1.8vw;
 }
 
 #rating {
@@ -184,6 +183,7 @@
 .show-map {
     font-size: 5vw;
     font-family: "Berthold Akzidenz Grotesk BE";
+    color: white;
 }
 
 .buttons {
