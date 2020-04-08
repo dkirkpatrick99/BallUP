@@ -31,7 +31,7 @@
 
 #pickup-vid {
     width:100%;
-    filter: brightness(70%);
+    filter: brightness(80%);
 }
 
 .vid-objects {
@@ -155,10 +155,6 @@
     /* width: 100%; */
 }
 
-.team1-b h1 {
-    /* margin-left: 20px; */
-}
-
 .team1-b li {
     list-style: none;
     font-size: 1.3vw;
@@ -188,8 +184,8 @@
 .team2-b {
     display: flex;
     /* background-color: red; */
-    height: 45%;
     width: 100%;
+    height: 45%;
     position: relative;
     font-family: "Berthold Akzidenz Grotesk BE";
     flex-direction: column;
@@ -202,12 +198,10 @@
     font-size: 2vw;
     margin: 0%;
     padding: 0%;
-    margin-right: 20px;
 }
 
 .team2-b ul {
     margin: 0%;
-    margin-right: 20px;
     padding: 0%;
     
 }
