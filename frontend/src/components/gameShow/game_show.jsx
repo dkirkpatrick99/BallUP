@@ -145,7 +145,7 @@ class GameShow extends React.Component {
         
         
         let game = {players: []};
-        debugger;
+       
         this.props.games.forEach(g => {
             
             if (g._id === this.state.id) {

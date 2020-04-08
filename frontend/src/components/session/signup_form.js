@@ -66,7 +66,7 @@ class SignupForm extends React.Component {
     
 
     render() {
-        debugger;
+      
         let postions = ["Point Guard", "Shooting Guard", "Small Forward",
             "Power Forward", "Center"];
         let secondaryPos = postions.filter( position =>
