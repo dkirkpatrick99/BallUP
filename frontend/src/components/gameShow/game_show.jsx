@@ -77,7 +77,7 @@ class GameShow extends React.Component {
             
             let playersArr1 = this.state.game.players.slice(0, mid);
             let playersArr2 = this.state.game.players.slice(mid);
-
+                debugger;
             let positions = ["Point Guard", "Shooting Guard", "Small Forward", 
             "Power Forward", "Center"];
 
@@ -99,6 +99,9 @@ class GameShow extends React.Component {
                         if (team1[positions[i]] === 0){
                             team1[positions[i]] = player.handle
                             break;
+                        } else if (team2[positions[i]] === 0) {
+                            team2[positions[i]] = player.handle
+                            break;
                         }
                     }
                 }
@@ -119,6 +122,9 @@ class GameShow extends React.Component {
                     for (let i = 0; i < positions.length; i++) {
                         if (team2[positions[i]] === 0) {
                             team2[positions[i]] = player.handle
+                            break;
+                        } else if (team1[positions[i]] === 0) {
+                            team1[positions[i]] = player.handle
                             break;
                         }
                     }
