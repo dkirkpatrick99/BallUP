@@ -54,7 +54,7 @@ class NavBar extends React.Component {
             return (
                 <div>
                     <ul className="navbar-right-loggedin">
-                    <li><Link to={'/courts'}>Games</Link></li>
+                    <li><Link to={'/games'}>Games</Link></li>
                         <li onClick={this.logoutUser}>Logout</li> 
                     </ul>
                 </div>

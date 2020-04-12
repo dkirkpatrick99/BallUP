@@ -28,9 +28,6 @@ const GameSchema = new Schema({
     date: {
       type: Date,
       default: Date.now
-    },
-    count: {
-      type: Number
     }
   })
 

@@ -23,7 +23,7 @@ class SignupForm extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.signedIn === true) {
-            this.props.history.push('/courts');
+            this.props.history.push('/games');
         }
 
         // this.setState({ errors: nextProps.errors })

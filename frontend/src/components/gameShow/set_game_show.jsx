@@ -9,7 +9,7 @@ import { teamNames1, teamNames2 } from './team_names'
 import $ from 'jquery'
 
 
-class GameShow extends React.Component {
+class SetGameShow extends React.Component {
     constructor(props) {
         super(props);
         this.addPlayer = this.addPlayer.bind(this)
@@ -57,6 +57,7 @@ class GameShow extends React.Component {
             this.state.players[this.state.id] = teams;
             this.setState({ players: this.state.players})
         }
+        debugger;
         // if (typeof currCount === "string"){ 
         //     this.state.count[this.state.id] = JSON.parse(currCount);
         //     this.setState({ count: this.state.count})
@@ -99,12 +100,12 @@ class GameShow extends React.Component {
     startGame(e) {
      e.preventDefault();
         if (this.state.game.players.length === 10) {
-            // $(".grid").addClass("grid-b");
-            // $(".showbox-right").addClass("showbox-right-b");
-            // $(".showbox-right").removeClass("showbox-right");
-            // $(".team1").addClass("team1-b");
-            // $(".vs").addClass("vs-b");
-            // $(".team2").addClass("team2-b");
+            $(".grid").addClass("grid-b");
+            $(".showbox-right").addClass("showbox-right-b");
+            $(".showbox-right").removeClass("showbox-right");
+            $(".team1").addClass("team1-b");
+            $(".vs").addClass("vs-b");
+            $(".team2").addClass("team2-b");
 
             let team1 = {
                 "Point Guard": 0, "Shooting Guard": 0, "Small Forward": 0, 
@@ -184,8 +185,6 @@ class GameShow extends React.Component {
             localStorage.setItem(`${this.state.id}`, 
             JSON.stringify(this.state.players[this.state.id]))
             this.setState({ [this.state.id]: this.state.count[this.state.id] })
-            setTimeout(() => { this.props.history.push(`/setgames/${this.state.id}`) }, 3000);
-            
         }
     }
 
@@ -286,7 +285,7 @@ class GameShow extends React.Component {
                             </div>
 
                             <div className="showbox-right">
-                                <div className="grid">
+                                {/* <div className="grid">
                                     <div id="playes"><div>
                                         <div id="p-title">Players</div></div>
                                         {game.players.map((player) =>
@@ -305,9 +304,9 @@ class GameShow extends React.Component {
                                             </div>
                                         )}
                                     </div>
-                                </div>
+                                </div> */}
 
-                                <div className="team1">
+                                <div className="team1-b">
                                     <ul>
                                         <h1>
                                         {this.state.teamNames[this.teamKey][0]}
@@ -321,8 +320,8 @@ class GameShow extends React.Component {
                                         }
                                     </ul>
                                 </div>
-                                <div className="vs">VS.</div>
-                                <div className="team2">
+                                <div className="vs-b">VS.</div>
+                                <div className="team2-b">
                                     <ul>
                                         <h1>{this.state.teamNames[this.teamKey][1]}</h1>
                                         {
@@ -385,4 +384,4 @@ class GameShow extends React.Component {
 
 }
 
-export default GameShow
+export default SetGameShow
