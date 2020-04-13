@@ -24,6 +24,7 @@ router.post('/creategame',
                 location: req.body.location,
                 time: req.body.time,
                 game_date: req.body.game_date,
+                game_set: req.body.game_set,
                 players: [req.user]
             })
   

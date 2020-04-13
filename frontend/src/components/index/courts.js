@@ -13,7 +13,8 @@ class Courts extends React.Component {
             title: '',
             location: '',
             time: '',
-            game_date: ''
+            game_date: '',
+            game_set: false
         };
         this.handleSumbit= this.handleSumbit.bind(this)
 
@@ -35,7 +36,8 @@ class Courts extends React.Component {
             location: this.state.location,
             time: this.state.time,
             game_date: this.state.game_date,
-            players: []
+            players: [],
+            game_set: false
         };
 
         this.props.createGame(game)
@@ -49,13 +51,23 @@ class Courts extends React.Component {
     }
 
     render() {
-       debugger; 
+       debugger;
+
+       let set_games = this.props.games.filter( game =>
+            game.game_set
+        )
+
+       let unset_games = this.props.games.filter( game =>
+            game.game_set !== true
+        )
+
+        
         return (  
             <div className="index">
 
                 <div className="games">
-                    <h2>Games</h2>
-                {this.props.games.map( game => 
+                    <h2>Unset Games</h2>
+                {unset_games.map( game => 
                     <ul >
                         <Link to={`/games/${game._id}`}>
                             <GameItem game={game} />
@@ -87,8 +99,23 @@ class Courts extends React.Component {
                         onChange={this.update('game_date')}
                         placeholder="Game Date"
                     /> 
+                   <input type="hidden"
+                        value={this.state.game_set}
+                        onSubmit={this.update('game_set')}
+                    /> 
                     <input type="submit" value="Submit" />
                 </form>
+
+                <div>
+                    <h2>Set Games</h2>
+                    {set_games.map(game =>
+                        <ul >
+                            <Link to={`/setgames/${game._id}`}>
+                                <GameItem game={game} />
+                            </Link>
+                        </ul>
+                    )}
+                </div>
 
             </div>  
         

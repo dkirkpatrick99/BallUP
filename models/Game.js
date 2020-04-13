@@ -28,6 +28,9 @@ const GameSchema = new Schema({
     date: {
       type: Date,
       default: Date.now
+    },
+    game_set: {
+      type: Boolean
     }
   })
 

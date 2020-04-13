@@ -99,12 +99,18 @@ class GameShow extends React.Component {
     startGame(e) {
      e.preventDefault();
         if (this.state.game.players.length === 10) {
-            // $(".grid").addClass("grid-b");
-            // $(".showbox-right").addClass("showbox-right-b");
-            // $(".showbox-right").removeClass("showbox-right");
-            // $(".team1").addClass("team1-b");
-            // $(".vs").addClass("vs-b");
-            // $(".team2").addClass("team2-b");
+
+            if (this.state.game.game_set != undefined) {
+                this.state.game.game_set = true;
+                this.props.updateGame(this.state.game);
+            }
+
+            $(".grid").addClass("grid-b");
+            $(".showbox-right").addClass("showbox-right-b");
+            $(".showbox-right").removeClass("showbox-right");
+            $(".team1").addClass("team1-b");
+            $(".vs").addClass("vs-b");
+            $(".team2").addClass("team2-b");
 
             let team1 = {
                 "Point Guard": 0, "Shooting Guard": 0, "Small Forward": 0, 
@@ -209,6 +215,7 @@ class GameShow extends React.Component {
         // this.props.updateGame(this.state.count);
     }
 
+
     render() {
         
         let game = {players: []};
@@ -240,6 +247,7 @@ class GameShow extends React.Component {
     //     document.getElementsByClassName("owner-button").style.display = "none";
     // }
 
+        debugger;
 
         return (
 
@@ -307,7 +315,7 @@ class GameShow extends React.Component {
                                     </div>
                                 </div>
 
-                                <div className="team1">
+                                {/* <div className="team1">
                                     <ul>
                                         <h1>
                                         {this.state.teamNames[this.teamKey][0]}
@@ -334,7 +342,7 @@ class GameShow extends React.Component {
                                                     </li>)
                                         }
                                     </ul>
-                                </div>
+                                </div> */}
                                 {/* <div>
                                 <h1>{this.firstTeam}</h1>
                                 <ul>
