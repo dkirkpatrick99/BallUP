@@ -1,10 +1,10 @@
  import React from "react";
-// import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { Map, GoogleApiWrapper } from 'google-maps-react';
 import MapContainer from '../map/map';
 import GameItem from './game_item';
 import { Link } from "react-router-dom";
 import $ from 'jquery';
-import './index.css'
+import './index.css';
 
 class Courts extends React.Component {
     constructor(props) {
@@ -66,7 +66,7 @@ class Courts extends React.Component {
             <div className="index">
 
                 <div className="games">
-                    <h2>Unset Games</h2>
+                    <h2>Open Games</h2>
                 {unset_games.map( game => 
                     <ul >
                         <Link to={`/games/${game._id}`}>
@@ -75,6 +75,7 @@ class Courts extends React.Component {
                     </ul>
                     )}
                  </div>
+                
                 <div className="map">
                     <MapContainer />
                 </div>
@@ -117,6 +118,7 @@ class Courts extends React.Component {
                     )}
                 </div>
 
+                        
             </div>  
         
         )}

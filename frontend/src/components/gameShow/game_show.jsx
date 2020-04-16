@@ -315,8 +315,8 @@ class GameShow extends React.Component {
                                     </div>
                                 </div>
 
-                                {/* <div className="team1">
-                                    <ul>
+                                <div className="team1">
+                                    {/* <ul>
                                         <h1>
                                         {this.state.teamNames[this.teamKey][0]}
                                         </h1>
@@ -327,9 +327,10 @@ class GameShow extends React.Component {
                                             {this.state.players[this.state.id][0][position]}
                                             </li>)
                                         }
-                                    </ul>
+                                    </ul> */}
+                                    <h1>Game Set</h1>
                                 </div>
-                                <div className="vs">VS.</div>
+                                {/* <div className="vs">VS.</div>
                                 <div className="team2">
                                     <ul>
                                         <h1>{this.state.teamNames[this.teamKey][1]}</h1>
@@ -343,22 +344,7 @@ class GameShow extends React.Component {
                                         }
                                     </ul>
                                 </div> */}
-                                {/* <div>
-                                <h1>{this.firstTeam}</h1>
-                                <ul>
-                                    {
-                                        Object.keys(this.state.players[0]).map(position =>
-                                            <li>{this.state.players[0][position]} {position}</li>)
-                                    }
-                                </ul>
-                                <h1>{this.secondTeam}</h1>
-                                <ul>
-                                    {
-                                        Object.keys(this.state.players[1]).map(position =>
-                                            <li>{this.state.players[1][position]} {position}</li>)
-                                    }
-                                </ul>
-                                </div> */}
+                               
                             </div>
                         </div>
                         <div className="buttons">                           
