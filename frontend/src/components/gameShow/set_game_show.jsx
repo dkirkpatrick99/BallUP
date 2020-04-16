@@ -57,7 +57,6 @@ class SetGameShow extends React.Component {
             this.state.players[this.state.id] = teams;
             this.setState({ players: this.state.players})
         }
-        debugger;
         // if (typeof currCount === "string"){ 
         //     this.state.count[this.state.id] = JSON.parse(currCount);
         //     this.setState({ count: this.state.count})

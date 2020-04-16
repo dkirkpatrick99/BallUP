@@ -247,7 +247,6 @@ class GameShow extends React.Component {
     //     document.getElementsByClassName("owner-button").style.display = "none";
     // }
 
-        debugger;
 
         return (
 

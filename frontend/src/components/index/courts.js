@@ -24,7 +24,6 @@ class Courts extends React.Component {
         this.props.getGames();
         this.props.getAddress('1109 N Highland St, Arlington VA');
         $('.navbar').removeClass('navbar-b');
-        debugger;
     }
 
     handleSumbit(e) {
@@ -51,7 +50,6 @@ class Courts extends React.Component {
     }
 
     render() {
-       debugger;
 
        let set_games = this.props.games.filter( game =>
             game.game_set
