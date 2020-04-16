@@ -27,3 +27,12 @@
 .games ul {
     margin: 0;
 }
+
+.index {
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    display: flex;
+}

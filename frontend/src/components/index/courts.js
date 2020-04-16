@@ -64,59 +64,64 @@ class Courts extends React.Component {
         return (  
             <div className="index">
 
-                <div className="games">
-                    <h2>Open Games</h2>
-                {unset_games.map( game => 
-                    <ul >
-                        <Link to={`/games/${game._id}`}>
-                            <GameItem game={game} />
-                        </Link>
-                    </ul>
-                    )}
-                 </div>
-                
-                <div className="map">
-                    <MapContainer />
-                </div>
-                <form onSubmit={this.handleSumbit}>
-                   <input type="text"
-                        value={this.state.title}
-                        onChange={this.update('title')}
-                        placeholder="Title"
-                    /> 
-                   <input type="text"
-                        value={this.state.location}
-                        onChange={this.update('location')}
-                        placeholder="location"
-                    /> 
-                   <input type="text"
-                        value={this.state.time}
-                        onChange={this.update('time')}
-                        placeholder="Time"
-                    /> 
-                   <input type="text"
-                        value={this.state.game_date}
-                        onChange={this.update('game_date')}
-                        placeholder="Game Date"
-                    /> 
-                   <input type="hidden"
-                        value={this.state.game_set}
-                        onSubmit={this.update('game_set')}
-                    /> 
-                    <input type="submit" value="Submit" />
-                </form>
+                <div className="top">
 
-                <div>
-                    <h2>Set Games</h2>
-                    {set_games.map(game =>
+                    <div className="games">
+                        <h2>Open Games</h2>
+                    {unset_games.map( game => 
                         <ul >
-                            <Link to={`/setgames/${game._id}`}>
+                            <Link to={`/games/${game._id}`}>
                                 <GameItem game={game} />
                             </Link>
                         </ul>
-                    )}
+                        )}
+                    </div>
+                    
+                    <div className="map">
+                        <MapContainer />
+                    </div>
+                    <form onSubmit={this.handleSumbit}>
+                    <input type="text"
+                            value={this.state.title}
+                            onChange={this.update('title')}
+                            placeholder="Title"
+                        /> 
+                    <input type="text"
+                            value={this.state.location}
+                            onChange={this.update('location')}
+                            placeholder="location"
+                        /> 
+                    <input type="text"
+                            value={this.state.time}
+                            onChange={this.update('time')}
+                            placeholder="Time"
+                        /> 
+                    <input type="text"
+                            value={this.state.game_date}
+                            onChange={this.update('game_date')}
+                            placeholder="Game Date"
+                        /> 
+                    <input type="hidden"
+                            value={this.state.game_set}
+                            onSubmit={this.update('game_set')}
+                        /> 
+                        <input type="submit" value="Submit" />
+                    </form>
+
+                    <div>
+                        <h2>Set Games</h2>
+                        {set_games.map(game =>
+                            <ul >
+                                <Link to={`/setgames/${game._id}`}>
+                                    <GameItem game={game} />
+                                </Link>
+                            </ul>
+                        )}
+                    </div>
                 </div>
-                <IndexMap />
+
+                    <IndexMap />
+                
             </div>  
         
         )}

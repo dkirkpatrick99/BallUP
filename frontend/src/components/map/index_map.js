@@ -9,7 +9,10 @@ export class IndexMap extends Component {
                 zoom={12}
                 center={{ lat: 37.733795, lng: -122.446747 } }
                 styles={ mapStyles }
-
+                mapContainerStyle={{
+                    height: "100vh",
+                    width: "50vw"
+                }}
             >
                 
 
