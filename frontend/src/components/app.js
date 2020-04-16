@@ -11,6 +11,7 @@ import SetGameShowContainer from './gameShow/set_game_show_container'
 import SplashPage from './splash/splash';
 import CourtsContainer from './index/courts_container';
 import GeocodeContainer from './map/geocoding_container'
+import { IndexMap } from './map/index_map';
 
 const App = () => {
     return (<div>
@@ -23,6 +24,7 @@ const App = () => {
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/games" component={CourtsContainer} />
             <AuthRoute path="/" component={SplashPage} />
+            <AuthRoute exact path="/indexmap" component={IndexMap} />
         </Switch>
     </div>)
 };
