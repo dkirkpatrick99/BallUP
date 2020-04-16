@@ -30,6 +30,7 @@
     "concurrently": "^5.1.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "google-maps-react": "^2.0.2",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
     "mongoose": "^5.9.5",
@@ -40,6 +41,7 @@
     "validator": "^12.2.0"
   },
   "devDependencies": {
+    "@types/google-maps": "^3.2.2",
     "nodemon": "^2.0.2"
   }
 }

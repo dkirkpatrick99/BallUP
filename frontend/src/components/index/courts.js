@@ -3,6 +3,7 @@ import { Map, GoogleApiWrapper } from 'google-maps-react';
 import MapContainer from '../map/map';
 import GameItem from './game_item';
 import { Link } from "react-router-dom";
+import IndexMap from "../map/index_map"
 import $ from 'jquery';
 import './index.css';
 
@@ -115,8 +116,7 @@ class Courts extends React.Component {
                         </ul>
                     )}
                 </div>
-
-                        
+                <IndexMap />
             </div>  
         
         )}
