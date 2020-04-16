@@ -22,7 +22,7 @@ export class IndexMap extends Component {
             });
     }
     render() {
-            debugger;
+        
         if (Object.keys(this.state.dataObj).length === 0 && this.state.dataObj.constructor === Object) {{
             return null;
         }}
