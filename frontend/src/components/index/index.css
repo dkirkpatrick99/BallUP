@@ -6,26 +6,45 @@
     height: 100vh;
 }
 
+.top {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+}
+
+
 .games {
+    width: 15vw;
+    background-color: green;
+    font-family: "Berthold Akzidenz Grotesk BE";
     display: flex;
     flex-direction: column;
-}
-
-.map { 
-    margin-top: 70px;
-    margin-left: 70px;
-    transform: translateY(20%);
-   
+    align-items: center;
+    overflow-y: scroll;
 
 }
-
 .games h2 {
-    transform: translateX(20%) translateY(100%);
-    text-decoration: underline;
+    /* transform: translateX(20%) translateY(100%); */
+    margin: 0%;
+    margin-top: 4vh;
+    margin-bottom: 2vh;
+    font-size: 2vw;
+    color: white;
+    z-index: 1000;
+}
+
+.games h3 {
+    margin: 0%;
+}
+
+.games h3:last-child{
+    margin-bottom: 2vh;
 }
 
 .games ul {
     margin: 0;
+    font-size: 1vw;
+    padding: 0%;
 }
 
 .index {
@@ -33,6 +52,61 @@
     flex-direction: column;
 }
 
-.top {
+
+.map { 
+    width: 70vw;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.map > div {
+    width: 100%;
+    height: 100%;
+}
+.map-container {
+    width: inherit;
+    position: absolute;
+    height: inherit;
+}
+
+
+.set-games {
+    width: 15vw;
+    background-color: saddlebrown;
+    font-family: "Berthold Akzidenz Grotesk BE";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 4;
+    overflow-y: scroll;
+}
+
+.set-games h2 {
+    /* transform: translateX(20%) translateY(100%); */
+    margin: 0%;
+    margin-top: 4vh;
+    margin-bottom: 2vh;
+    font-size: 2vw;
+    color: white;
+    z-index: 1000;
+}
+
+.set-games h3 {
+    margin: 0%;
+}
+
+.set-games h3:last-child{
+    margin-bottom: 2vh;
+}
+
+.set-games ul {
+    margin: 0;
+    font-size: 1vw;
+    padding: 0%;
+}
+
+.new-game{
+    /* display: none; */
+    z-index: 1000;
+}
+

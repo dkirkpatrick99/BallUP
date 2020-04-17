@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { mapStyles } from './map_style'
 
 
+
 export class IndexMap extends Component {
     constructor (props) {
         super(props);
@@ -34,22 +35,24 @@ export class IndexMap extends Component {
             });
     }
     render() {
+    
       
         if (Object.keys(this.state.coords).length === 0){
             return (null);
         }
 
+
         return (
-            <div>
+            <div className="map-container">
        
-            <Map google={this.props.google} 
+            <Map google={this.props.google}
                 zoom={12}
-                center={{ lat: 37.733795, lng: -122.446747 } }
-                styles={ mapStyles }
-                mapContainerStyle={{
-                    height: "100vh",
-                    width: "50%"
-                }}
+                center={{ lat: 37.75, lng: -122.446747 }}
+                styles={mapStyles}
+                style={{
+                    width: "70%",
+                    height: "70vh"
+                    }}
             >
                 
                 {this.state.coords.map( coord => 
