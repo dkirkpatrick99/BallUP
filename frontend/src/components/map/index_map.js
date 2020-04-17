@@ -6,26 +6,39 @@ import { mapStyles } from './map_style'
 export class IndexMap extends Component {
     constructor (props) {
         super(props);
-        this.state = { dataObj: {}}
+        this.state = { dataObj: {}, games: [], coords: []};
+        this.state.games = this.props.games;
+        this.pushCoords = this.pushCoords.bind(this);
     }
     componentDidMount() {
-        let test = "https://maps.googleapis.com/maps/api/geocode/json?address=401 Berry St, San Francisco, CA 94158&key=AIzaSyD5B7ZusFtnsVcijiwuNtDMga34pB5Lf5c";
+      
+        if (this.state.games.length) {
+            this.state.games.forEach( game => {
+                this.pushCoords(game.location)
+            })
+        }
+
+    }
+    pushCoords(address) {
+    
+        let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s`;
 
 
-        fetch(test)
+        fetch(url)
             .then((response) => {
                 return response.json();
             })
             .then((data) => {
-                this.setState({ dataObj: data })
-                
+                this.state.coords.push(data.results[0].geometry.location)
+                this.setState({ coords: this.state.coords })
             });
     }
     render() {
-        
-        if (Object.keys(this.state.dataObj).length === 0 && this.state.dataObj.constructor === Object) {{
-            return null;
-        }}
+      
+        if (Object.keys(this.state.coords).length === 0){
+            return (null);
+        }
+
         return (
             <div>
        
@@ -39,17 +52,15 @@ export class IndexMap extends Component {
                 }}
             >
                 
-
-                <Marker onClick={this.onMarkerClick}
-                    name={'Current location'}
-                    icon={{ url: "gold-marker.png" }}
-                        position={this.state.dataObj.results[0].geometry.location}
-                        />
-                <Marker onClick={this.onMarkerClick}
-                    name={'Current location'}
-                    icon={{ url: "gold-marker.png" }}
-                        position={{ lat: 37.733795, lng: -122.446747 }}
-                        />
+                {this.state.coords.map( coord => 
+                    <Marker onClick={this.onMarkerClick}
+                        name={'Current location'}
+                        icon={{ url: "gold-marker.png" }}
+                        position={coord}
+                    />
+                    
+                    )}
+                
 
                 <InfoWindow onClose={this.onInfoWindowClose}>
                     {/* <div>
@@ -63,5 +74,5 @@ export class IndexMap extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: ('AIzaSyD5B7ZusFtnsVcijiwuNtDMga34pB5Lf5c')
+    apiKey: ('AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s')
 })(IndexMap)

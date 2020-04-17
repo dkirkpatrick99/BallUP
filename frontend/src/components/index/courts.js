@@ -1,11 +1,12 @@
  import React from "react";
 import { Map, GoogleApiWrapper } from 'google-maps-react';
-import MapContainer from '../map/map';
+// import MapContainer from '../map/map';
 import GameItem from './game_item';
 import { Link } from "react-router-dom";
 import IndexMap from "../map/index_map"
 import $ from 'jquery';
 import './index.css';
+import IndexMapContainer from "../map/index_map_container"
 
 class Courts extends React.Component {
     constructor(props) {
@@ -15,7 +16,9 @@ class Courts extends React.Component {
             location: '',
             time: '',
             game_date: '',
-            game_set: false
+            game_set: false,
+            lat: 0,
+            lng: 0
         };
         this.handleSumbit= this.handleSumbit.bind(this)
 
@@ -23,7 +26,7 @@ class Courts extends React.Component {
 
     componentDidMount(){
         this.props.getGames();
-        this.props.getAddress('1109 N Highland St, Arlington VA');
+        // this.props.getAddress('1109 N Highland St, Arlington VA');
         $('.navbar').removeClass('navbar-b');
     }
 
@@ -37,7 +40,9 @@ class Courts extends React.Component {
             time: this.state.time,
             game_date: this.state.game_date,
             players: [],
-            game_set: false
+            game_set: false,
+            lat: 0,
+            lng:0
         };
 
         this.props.createGame(game)
@@ -78,7 +83,7 @@ class Courts extends React.Component {
                     </div>
                     
                     <div className="map">
-                        <MapContainer />
+                        {/* <MapContainer /> */}
                     </div>
                     <form onSubmit={this.handleSumbit}>
                     <input type="text"
@@ -120,7 +125,7 @@ class Courts extends React.Component {
                     </div>
                 </div>
 
-                    <IndexMap />
+                    <IndexMapContainer />
                 
             </div>  
         
