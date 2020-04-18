@@ -55,6 +55,7 @@ export class IndexMap extends Component {
                     }}
                     disableDefaultUI={true}
                     zoomControl={true}
+                    scrollwheel={false}
                 
             >
                 

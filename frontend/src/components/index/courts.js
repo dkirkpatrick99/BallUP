@@ -86,18 +86,14 @@ class Courts extends React.Component {
                             )}
                         </div>
                     </div>
-                    
-                    <div className="map">
-                        <IndexMapContainer />
-                    </div>
-                    
+
                     <div className="games">
                         <h2>Set Games</h2>
                         <div className="game-list">
                             {set_games.map(game =>
                                 <div className="game-list-item">
                                     <ul>
-                                        <Link to={`/games/${game._id}`}>
+                                        <Link to={`/setgames/${game._id}`}>
                                             <GameItem game={game} />
                                         </Link>
 
@@ -105,6 +101,10 @@ class Courts extends React.Component {
                                 </div>
                             )}
                         </div>
+                    </div>
+                    
+                    <div className="map">
+                        <IndexMapContainer />
                     </div>
                     {/* <div className="set-games">
                         <h2>Set Games</h2>
