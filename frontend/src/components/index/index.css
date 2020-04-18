@@ -15,13 +15,19 @@
 
 .games {
     width: 15vw;
-    background-color: green;
+    background-image: linear-gradient( rgb(63, 63, 63),  rgb(27, 27, 27), rgb(27, 27, 27));
     font-family: "Berthold Akzidenz Grotesk BE";
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: scroll;
+    align-items: flex-start;
+    z-index: 4;
 
+}
+
+.game-list {
+    height: inherit;
+    overflow-y: scroll;
 }
 .games h2 {
     /* transform: translateX(20%) translateY(100%); */
@@ -31,6 +37,7 @@
     font-size: 2vw;
     color: white;
     z-index: 1000;
+    margin-left: 2%;
 }
 
 .games h3 {
@@ -38,13 +45,37 @@
 }
 
 .games h3:last-child{
-    margin-bottom: 2vh;
+    padding-bottom: 2vh;
 }
 
 .games ul {
     margin: 0;
-    font-size: 1vw;
+    font-size: 1.1vw;
     padding: 0%;
+    border-top: rgb(63, 63, 63) 2px solid;
+    height: 100%;
+}
+
+
+.game-list-item {
+    width: 100%;
+    margin: 0%;
+}
+
+.game-list-item:hover {
+    cursor: pointer;
+    background-color: black;
+}
+
+.games a {
+    text-decoration: none;
+    color: white;
+    height: inherit;
+}
+
+.games a div {
+    margin-left: 2%;
+    margin-top: 2%;
 }
 
 .index {
@@ -76,7 +107,7 @@
     font-family: "Berthold Akzidenz Grotesk BE";
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     z-index: 4;
     overflow-y: scroll;
 }

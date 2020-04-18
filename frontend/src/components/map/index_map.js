@@ -47,12 +47,15 @@ export class IndexMap extends Component {
        
             <Map google={this.props.google}
                 zoom={12}
-                center={{ lat: 37.75, lng: -122.446747 }}
+                center={{ lat: 37.77, lng: -122.446747 }}
                 styles={mapStyles}
                 style={{
                     width: "70%",
                     height: "70vh"
                     }}
+                    disableDefaultUI={true}
+                    zoomControl={true}
+                
             >
                 
                 {this.state.coords.map( coord => 

@@ -47,6 +47,7 @@ class Courts extends React.Component {
 
         this.props.createGame(game)
             .then(() => this.props.history.push('/'));
+        window.location.reload(false);
     }
 
     update(field) {
@@ -65,7 +66,6 @@ class Courts extends React.Component {
             game.game_set !== true
         )
 
-        
         return (  
             <div className="index">
 
@@ -73,22 +73,40 @@ class Courts extends React.Component {
 
                     <div className="games">
                         <h2>Open Games</h2> 
-                    {unset_games.map( game => 
-                        <ul>
-                            <Link to={`/games/${game._id}`}>
-                                <GameItem game={game} />
-                            </Link>
-                            
-                        </ul>
-                        )}
+                        <div className="game-list">
+                        {unset_games.map( game => 
+                            <div className="game-list-item">
+                                <ul>
+                                    <Link to={`/games/${game._id}`}>
+                                        <GameItem game={game} />
+                                    </Link>
+                                    
+                                </ul>
+                            </div> 
+                            )}
+                        </div>
                     </div>
                     
                     <div className="map">
                         <IndexMapContainer />
                     </div>
                     
+                    <div className="games">
+                        <h2>Set Games</h2>
+                        <div className="game-list">
+                            {set_games.map(game =>
+                                <div className="game-list-item">
+                                    <ul>
+                                        <Link to={`/games/${game._id}`}>
+                                            <GameItem game={game} />
+                                        </Link>
 
-                    <div className="set-games">
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                    {/* <div className="set-games">
                         <h2>Set Games</h2>
                         {set_games.map(game =>
                             <ul >
@@ -97,7 +115,7 @@ class Courts extends React.Component {
                                 </Link>
                             </ul>
                         )}
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="new-game">
