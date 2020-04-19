@@ -56,14 +56,14 @@
 
 .game-info h2 {
     padding: 0%;
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
 }
 
 /* .players {
     height: inherit;
     width: 350px;
     background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(5, 0, 0, .8));
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     position: relative;
     z-index: 2;
     display: flex;
@@ -134,7 +134,7 @@
     height: 45%;
     width: 100%;
     position: relative;
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -171,7 +171,7 @@
     height: 10%;
     width: 100%;
     position: relative;
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     font-size: 2.7vw;
     align-items: center;
     justify-content: center;
@@ -188,7 +188,7 @@
     width: 100%;
     height: 45%;
     position: relative;
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -237,7 +237,7 @@
     margin-top: 3%;
     padding: 1%;
     font-size: 1.5vw;
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
 }
 
 #p-title, #r-title {
@@ -258,7 +258,7 @@
 #r-num {
     z-index: 1;
     color: white;
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
 }
 
 #ball-b {
@@ -303,7 +303,7 @@
 
 .show-map {
     font-size: 5vw;
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     color: white;
 }
 

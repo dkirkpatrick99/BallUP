@@ -20,7 +20,7 @@
     width: 15vw;
     background-image: linear-gradient( rgb(73, 73, 73),  rgb(73, 73, 73), rgb(73, 73, 73));
     /* background-color: #a9a471; */
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,7 +127,7 @@
 .set-games {
     width: 15vw;
     background-color: saddlebrown;
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -204,7 +204,7 @@
 }
 
 .new-game-b h1 {
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     margin: 0%;
     margin-left: 3%;
     margin-right: 3%;
@@ -248,7 +248,7 @@ body {
     text-align: center;
     flex-shrink: 0;
 
-    font: 1.6vw "Berthold Akzidenz Grotesk BE";
+    font: 1.6vw "Berthold Regular";
 }
 
 .num-circle-set {

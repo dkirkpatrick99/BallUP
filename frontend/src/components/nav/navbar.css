@@ -13,7 +13,7 @@
     position: relative;
 }
 .splash-logo {
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     color: black;
     transform: translateX(-20px);
     height: 25px;
@@ -24,7 +24,7 @@
 }
 
 .navbar-right {
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     color: black;
     display: flex;
     flex-direction: row;
@@ -89,7 +89,7 @@
     /* transform: translateY(-50%); */
     left: -3%;
     color: white;
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     font-size: 4.8vw;
     position: relative;
     transform: translateX(4%);
@@ -100,7 +100,7 @@
     transform: translateY(-150%) translateX(2%);
     right: 4%;
     color: white;
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     font-size: 2vw;
     position: relative;
 }
@@ -114,7 +114,7 @@
     position: absolute;
     object-fit: cover;
     /* transform: translateY(10vh); */
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     font-size: 16px;
     background-color: black;
     color: white;
@@ -155,7 +155,7 @@
 }
 
 .modal-background h1 {
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     position: absolute;
     z-index: 80;
     left: 10%;
@@ -191,7 +191,7 @@
 }
 
 .su-modal-background h1 {
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     position: absolute;
     z-index: 80;
     left: 10%;
@@ -230,7 +230,7 @@
 .navbar-right-loggedin li {
     list-style: none;
     text-decoration: none;
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     font-size: 25px;
 }
 
@@ -257,7 +257,7 @@
 input {
     outline-color: black;
     outline-width: 1px;
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     letter-spacing: 1px;
 }
 
@@ -266,16 +266,16 @@ input:focus {
 }
 
 input[type=submit] {
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
 }
 
 select {
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
     letter-spacing: 1px;
 }
 
 label, button, option {
-    font-family: "Berthold Akzidenz Grotesk BE";
+    font-family: "Berthold Regular";
 }
 
 button:hover {
