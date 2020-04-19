@@ -40,9 +40,9 @@ export class IndexMap extends Component {
     render() {
     
       
-        if (Object.keys(this.state.coords).length === 0){
-            return (null);
-        }
+        // if (Object.keys(this.state.coords).length === 0){
+        //     return (null);
+        // }
 
 
         return (
