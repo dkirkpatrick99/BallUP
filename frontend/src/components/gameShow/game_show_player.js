@@ -8,4 +8,4 @@ const GameShowItem = (props) => {
     )
 }
 
-export default GameShowItem
+export default GameShowItem;

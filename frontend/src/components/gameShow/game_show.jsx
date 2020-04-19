@@ -378,4 +378,4 @@ class GameShow extends React.Component {
 
 }
 
-export default GameShow
+export default GameShow;

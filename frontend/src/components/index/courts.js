@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 import IndexMap from "../map/index_map"
 import $ from 'jquery';
 import './index.css';
-import IndexMapContainer from "../map/index_map_container"
+import IndexMapContainer from "../map/index_map_container";
+
 
 class Courts extends React.Component {
     constructor(props) {
@@ -20,7 +21,8 @@ class Courts extends React.Component {
             lat: 0,
             lng: 0
         };
-        this.handleSumbit= this.handleSumbit.bind(this)
+        this.handleSumbit= this.handleSumbit.bind(this);
+        this.createGameModal= this.createGameModal.bind(this);
 
     }
 
@@ -53,6 +55,17 @@ class Courts extends React.Component {
         return e => this.setState({
             [field]: e.currentTarget.value
         });
+    }
+
+    createGameModal(e) {
+        e.preventDefault();
+        // $(".new-game").addClass(".new-game-b");
+        $(".new-game").addClass("new-game-b");
+    }
+
+    closeModal(e) {
+        e.preventDefault();
+        $(".new-game").removeClass("new-game-b");
     }
 
     render() {
@@ -126,6 +139,8 @@ class Courts extends React.Component {
                 </div>
 
                 <div className="new-game">
+                  <p className="ng-closeout" onClick={this.closeModal}>&times;</p>
+                   <h1>Create a New Game</h1>
                     <form onSubmit={this.handleSumbit}>
                         <input type="text"
                             value={this.state.title}
@@ -154,9 +169,8 @@ class Courts extends React.Component {
                         <input type="submit" value="Submit" />
                     </form>
                 </div>
-
-                    {/* <IndexMapContainer /> */}
-                
+                <p className="ng-btn" onClick={this.createGameModal}>
+                    New Game</p>
             </div>  
         
         )}

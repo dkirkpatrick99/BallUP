@@ -159,10 +159,77 @@
     padding: 0%;
 }
 
-.new-game{
-    /* display: none; */
-    z-index: 1000;
+.ng-btn {
+    position: absolute;
+    z-index: 56;
+    left: 30vw;
+    color: #3f3f3e;
+    font-family: "Berthold Bold";
+    font-size: 1.3vw;
+    transform: translateY(7.5vh) translateX(1.8vw);
+    background-color: white;
+    padding: .5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-radius: 4px;
+    margin: 0%;
+
 }
+
+.ng-btn:hover {
+    cursor: pointer;
+    color: #1a1a19;
+}
+
+.new-game {
+    display: none;
+}
+.new-game-b {
+    display: block;
+    z-index: 1000;
+    background-color: white;
+    position: absolute;
+    width: 200px;
+    height: 138px;
+    left: 30vw;
+    transform: translateY(12vh);
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.new-game-b form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-game-b h1 {
+    font-family: "Berthold Akzidenz Grotesk BE";
+    margin: 0%;
+    margin-left: 3%;
+    margin-right: 3%;
+    font-size: 25px;
+    margin-bottom: 7%;
+}
+
+.new-game-b p {
+    float: right;
+    margin-right: 3%;
+}
+
+.new-game-b input {
+    margin-bottom: 1px;
+    width: 140px;
+    padding: 0%;
+}
+.new-game-b input[type=submit] {
+    width: 140px;
+    padding: 0%;
+    border:none;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+} 
 
 body {
     max-width: 100%;
@@ -192,3 +259,6 @@ body {
     display: none;
 }
 
+.ng-closeout:hover {
+    cursor: pointer;
+}
