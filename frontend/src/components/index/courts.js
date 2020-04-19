@@ -47,7 +47,6 @@ class Courts extends React.Component {
 
         this.props.createGame(game)
             .then(() => this.props.history.push('/'));
-        window.location.reload(false);
     }
 
     update(field) {
@@ -65,18 +64,23 @@ class Courts extends React.Component {
        let unset_games = this.props.games.filter( game =>
             game.game_set !== true
         )
-
+        let set_game_i = 1;
+        let unset_game_i = 1;
         return (  
             <div className="index">
 
                 <div className="top">
 
                     <div className="games">
-                        <h2>Open Games</h2> 
+                        <h2>Open Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
+                           </h2> 
                         <div className="game-list">
                         {unset_games.map( game => 
                             <div className="game-list-item">
-                                <ul>
+                                <ul><div className="num-circle">
+                                    {unset_game_i}</div>
+                                    <div className="hide-me">
+                                        {unset_game_i++}</div>
                                     <Link to={`/games/${game._id}`}>
                                         <GameItem game={game} />
                                     </Link>
@@ -88,11 +92,14 @@ class Courts extends React.Component {
                     </div>
 
                     <div className="games">
-                        <h2>Set Games</h2>
+                        <h2>Set Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;</h2>
                         <div className="game-list">
                             {set_games.map(game =>
                                 <div className="game-list-item">
-                                    <ul>
+                                    <ul><div className="num-circle-set">
+                                        {set_game_i}</div>
+                                        <div className="hide-me">
+                                            {set_game_i++}</div>
                                         <Link to={`/setgames/${game._id}`}>
                                             <GameItem game={game} />
                                         </Link>

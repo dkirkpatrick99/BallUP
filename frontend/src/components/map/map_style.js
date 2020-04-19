@@ -10,7 +10,7 @@ export const mapStyles = [
                 "color": "#000000"
             },
             {
-                "lightness": 40
+                "lightness": "60"
             }
         ]
     },
@@ -160,7 +160,7 @@ export const mapStyles = [
                 "color": "#000000"
             },
             {
-                "lightness": 17
+                "lightness": 11
             }
         ]
     }

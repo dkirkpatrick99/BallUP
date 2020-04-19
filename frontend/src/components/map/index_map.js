@@ -18,7 +18,10 @@ export class IndexMap extends Component {
                 this.pushCoords(game.location)
             })
         }
+    }
 
+    componentWillReceiveProps() {
+        window.location.reload(false);
     }
     pushCoords(address) {
     
@@ -46,12 +49,12 @@ export class IndexMap extends Component {
             <div className="map-container">
        
             <Map google={this.props.google}
-                zoom={12}
+                zoom={13}
                 center={{ lat: 37.77, lng: -122.446747 }}
                 styles={mapStyles}
                 style={{
                     width: "70%",
-                    height: "70vh"
+                    height: "90vh"
                     }}
                     disableDefaultUI={true}
                     zoomControl={true}

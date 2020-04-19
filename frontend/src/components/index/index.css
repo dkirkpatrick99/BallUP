@@ -1,3 +1,6 @@
+/* gray: #84857e */
+/* gold: #a9a471 */
+
 .index {
     display: flex;
     flex-direction: row;
@@ -9,13 +12,14 @@
 .top {
     display: flex;
     width: 100%;
-    height: 70vh;
+    height: 90vh;
 }
 
 
 .games {
     width: 15vw;
-    background-image: linear-gradient( rgb(63, 63, 63),  rgb(27, 27, 27), rgb(27, 27, 27));
+    background-image: linear-gradient( rgb(73, 73, 73),  rgb(73, 73, 73), rgb(73, 73, 73));
+    /* background-color: #a9a471; */
     font-family: "Berthold Akzidenz Grotesk BE";
     display: flex;
     flex-direction: column;
@@ -32,12 +36,17 @@
 .games h2 {
     /* transform: translateX(20%) translateY(100%); */
     margin: 0%;
-    margin-top: 4vh;
-    margin-bottom: 2vh;
+    padding-top: 4vh;
+    padding-bottom: 2vh;
     font-size: 2vw;
-    color: white;
+    width: 98%;
+    color: rgb(255, 255, 255);
     z-index: 1000;
-    margin-left: 2%;
+    padding-left: 2%;
+    /* text-decoration: underline;
+    text-decoration-color: rgb(63, 63, 63); */
+    background-image: linear-gradient(to right, rgb(41, 40, 40), rgb(36, 36, 36));
+    
 }
 
 .games h3 {
@@ -50,12 +59,13 @@
 
 .games ul {
     margin: 0;
-    font-size: 1.1vw;
+    font-size: .8vw;
     padding: 0%;
-    border-top: rgb(63, 63, 63) 2px solid;
+    border-top: rgb(255, 255, 255) 2px solid;
     height: 100%;
+    display: flex;
+    
 }
-
 
 .game-list-item {
     width: 100%;
@@ -64,19 +74,32 @@
 
 .game-list-item:hover {
     cursor: pointer;
-    background-color: black;
+    background-color:rgb(36, 36, 36);
 }
 
 .games a {
     text-decoration: none;
     color: white;
     height: inherit;
+    margin-right: 4%;
 }
 
 .games a div {
-    margin-left: 2%;
+    margin-left: 6%;
     margin-top: 2%;
 }
+
+.games a div h3:first-child {
+    font-size: 1.2vw;
+    font-family: "Berthold Bold";
+    margin-bottom: 2%;
+    margin-top: 5%;
+}
+
+.games a div h3 {
+    margin-bottom: 2%;
+}
+
 
 .index {
     display: flex;
@@ -85,7 +108,7 @@
 
 
 .map { 
-    width: 70vw;
+    width: 60vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -139,5 +162,33 @@
 .new-game{
     /* display: none; */
     z-index: 1000;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.num-circle, .num-circle-set {
+    margin-top: 4%;
+    margin-left: 2%;
+    border-radius: 50%;
+    width: 2vw;
+    height: 2vw;
+    padding: .2vw;
+    background: #a9a471;
+    color: white;
+    text-align: center;
+    flex-shrink: 0;
+
+    font: 1.6vw "Berthold Akzidenz Grotesk BE";
+}
+
+.num-circle-set {
+   background: rgb(36, 36, 36);
+}
+
+.hide-me {
+    display: none;
 }
 
