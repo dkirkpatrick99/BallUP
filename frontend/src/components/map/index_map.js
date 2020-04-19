@@ -20,9 +20,9 @@ export class IndexMap extends Component {
         }
     }
 
-    componentWillReceiveProps() {
-        window.location.reload(false);
-    }
+    // componentWillReceiveProps() {
+    //     window.location.reload(false);
+    // }
     pushCoords(address) {
     
         let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s`;
