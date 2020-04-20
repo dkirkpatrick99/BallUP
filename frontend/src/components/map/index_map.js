@@ -20,12 +20,12 @@ export class IndexMap extends Component {
         }
     }
 
-    componentDidUpdate(prevProps) {
-        debugger;
-        if (prevProps.games.length !== this.props.games.length){
-             window.location.reload(false);
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     debugger;
+    //     if (prevProps.games.length !== this.props.games.length){
+    //          window.location.reload(false);
+    //     }
+    // }
     pushCoords(game) {
     
         let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${game.location}&key=AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s`;
