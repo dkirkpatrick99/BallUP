@@ -1,31 +1,31 @@
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import React, { Component } from 'react'
 import { mapStyles } from './map_style'
+import $ from 'jquery'
 
 
 
 export class IndexMap extends Component {
     constructor (props) {
         super(props);
-        this.state = { dataObj: {}, games: [], coords: []};
-        this.state.games = this.props.games;
+        this.state = { games: [], coords: []};
         this.pushCoords = this.pushCoords.bind(this);
     }
     componentDidMount() {
       
-        if (this.state.games.length) {
-            this.state.games.forEach( game => {
-                this.pushCoords(game.location)
+        if (this.props.games.length) {
+            this.props.games.forEach( game => {
+                this.pushCoords(game) 
             })
         }
     }
 
-    // componentWillReceiveProps() {
-    //     window.location.reload(false);
-    // }
-    pushCoords(address) {
+    componentWillReceiveProps() {
+        window.location.reload(false);
+    }
+    pushCoords(game) {
     
-        let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s`;
+        let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${game.location}&key=AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s`;
 
 
         fetch(url)
@@ -33,18 +33,31 @@ export class IndexMap extends Component {
                 return response.json();
             })
             .then((data) => {
+               
                 this.state.coords.push(data.results[0].geometry.location)
                 this.setState({ coords: this.state.coords })
+                game["coords"] = data.results[0].geometry.location;
+                this.state.games.push(game);
+                this.setState({ games: this.state.games })
             });
     }
+
+    onMarkerClick(game) {
+       
+        $(`.highlight-item`).removeClass("highlight-item")
+        $(`.${game._id}`).addClass("highlight-item")
+    }
+
     render() {
-    
-      
-        // if (Object.keys(this.state.coords).length === 0){
-        //     return (null);
-        // }
 
+        debugger;
 
+        let unset_games = this.state.games.filter( game =>
+                !game.game_set
+            )
+        let set_games = this.state.games.filter( game =>
+                game.game_set
+            )
         return (
             <div className="map-container">
        
@@ -62,13 +75,26 @@ export class IndexMap extends Component {
                 
             >
                 
-                {this.state.coords.map( coord => 
-                    <Marker onClick={this.onMarkerClick}
-                        name={'Current location'}
+                {unset_games.map( game => 
+                    <Marker onClick={ () => {
+                        
+                        this.onMarkerClick(game);
+                    }}
+                        name={game.title}
                         icon={{ url: "gold-marker.png" }}
-                        position={coord}
+                        position={game.coords}
                     />
-                    
+                    )}
+
+                {set_games.map( game => 
+                    <Marker onClick={ () => {
+                        
+                        this.onMarkerClick(game);
+                    }}
+                        name={game.title}
+                        icon={{ url: "white-marker.png" }}
+                        position={game.coords}
+                    />
                     )}
                 
 

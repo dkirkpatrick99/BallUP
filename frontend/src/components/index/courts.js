@@ -23,6 +23,7 @@ class Courts extends React.Component {
         };
         this.handleSumbit= this.handleSumbit.bind(this);
         this.createGameModal= this.createGameModal.bind(this);
+        this.setCoords= this.setCoords.bind(this);
 
     }
 
@@ -32,9 +33,8 @@ class Courts extends React.Component {
         $('.navbar').removeClass('navbar-b');
     }
 
-    handleSumbit(e) {
-        e.preventDefault();
-
+    handleSumbit() {
+        
         let game = {
             
             title: this.state.title,
@@ -43,13 +43,34 @@ class Courts extends React.Component {
             game_date: this.state.game_date,
             players: [],
             game_set: false,
-            lat: 0,
-            lng:0
+            lat: this.state.lat,
+            lng: this.state.lng 
         };
+
 
         this.props.createGame(game)
             .then(() => this.props.history.push('/'));
             window.location.reload(false);
+    }
+
+    setCoords(address) {
+        
+        let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s`;
+
+
+        fetch(url)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                debugger;
+                this.state.lat = data.results[0].geometry.location.lat;
+                this.state.lng = data.results[0].geometry.location.lng;
+                debugger;
+                this.setState({ lat: this.state.lat })
+                this.setState({ lng: this.state.lng })
+
+            });
     }
 
     update(field) {
@@ -91,14 +112,13 @@ class Courts extends React.Component {
                         <div className="game-list">
                         {unset_games.map( game => 
                             <div className="game-list-item">
-                                <ul><div className="num-circle">
+                                <ul className={game._id}><div className="num-circle">
                                     {unset_game_i}</div>
                                     <div className="hide-me">
                                         {unset_game_i++}</div>
                                     <Link to={`/games/${game._id}`}>
                                         <GameItem game={game} />
-                                    </Link>
-                                    
+                                    </Link> 
                                 </ul>
                             </div> 
                             )}
@@ -110,7 +130,7 @@ class Courts extends React.Component {
                         <div className="game-list">
                             {set_games.map(game =>
                                 <div className="game-list-item">
-                                    <ul><div className="num-circle-set">
+                                    <ul className={game._id}><div className="num-circle-set">
                                         {set_game_i}</div>
                                         <div className="hide-me">
                                             {set_game_i++}</div>
@@ -142,7 +162,12 @@ class Courts extends React.Component {
                 <div className="new-game">
                   <p className="ng-closeout" onClick={this.closeModal}>&times;</p>
                    <h1>Create a New Game</h1>
-                    <form onSubmit={this.handleSumbit}>
+                    <form onSubmit={ (e) => {
+                        e.preventDefault();
+                        this.setCoords(this.state.location)
+                        debugger;
+                        this.handleSumbit()
+                    }}>
                         <input type="text"
                             value={this.state.title}
                             onChange={this.update('title')}
