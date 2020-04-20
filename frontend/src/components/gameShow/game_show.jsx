@@ -254,7 +254,7 @@ class GameShow extends React.Component {
 
                 <div className="flex-vid">
                     <div className="video-box">
-                        <video id="pickup-vid" autoPlay loop muted>
+                        <video id="pickup-vid" playsInline autoPlay loop muted>
                             <source src="pickupBball2.mp4" type="video/mp4" />
                         </video>
                         {/* <div className="vid-objects">
