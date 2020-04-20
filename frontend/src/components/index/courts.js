@@ -145,7 +145,7 @@ class Courts extends React.Component {
                     </div>
                     
                     <div className="map">
-                        <IndexMapContainer />
+                        <IndexMapContainer history={this.props.history}/>
                     </div>
                     {/* <div className="set-games">
                         <h2>Set Games</h2>
