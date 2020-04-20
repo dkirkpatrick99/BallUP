@@ -20,12 +20,13 @@ export class IndexMap extends Component {
         }
     }
 
-    // componentDidUpdate(prevProps) {
-    //     debugger;
-    //     if (prevProps.games.length !== this.props.games.length){
-    //          window.location.reload(false);
-    //     }
-    // }
+    componentWillReceiveProps(nextProps) {
+        debugger;
+        if (nextProps.games.length !== this.props.games.length){
+             window.location.reload(false);
+            
+        }
+    }
     pushCoords(game) {
     
         let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${game.location}&key=AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s`;
@@ -71,9 +72,9 @@ export class IndexMap extends Component {
                     width: "70%",
                     height: "90vh"
                     }}
-                    disableDefaultUI={true}
-                    zoomControl={true}
-                    scrollwheel={false}
+                disableDefaultUI={true}
+                zoomControl={true}
+                scrollwheel={false}
                 
             >
                 
@@ -82,9 +83,10 @@ export class IndexMap extends Component {
                         
                         this.onMarkerClick(game);
                     }}
-                        name={game.title}
-                        icon={{ url: "gold-marker.png" }}
-                        position={game.coords}
+                    name={game.title}
+                    icon={{ url: "gold-marker.png" }}
+                    position={game.coords}
+                    key={game._id}
                     />
                     )}
 
@@ -93,9 +95,10 @@ export class IndexMap extends Component {
                         
                         this.onMarkerClick(game);
                     }}
-                        name={game.title}
-                        icon={{ url: "white-marker.png" }}
-                        position={game.coords}
+                    name={game.title}
+                    icon={{ url: "white-marker.png" }}
+                    position={game.coords}
+                    key={game._id}
                     />
                     )}
                 
