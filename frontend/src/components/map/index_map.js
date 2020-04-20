@@ -25,7 +25,7 @@ export class IndexMap extends Component {
         if (nextProps.games.length !== this.props.games.length){
             debugger;
             // this.componentDidMount();
-            setTimeout(() => { window.location.reload(false);},1000)
+            setTimeout(() => { window.location.reload(false);},6000)
              
             
         }
