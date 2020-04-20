@@ -2,7 +2,7 @@ import IndexMap from './index_map'
 import { connect } from 'react-redux'
 
 const mapStateToProps = (state) => {
-    debugger;
+   
    return {
      games: state.games.all
     }

@@ -190,7 +190,7 @@ class GameShow extends React.Component {
             localStorage.setItem(`${this.state.id}`, 
             JSON.stringify(this.state.players[this.state.id]))
             this.setState({ [this.state.id]: this.state.count[this.state.id] })
-            setTimeout(() => { this.props.history.push(`/setgames/${this.state.id}`) }, 3000);
+            setTimeout(() => { this.props.history.push(`/setgames/${this.state.id}`) }, 1500);
             
         }
     }

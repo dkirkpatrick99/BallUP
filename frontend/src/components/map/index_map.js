@@ -21,7 +21,7 @@ export class IndexMap extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        debugger;
+     
         if (nextProps.games.length !== this.props.games.length){ 
            this.props.history.push('/');
         }
