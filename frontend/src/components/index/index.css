@@ -1,6 +1,15 @@
 /* gray: #84857e */
 /* gold: #a9a471 */
 
+@font-face{
+    font-family: "Berthold Regular";
+    src: url('../../public/berthold-regular.ttf')
+}
+@font-face{
+    font-family: "Berthold Bold";
+    src: url('../../public/berthold-bold.ttf')
+}
+
 .index {
     display: flex;
     flex-direction: row;
