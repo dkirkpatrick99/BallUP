@@ -20,8 +20,9 @@ export class IndexMap extends Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.games.length !== this.props.games.length){
+    componentDidUpdate(prevProps) {
+        debugger;
+        if (prevProps.games.length !== this.props.games.length){
              window.location.reload(false);
         }
     }

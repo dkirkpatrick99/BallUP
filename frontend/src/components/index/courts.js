@@ -50,7 +50,7 @@ class Courts extends React.Component {
 
         this.props.createGame(game)
             .then(() => this.props.history.push('/'));
-            window.location.reload(false);
+            // window.location.reload(false);
     }
 
     setCoords(address) {
