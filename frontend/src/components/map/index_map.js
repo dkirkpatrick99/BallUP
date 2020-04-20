@@ -21,7 +21,7 @@ export class IndexMap extends Component {
     }
 
     componentWillReceiveProps() {
-        window.location.reload(false);
+        // window.location.reload(false);
     }
     pushCoords(address) {
     
