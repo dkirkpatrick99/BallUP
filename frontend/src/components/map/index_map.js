@@ -20,8 +20,10 @@ export class IndexMap extends Component {
         }
     }
 
-    componentWillReceiveProps() {
-        window.location.reload(false);
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.games.length !== this.props.games.length){
+             window.location.reload(false);
+        }
     }
     pushCoords(game) {
     
@@ -50,7 +52,6 @@ export class IndexMap extends Component {
 
     render() {
 
-        debugger;
 
         let unset_games = this.state.games.filter( game =>
                 !game.game_set

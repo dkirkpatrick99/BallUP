@@ -63,10 +63,10 @@ class Courts extends React.Component {
                 return response.json();
             })
             .then((data) => {
-                debugger;
+                
                 this.state.lat = data.results[0].geometry.location.lat;
                 this.state.lng = data.results[0].geometry.location.lng;
-                debugger;
+                
                 this.setState({ lat: this.state.lat })
                 this.setState({ lng: this.state.lng })
 
@@ -165,7 +165,6 @@ class Courts extends React.Component {
                     <form onSubmit={ (e) => {
                         e.preventDefault();
                         this.setCoords(this.state.location)
-                        debugger;
                         this.handleSumbit()
                     }}>
                         <input type="text"
