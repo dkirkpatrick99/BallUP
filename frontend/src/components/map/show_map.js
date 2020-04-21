@@ -62,12 +62,12 @@ class ShowMap extends Component {
 
             >
             
-            {/* <Marker
+            <Marker
                 name={this.props.game.title}
                 icon={{ url: icon}}
                 position={this.state.coords}
                 
-            /> */}
+            />
 
             </Map>
         )
