@@ -290,7 +290,10 @@ class GameShow extends React.Component {
                                 </div>
                                 <div className="showbox-left-bottom">
                                     <div className="show-map">
-                                        <ShowMap game={game} />
+                                        <ShowMap 
+                                          game={game} 
+                                          history={this.props.history}
+                                          />
                                     </div>
                                 </div>
                             </div>

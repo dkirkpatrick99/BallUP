@@ -17,6 +17,17 @@ class ShowMap extends Component {
         }
     }
 
+    componentWillReceiveProps(nextProps) {
+
+        if (nextProps.game !== this.props.game ) {
+            if (nextProps.game.game_set){
+                this.props.history.push(`/setgames/${this.props.game._id}`);
+            } else {
+                this.props.history.push(`/games/${this.props.game._id}`);
+            }
+        }
+    }
+
     pushCoords(game) {
 
         let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${game.location}&key=AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s`;

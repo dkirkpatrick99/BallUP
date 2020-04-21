@@ -281,7 +281,10 @@ class SetGameShow extends React.Component {
                                 </div>
                                 <div className="showbox-left-bottom">
                                     <div className="show-map">
-                                        <ShowMap game={game} />
+                                        <ShowMap 
+                                          game={game} 
+                                          history={this.props.history}  
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -376,10 +379,6 @@ class SetGameShow extends React.Component {
                             Click me
                         </button>
                 </div> */}
-
-                    <div >
-                        <MapContain />
-                    </div>
             </div>
         )
     }
