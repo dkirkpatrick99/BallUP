@@ -12,7 +12,7 @@ class ShowMap extends Component {
     }
     componentDidMount(){
         debugger;
-        if (this.props.game !== undefined){
+        if (this.props.game.players.length){
             this.pushCoords(this.props.game);
         }
     }
@@ -44,7 +44,7 @@ class ShowMap extends Component {
     }
 
     render() {
-        debugger;
+        
         let icon = "gold-marker.png";
 
         if (this.props.game.game_set) icon ="white-marker.png";
