@@ -17,6 +17,14 @@ class ShowMap extends Component {
         }
     }
 
+    shouldComponentUpdate(nextProps){
+        if (this.props.game === nextProps.game) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     // componentWillReceiveProps(nextProps) {
         
     //     if (nextProps.game !== this.props.game ) {
@@ -46,8 +54,8 @@ class ShowMap extends Component {
     render() {
         
         let icon = "gold-marker.png";
-
         if (this.props.game.game_set) icon ="white-marker.png";
+
         return (
             <Map google={this.props.google}
                 zoom={13}
