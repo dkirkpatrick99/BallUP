@@ -17,24 +17,12 @@ class ShowMap extends Component {
         }
     }
 
-    shouldComponentUpdate(nextProps){
-        if (this.props.game === nextProps.game) {
-            return true;
-        } else {
-            return false;
+    componentWillReceiveProps(nextProps) {
+        
+        if (nextProps.game !== this.props.game ) {
+            this.componentDidMount();
         }
     }
-
-    // componentWillReceiveProps(nextProps) {
-        
-    //     if (nextProps.game !== this.props.game ) {
-    //         if (nextProps.game.game_set){
-    //             nextProps.history.push(`/setgames/${nextProps.game._id}`);
-    //         } else {
-    //             nextProps.history.push(`/games/${nextProps.game._id}`);
-    //         }
-    //     }
-    // }
 
     pushCoords(game) {
 
