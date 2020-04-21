@@ -17,16 +17,16 @@ class ShowMap extends Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) {
+    // componentWillReceiveProps(nextProps) {
         
-        if (nextProps.game !== this.props.game ) {
-            if (nextProps.game.game_set){
-                nextProps.history.push(`/setgames/${nextProps.game._id}`);
-            } else {
-                nextProps.history.push(`/games/${nextProps.game._id}`);
-            }
-        }
-    }
+    //     if (nextProps.game !== this.props.game ) {
+    //         if (nextProps.game.game_set){
+    //             nextProps.history.push(`/setgames/${nextProps.game._id}`);
+    //         } else {
+    //             nextProps.history.push(`/games/${nextProps.game._id}`);
+    //         }
+    //     }
+    // }
 
     pushCoords(game) {
 
