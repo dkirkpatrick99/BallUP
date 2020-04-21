@@ -123,6 +123,8 @@ class Courts extends React.Component {
                             </div> 
                             )}
                         </div>
+                        <h2 id="list-foot"> &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
+                           </h2>
                     </div>
 
                     <div className="games">
@@ -142,6 +144,8 @@ class Courts extends React.Component {
                                 </div>
                             )}
                         </div>
+                        <h2 id="list-foot"> &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
+                           </h2>
                     </div>
                     
                     <div className="map">

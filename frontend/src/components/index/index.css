@@ -59,6 +59,22 @@
     
 }
 
+#list-foot {
+    margin: 0%;
+    padding: 0%;
+    /* padding-top: 4vh;
+    padding-bottom: 2vh; */
+    font-size: 2vw;
+    width: 98.5%;
+    color: rgb(255, 255, 255);
+    z-index: 1000;
+    padding-left: 2%;
+    /* text-decoration: underline;
+    text-decoration-color: rgb(63, 63, 63); */
+    /* border: 2px solid black; */
+    background-image: linear-gradient( rgb(73, 73, 73),  rgb(73, 73, 73), rgb(73, 73, 73));
+}
+
 .games h3 {
     margin: 0%;
 }
