@@ -100,13 +100,7 @@ export class IndexMap extends Component {
                     key={game._id}
                     />
                     )}
-                
 
-                <InfoWindow onClose={this.onInfoWindowClose}>
-                    {/* <div>
-                        <h1>{this.state.selectedPlace.name}</h1>
-                    </div> */}
-                </InfoWindow>
             </Map>
             </div>
         );

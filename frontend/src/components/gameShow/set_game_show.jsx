@@ -6,6 +6,7 @@ import MapContainer from '../map/map';
 import MapContain from '../map/geocoding'
 import './show.css';
 import { teamNames1, teamNames2 } from './team_names'
+import ShowMap from '../map/show_map'
 import $ from 'jquery'
 
 
@@ -279,7 +280,9 @@ class SetGameShow extends React.Component {
                                     </div>
                                 </div>
                                 <div className="showbox-left-bottom">
-                                    <div className="show-map">MAP</div>
+                                    <div className="show-map">
+                                        <ShowMap game={game} />
+                                    </div>
                                 </div>
                             </div>
 

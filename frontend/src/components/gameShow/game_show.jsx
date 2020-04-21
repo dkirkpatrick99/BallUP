@@ -3,10 +3,11 @@ import { withRouter } from 'react-router-dom';
 import GameShowPlayer from './game_show_player';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 import MapContainer from '../map/map';
-import MapContain from '../map/geocoding'
+// import MapContain from '../map/geocoding'
 import './show.css';
 import { teamNames1, teamNames2 } from './team_names'
 import $ from 'jquery'
+import ShowMap from '../map/show_map'
 
 
 class GameShow extends React.Component {
@@ -246,7 +247,7 @@ class GameShow extends React.Component {
     // } else {
     //     document.getElementsByClassName("owner-button").style.display = "none";
     // }
-
+    
 
         return (
 
@@ -288,7 +289,9 @@ class GameShow extends React.Component {
                                     </div>
                                 </div>
                                 <div className="showbox-left-bottom">
-                                    <div className="show-map">MAP</div>
+                                    <div className="show-map">
+                                        <ShowMap game={game} />
+                                    </div>
                                 </div>
                             </div>
 
@@ -369,9 +372,9 @@ class GameShow extends React.Component {
                         </button>
                 </div> */}
 
-                    <div >
+                    {/* <div >
                         <MapContain />
-                    </div>
+                    </div> */}
             </div>
         )
     }
