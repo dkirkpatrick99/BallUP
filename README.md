@@ -5,7 +5,7 @@
 ![Alt Text](ballupgame.gif)
 
 ### Background
-Ball Up is a website for basketball players and enthusists. With this website users can create a new game and location that other players can view and join. After playing with a game with a user, individuals can give star ratings (1 - 5) to eachother based on general conduct on the court and style of the player.
+Ball Up is a website for basketball players and enthusists. With this website users can create a new game and location that other players can view and join. After playing with a game, individuals can give star ratings (1 - 5) to eachother based on general conduct on the court and style of the player.
 
 ### Functionality 
 * Sign up and Login for users
