@@ -48,14 +48,18 @@ export class IndexMap extends Component {
     }
 
     onMarkerClick(game) {
-        
+        let itemY = $(`.${game._id}`).offset().top;
+        let listHeight = $(".game-list").height();
+        debugger;
         if (this.clicked !== game._id) {
             $(`.highlight-item`).removeClass("highlight-item");
             $(`.${game._id}`).addClass("highlight-item");
-            $('.game-list').animate({
-                scrollTop: $(`.${game._id}`).offset().top
-            }, 1000);
-            } 
+            if (itemY > listHeight || itemY < $(".list-head").height()) {
+                $('.game-list').animate({
+                    scrollTop: $(`.${game._id}`).offset().top
+                }, 1000)
+            }
+        }
         this.clicked = game._id;
     }
 

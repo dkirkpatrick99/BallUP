@@ -107,7 +107,7 @@ class Courts extends React.Component {
                 <div className="top">
 
                     <div className="games">
-                        <h2>Open Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
+                        <h2 className="list-head">Open Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
                            </h2> 
                         <div className="game-list">
                         {unset_games.map( game => 
