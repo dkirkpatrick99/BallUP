@@ -5,10 +5,12 @@ import $ from 'jquery'
 
 
 
+
 export class IndexMap extends Component {
     constructor (props) {
         super(props);
         this.state = { games: [], coords: []};
+        this.clicked = "";
         this.pushCoords = this.pushCoords.bind(this);
     }
     componentDidMount() {
@@ -46,9 +48,27 @@ export class IndexMap extends Component {
     }
 
     onMarkerClick(game) {
-       
-        $(`.highlight-item`).removeClass("highlight-item")
-        $(`.${game._id}`).addClass("highlight-item")
+        
+        if (this.clicked !== game._id) {
+            $(`.highlight-item`).removeClass("highlight-item");
+            $(`.${game._id}`).addClass("highlight-item");
+            $('.game-list').animate({
+                scrollTop: $(`.${game._id}`).offset().top
+            }, 1000);
+            } 
+        this.clicked = game._id;
+    }
+
+    onSetMarkerClick(game) {
+      
+        if (this.clicked !== game._id) {
+            $(`.highlight-item`).removeClass("highlight-item");
+            $(`.${game._id}`).addClass("highlight-item");
+            $('.set-game-list').animate({
+                scrollTop: $(`.${game._id}`).offset().top
+            }, 1000);
+            } 
+        this.clicked = game._id;
     }
 
     render() {
@@ -62,7 +82,7 @@ export class IndexMap extends Component {
             )
         return (
             <div className="map-container">
-       
+
             <Map google={this.props.google}
                 zoom={13}
                 center={{ lat: 37.77, lng: -122.446747 }}
@@ -92,7 +112,7 @@ export class IndexMap extends Component {
                 {set_games.map( game => 
                     <Marker onClick={ () => {
                         
-                        this.onMarkerClick(game);
+                        this.onSetMarkerClick(game);
                     }}
                     name={game.title}
                     icon={{ url: "white-marker.png" }}

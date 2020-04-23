@@ -118,8 +118,9 @@ class Courts extends React.Component {
                                         {unset_game_i++}</div>
                                     <Link to={`/games/${game._id}`}>
                                         <GameItem game={game} />
-                                    </Link> 
+                                    </Link>
                                 </ul>
+                                
                             </div> 
                             )}
                         </div>
@@ -129,7 +130,7 @@ class Courts extends React.Component {
 
                     <div className="games">
                         <h2>Set Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;</h2>
-                        <div className="game-list">
+                        <div className="set-game-list">
                             {set_games.map(game =>
                                 <div className="game-list-item">
                                     <ul className={game._id}><div className="num-circle-set">
@@ -199,8 +200,8 @@ class Courts extends React.Component {
                     </form>
                 </div>
                 <p className="ng-btn" onClick={this.createGameModal}>
-                    New Game</p>
-            </div>  
+                    New Game</p> 
+            </div> 
         
         )}
 }
