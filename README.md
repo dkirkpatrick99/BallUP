@@ -1,11 +1,11 @@
 # Ball UP
-## An app for basket ball players to connect, form teams and meet up for pick up games.
+## An app for basketball players to connect, form teams and meet up for pick-up games.
 
 [Live Site](https://ballup-app.herokuapp.com/#/)
 ![Alt Text](ballupgame.gif)
 
 ### Background
-Ball Up is a website for basket ball players and enthusists. With this website users can create a new game and location that other players can view and join. After playing with a game with a user, individuals can give star ratings (1 - 5) to eachother based on general conduct on the court and style of the player.
+Ball Up is a website for basketball players and enthusists. With this website users can create a new game and location that other players can view and join. After playing with a game with a user, individuals can give star ratings (1 - 5) to eachother based on general conduct on the court and style of the player.
 
 ### Functionality 
 * Sign up and Login for users
