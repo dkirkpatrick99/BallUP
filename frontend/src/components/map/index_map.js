@@ -50,11 +50,12 @@ export class IndexMap extends Component {
     onMarkerClick(game) {
         let itemY = $(`.${game._id}`).offset().top - $(`.${game._id}`).height();
         let listHeight = $(".game-list").height();
-        debugger;
+        
         if (this.clicked !== game._id) {
             $(`.highlight-item`).removeClass("highlight-item");
             $(`.${game._id}`).addClass("highlight-item");
-            if (itemY > (listHeight - $(`.${game._id}`).height()) || itemY < $(".list-head").height()) {
+            if (itemY > (listHeight - $(`.${game._id}`).height()) || 
+                itemY < $(".list-head").height()) {
                 $('.game-list').animate({
                     scrollTop: $(`.${game._id}`).offset().top
                 }, 1000)
@@ -64,14 +65,19 @@ export class IndexMap extends Component {
     }
 
     onSetMarkerClick(game) {
-      
+        let itemY = $(`.${game._id}`).offset().top - $(`.${game._id}`).height();
+        let listHeight = $(".game-list").height();
+
         if (this.clicked !== game._id) {
             $(`.highlight-item`).removeClass("highlight-item");
             $(`.${game._id}`).addClass("highlight-item");
-            $('.set-game-list').animate({
-                scrollTop: $(`.${game._id}`).offset().top
-            }, 1000);
-            } 
+            if (itemY > (listHeight - $(`.${game._id}`).height()) || 
+                itemY < $(".list-head").height()) {
+                $('.set-game-list').animate({
+                    scrollTop: $(`.${game._id}`).offset().top
+                }, 1000)
+            }
+        }
         this.clicked = game._id;
     }
 
