@@ -1,5 +1,5 @@
 # Ball UP
-## An app for basketball players to connect, form teams and meet up for pick-up games.
+## An app for basketball players to connect, form teams and meet up to play pick-up games.
 
 [Live Site](https://ballup-app.herokuapp.com/#/)
 ![Alt Text](ballupgame.gif)
