@@ -48,16 +48,19 @@ export class IndexMap extends Component {
     }
 
     onMarkerClick(game) {
-        let itemY = $(`.${game._id}`).offset().top - $(`.${game._id}`).height();
+        let elmnt = document.getElementById("list-head");
+        let itemY = $(`.${game._id}`).offset().top - 
+            $(`.navbar`).height() - elmnt.clientHeight;
         let listHeight = $(".game-list").height();
         
         if (this.clicked !== game._id) {
             $(`.highlight-item`).removeClass("highlight-item");
             $(`.${game._id}`).addClass("highlight-item");
             if (itemY > (listHeight - $(`.${game._id}`).height()) || 
-                itemY < $(".list-head").height()) {
+                itemY < 0) {
                 $('.game-list').animate({
-                    scrollTop: $(`.${game._id}`).offset().top
+                    scrollTop: $(`.${game._id}`).offset().top -
+                        $(`.navbar`).height() - elmnt.clientHeight
                 }, 1000)
             }
         }
@@ -65,16 +68,19 @@ export class IndexMap extends Component {
     }
 
     onSetMarkerClick(game) {
-        let itemY = $(`.${game._id}`).offset().top - $(`.${game._id}`).height();
+        let elmnt = document.getElementById("list-head");
+        let itemY = $(`.${game._id}`).offset().top -
+            $(`.navbar`).height() - elmnt.clientHeight;
         let listHeight = $(".game-list").height();
 
         if (this.clicked !== game._id) {
             $(`.highlight-item`).removeClass("highlight-item");
             $(`.${game._id}`).addClass("highlight-item");
-            if (itemY > (listHeight - $(`.${game._id}`).height()) || 
-                itemY < $(".list-head").height()) {
+            if (itemY > (listHeight - $(`.${game._id}`).height()) ||
+                itemY < 0) {
                 $('.set-game-list').animate({
-                    scrollTop: $(`.${game._id}`).offset().top
+                    scrollTop: $(`.${game._id}`).offset().top -
+                        $(`.navbar`).height() - elmnt.clientHeight
                 }, 1000)
             }
         }

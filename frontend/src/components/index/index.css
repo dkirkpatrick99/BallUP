@@ -53,6 +53,7 @@
     margin: 0%;
     padding-top: 4vh;
     padding-bottom: 2vh;
+    /* height: 10vh; */
     font-size: 2vw;
     width: 98.3%;
     color: rgb(255, 255, 255);
@@ -62,7 +63,6 @@
     text-decoration-color: rgb(63, 63, 63); */
     /* border: 2px solid black; */
     background-image: linear-gradient(to right, rgb(41, 40, 40), rgb(36, 36, 36));
-    
 }
 
 #list-foot {
