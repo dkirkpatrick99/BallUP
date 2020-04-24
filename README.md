@@ -1,5 +1,5 @@
 # Ball UP
-## An app for basketball players to connect, form teams and meet up for pick-up games.
+## An app for basketball players to connect, form teams and meet up to play pick-up games.
 
 [Live Site](https://ballup-app.herokuapp.com/#/)
 ![Alt Text](ballupgame.gif)
@@ -35,6 +35,8 @@ There are additional features that I would like to implement for Ball UP.
 ### Ball UP Snippets
 
 #### Adds a new player to a game
+![Alt Text](addplayer.png)
+
 Checks if the player has already been added to the player list and adds the player, then displays a new list of players
 ````js
     addPlayer(e) {
@@ -56,6 +58,8 @@ Checks if the player has already been added to the player list and adds the play
 ````
 
 #### Displaying locations on a map
+![Alt Text](map.png)
+
 Passes an address to a Geocoding API that returns a longitude and latitude in the response that is then placed into the Google map and shown on the game show page.
 ````js
     setCoords(address) {
