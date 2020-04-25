@@ -134,6 +134,7 @@ class Courts extends Component {
                     <div className="games">
                         <h2 id="list-head">Open Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
                            </h2> 
+                            <Scrollbars>
                         <div className="game-list">
                         {unset_games.map( game => 
                             <div className="game-list-item">
@@ -151,27 +152,30 @@ class Courts extends Component {
                             <h2 id="list-foot"> &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
                            </h2>
                         </div>
+                        </Scrollbars>
                     </div>
 
                     <div className="games">
                         <h2 id="list-head">Set Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;</h2>
-                        <div className="set-game-list">
-                            {set_games.map(game =>
-                                <div className="game-list-item">
-                                    <ul className={game._id}><div className="num-circle-set">
-                                        {set_game_i}</div>
-                                        <div className="hide-me">
-                                            {set_game_i++}</div>
-                                        <Link to={`/setgames/${game._id}`}>
-                                            <GameItem game={game} />
-                                        </Link>
+                        <Scrollbars >
+                            <div className="set-game-list">
+                                {set_games.map(game =>
+                                    <div className="game-list-item">
+                                        <ul className={game._id}><div className="num-circle-set">
+                                            {set_game_i}</div>
+                                            <div className="hide-me">
+                                                {set_game_i++}</div>
+                                            <Link to={`/setgames/${game._id}`}>
+                                                <GameItem game={game} />
+                                            </Link>
 
-                                    </ul>
-                                </div>
-                            )}
-                            <h2 id="list-foot"> &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
-                           </h2>
-                        </div>
+                                        </ul>
+                                    </div>
+                                )}
+                                <h2 id="list-foot"> &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
+                            </h2>
+                            </div>
+                        </Scrollbars>
                     </div>
                     
                     <div className="map">
