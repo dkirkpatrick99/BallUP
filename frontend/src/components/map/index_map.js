@@ -97,14 +97,19 @@ export class IndexMap extends Component {
                 game.game_set
             )
         return (
-            <div className="map-container">
+            <div className="map-container"
+                 style={{
+                     width: "70%"
+                 }}
+            
+            >
 
             <Map google={this.props.google}
                 zoom={13}
-                center={{ lat: 37.77, lng: -122.446747 }}
+                center={{ lat: 37.774, lng: -122.446747 }}
                 styles={mapStyles}
                 style={{
-                    width: "70%",
+                    width: "100%",
                     height: "90vh"
                     }}
                 disableDefaultUI={true}
