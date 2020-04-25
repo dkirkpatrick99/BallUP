@@ -24,6 +24,7 @@ class Courts extends React.Component {
         this.handleSumbit= this.handleSumbit.bind(this);
         this.createGameModal= this.createGameModal.bind(this);
         this.setCoords= this.setCoords.bind(this);
+        
 
     }
 
