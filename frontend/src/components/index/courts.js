@@ -134,7 +134,23 @@ class Courts extends Component {
                     <div className="games">
                         <h2 id="list-head">Open Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
                            </h2> 
-                            <Scrollbars>
+                            <Scrollbars 
+                                onScroll={this.handleScroll}
+                                onScrollFrame={this.handleScrollFrame}
+                                onScrollStart={this.handleScrollStart}
+                                onScrollStop={this.handleScrollStop}
+                                onUpdate={this.handleUpdate}
+                                renderView={this.renderView}
+                                renderTrackHorizontal={this.renderTrackHorizontal}
+                                renderTrackVertical={this.renderTrackVertical}
+                                renderThumbHorizontal={this.renderThumbHorizontal}
+                                renderThumbVertical={this.renderThumbVertical}
+                                autoHide
+                                autoHideTimeout={1000}
+                                autoHideDuration={200}
+                                thumbMinSize={30}
+                                universal={true}
+                                {...this.props}>
                         <div className="game-list">
                         {unset_games.map( game => 
                             <div className="game-list-item">
@@ -157,7 +173,23 @@ class Courts extends Component {
 
                     <div className="games">
                         <h2 id="list-head">Set Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;</h2>
-                        <Scrollbars >
+                            <Scrollbars 
+                                onScroll={this.handleScroll}
+                                onScrollFrame={this.handleScrollFrame}
+                                onScrollStart={this.handleScrollStart}
+                                onScrollStop={this.handleScrollStop}
+                                onUpdate={this.handleUpdate}
+                                renderView={this.renderView}
+                                renderTrackHorizontal={this.renderTrackHorizontal}
+                                renderTrackVertical={this.renderTrackVertical}
+                                renderThumbHorizontal={this.renderThumbHorizontal}
+                                renderThumbVertical={this.renderThumbVertical}
+                                autoHide
+                                autoHideTimeout={1000}
+                                autoHideDuration={200}
+                                thumbMinSize={30}
+                                universal={true}
+                                {...this.props}>
                             <div className="set-game-list">
                                 {set_games.map(game =>
                                     <div className="game-list-item">
