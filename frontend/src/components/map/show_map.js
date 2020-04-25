@@ -11,7 +11,6 @@ class ShowMap extends Component {
         this.pushCoords = this.pushCoords.bind(this);
     }
     componentDidMount(){
-        debugger;
         if (this.props.game.players.length){
             this.pushCoords(this.props.game);
         }

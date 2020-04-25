@@ -1,6 +1,8 @@
 /* gray: #84857e */
 /* gold: #a9a471 */
 
+
+
 @font-face{
     font-family: "Berthold Regular";
     src: url('../../public/berthold-regular.ttf')
@@ -52,7 +54,7 @@
 
 .set-game-list {
     height: inherit;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     max-width: 100%;
     -ms-overflow-style: none;
