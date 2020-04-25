@@ -5,8 +5,10 @@ import GameItem from './game_item';
 import { Link } from "react-router-dom";
 import IndexMap from "../map/index_map"
 import $ from 'jquery';
+import niceScroll from 'jquery'
 import './index.css';
 import IndexMapContainer from "../map/index_map_container";
+import { Scrollbars } from 'react-custom-scrollbars';
 
 
 class Courts extends React.Component {
@@ -29,6 +31,7 @@ class Courts extends React.Component {
     }
 
     componentDidMount(){
+    
         this.props.getGames();
         // this.props.getAddress('1109 N Highland St, Arlington VA');
         $('.navbar').removeClass('navbar-b');
@@ -102,7 +105,28 @@ class Courts extends React.Component {
         )
         let set_game_i = 1;
         let unset_game_i = 1;
-        return (  
+        return (
+            <Scrollbars
+                style={{ height: "100vh",
+                         width: "100%"
+                        }}
+                onScroll={this.handleScroll}
+                onScrollFrame={this.handleScrollFrame}
+                onScrollStart={this.handleScrollStart}
+                onScrollStop={this.handleScrollStop}
+                onUpdate={this.handleUpdate}
+                renderView={this.renderView}
+                renderTrackHorizontal={this.renderTrackHorizontal}
+                renderTrackVertical={this.renderTrackVertical}
+                renderThumbHorizontal={this.renderThumbHorizontal}
+                renderThumbVertical={this.renderThumbVertical}
+                autoHide
+                autoHideTimeout={1000}
+                autoHideDuration={200}
+                thumbMinSize={30}
+                universal={true}
+                {...this.props}
+                > 
             <div className="index">
 
                 <div className="top">
@@ -151,7 +175,9 @@ class Courts extends React.Component {
                     </div>
                     
                     <div className="map">
-                        <IndexMapContainer history={this.props.history}/>
+                        <IndexMapContainer 
+                        history={this.props.history}
+                        />
                     </div>
                     {/* <div className="set-games">
                         <h2>Set Games</h2>
@@ -234,7 +260,8 @@ class Courts extends React.Component {
                 </div>
                 <p className="ng-btn" onClick={this.createGameModal}>
                     New Game</p> 
-            </div> 
+            </div>
+                </Scrollbars>
         
         )}
 }
