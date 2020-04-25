@@ -1,4 +1,4 @@
- import React from "react";
+ import React, { Component } from "react";
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 // import MapContainer from '../map/map';
 import GameItem from './game_item';
@@ -11,7 +11,7 @@ import IndexMapContainer from "../map/index_map_container";
 import { Scrollbars } from 'react-custom-scrollbars';
 
 
-class Courts extends React.Component {
+class Courts extends Component {
     constructor(props) {
         super(props);
         this.state = {
