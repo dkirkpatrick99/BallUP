@@ -43,12 +43,23 @@
     overflow-y: scroll;
     max-width: 100%;
     overflow-x: hidden;
+    -ms-overflow-style: none;
 }
+
+.game-list::-webkit-scrollbar {
+  display: none;
+}
+
 .set-game-list {
     height: inherit;
     overflow-y: scroll;
     overflow-x: hidden;
     max-width: 100%;
+    -ms-overflow-style: none;
+}
+
+.set-game-list::-webkit-scrollbar {
+  display: none;
 }
 
 
@@ -84,7 +95,8 @@
     /* border: 2px solid black; */
     background-image: none;
     margin-left: 4%;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
+    overflow: hidden;
 }
 
 .games h3 {
