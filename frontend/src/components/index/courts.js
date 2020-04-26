@@ -106,52 +106,15 @@ class Courts extends Component {
         let set_game_i = 1;
         let unset_game_i = 1;
         return (
-            <Scrollbars
-                style={{ height: "100vh",
-                         width: "100%"}}
-                //         }}
-                // onScroll={this.handleScroll}
-                // onScrollFrame={this.handleScrollFrame}
-                // onScrollStart={this.handleScrollStart}
-                // onScrollStop={this.handleScrollStop}
-                // onUpdate={this.handleUpdate}
-                // renderView={this.renderView}
-                // renderTrackHorizontal={this.renderTrackHorizontal}
-                // renderTrackVertical={this.renderTrackVertical}
-                // renderThumbHorizontal={this.renderThumbHorizontal}
-                // renderThumbVertical={this.renderThumbVertical}
-                // autoHide
-                // autoHideTimeout={1000}
-                // autoHideDuration={200}
-                // thumbMinSize={30}
-                // universal={true}
-                // {...this.props}
-                > 
+           
             <div className="index">
 
                 <div className="top">
                     
                     <div className="games">
                         <h2 id="list-head">Open Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
-                           </h2> 
-                            <Scrollbars 
-                                onScroll={this.handleScroll}
-                                onScrollFrame={this.handleScrollFrame}
-                                onScrollStart={this.handleScrollStart}
-                                onScrollStop={this.handleScrollStop}
-                                onUpdate={this.handleUpdate}
-                                renderView={this.renderView}
-                                renderTrackHorizontal={this.renderTrackHorizontal}
-                                renderTrackVertical={this.renderTrackVertical}
-                                renderThumbHorizontal={this.renderThumbHorizontal}
-                                renderThumbVertical={this.renderThumbVertical}
-                                autoHide
-                                autoHideTimeout={1000}
-                                autoHideDuration={200}
-                                thumbMinSize={30}
-                                universal={true}
-                                {...this.props}>
-                        <div className="game-list">
+                           </h2>
+                    <div className="game-list">
                         {unset_games.map( game => 
                             <div className="game-list-item">
                                 <ul className={game._id}><div className="num-circle">
@@ -168,28 +131,10 @@ class Courts extends Component {
                             <h2 id="list-foot"> &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
                            </h2>
                         </div>
-                        </Scrollbars>
                     </div>
 
                     <div className="games">
                         <h2 id="list-head">Set Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;</h2>
-                            <Scrollbars 
-                                onScroll={this.handleScroll}
-                                onScrollFrame={this.handleScrollFrame}
-                                onScrollStart={this.handleScrollStart}
-                                onScrollStop={this.handleScrollStop}
-                                onUpdate={this.handleUpdate}
-                                renderView={this.renderView}
-                                renderTrackHorizontal={this.renderTrackHorizontal}
-                                renderTrackVertical={this.renderTrackVertical}
-                                renderThumbHorizontal={this.renderThumbHorizontal}
-                                renderThumbVertical={this.renderThumbVertical}
-                                autoHide
-                                autoHideTimeout={1000}
-                                autoHideDuration={200}
-                                thumbMinSize={30}
-                                universal={true}
-                                {...this.props}>
                             <div className="set-game-list">
                                 {set_games.map(game =>
                                     <div className="game-list-item">
@@ -207,7 +152,6 @@ class Courts extends Component {
                                 <h2 id="list-foot"> &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
                             </h2>
                             </div>
-                        </Scrollbars>
                     </div>
                     
                     <div className="map">
@@ -297,7 +241,7 @@ class Courts extends Component {
                 <p className="ng-btn" onClick={this.createGameModal}>
                     New Game</p> 
             </div>
-                </Scrollbars>
+             
         
         )}
 }

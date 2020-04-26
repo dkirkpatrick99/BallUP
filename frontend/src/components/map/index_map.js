@@ -48,10 +48,12 @@ export class IndexMap extends Component {
     }
 
     onMarkerClick(game) {
+        
         let elmnt = document.getElementById("list-head");
         let itemY = $(`.${game._id}`).offset().top - 
             $(`.navbar`).height() - elmnt.clientHeight;
         let listHeight = $(".game-list").height();
+        debugger;
         
         if (this.clicked !== game._id) {
             $(`.highlight-item`).removeClass("highlight-item");
@@ -71,7 +73,7 @@ export class IndexMap extends Component {
         let elmnt = document.getElementById("list-head");
         let itemY = $(`.${game._id}`).offset().top -
             $(`.navbar`).height() - elmnt.clientHeight;
-        let listHeight = $(".game-list").height();
+        let listHeight = $(".set-game-list").height();
 
         if (this.clicked !== game._id) {
             $(`.highlight-item`).removeClass("highlight-item");
