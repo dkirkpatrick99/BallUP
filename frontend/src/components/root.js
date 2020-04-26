@@ -17,7 +17,6 @@ const Root = ({ store }) => (
                 autoHeightMax={200}
                 thumbMinSize={30}
                 universal={true}
-                {...this.props}>
                 >
                 <App />
             </Scrollbars>
