@@ -16,10 +16,10 @@
   } */
    
   /* Handle */
-  /* .game-list::-webkit-scrollbar-thumb {
+  .game-list::-webkit-scrollbar-thumb {
     background: #a9a471; 
     border-radius: 10px;
-  } */
+  }
   
   /* Handle on hover */
   /* ::-webkit-scrollbar-thumb:hover {
@@ -72,6 +72,10 @@
     max-width: 100%;
     overflow-x: hidden;
     -ms-overflow-style: none;
+}
+
+.scrollbar {
+    height: inherit;
 }
 
 .game-list::-webkit-scrollbar {
@@ -324,4 +328,8 @@ body {
     z-index: 2500;
     width: 100%;
     height: 100%;
+}
+
+.scrollbar {
+    height: 100vh;
 }

@@ -10,7 +10,7 @@ const Root = ({ store }) => (
             <Scrollbars 
                 style={{ height: "100vh"}}
                 autoHide
-                autoHideTimeout={1000}
+                autoHideTimeout={500}
                 autoHideDuration={200}
                 thumbMinSize={30}
                 universal={true}

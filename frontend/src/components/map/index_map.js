@@ -53,7 +53,6 @@ export class IndexMap extends Component {
         let itemY = $(`.${game._id}`).offset().top - 
             $(`.navbar`).height() - elmnt.clientHeight;
         let listHeight = $(".game-list").height();
-        debugger;
         
         if (this.clicked !== game._id) {
             $(`.highlight-item`).removeClass("highlight-item");
