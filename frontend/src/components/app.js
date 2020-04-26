@@ -13,19 +13,24 @@ import CourtsContainer from './index/courts_container';
 import GeocodeContainer from './map/geocoding_container'
 import { IndexMap } from './map/index_map';
 
+
+
 const App = () => {
     return (<div>
         <NavBarContainer />
-        <Switch>
-            <ProtectedRoute path="/games/:gameId" component={GameShowContainer}/>
-            <ProtectedRoute path="/setgames/:gameId" component={SetGameShowContainer}/>
-            <Route path="/map/geocode" component={GeocodeContainer} />
-            <AuthRoute exact path="/login" component={LoginFormContainer} />
-            <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <ProtectedRoute exact path="/games" component={CourtsContainer} />
-            <AuthRoute path="/" component={SplashPage} />
-            <AuthRoute exact path="/indexmap" component={IndexMap} />
-        </Switch>
+        
+            <Switch>
+                <ProtectedRoute path="/games/:gameId" component={GameShowContainer}/>
+                <ProtectedRoute path="/setgames/:gameId" component={SetGameShowContainer}/>
+                <Route path="/map/geocode" component={GeocodeContainer} />
+                <AuthRoute exact path="/login" component={LoginFormContainer} />
+                <AuthRoute exact path="/signup" component={SignupFormContainer} />
+                <ProtectedRoute exact path="/games" component={CourtsContainer} />
+                <AuthRoute path="/" component={SplashPage} />
+                <AuthRoute exact path="/indexmap" component={IndexMap} />
+                
+            </Switch>
+        
     </div>)
 };
 

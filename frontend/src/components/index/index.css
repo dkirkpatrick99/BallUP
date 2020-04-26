@@ -26,16 +26,6 @@
     background: #5f5c39; 
   } */
 
-::-webkit-input-placeholder,
-::-webkit-scrollbar-thumb{
-    background-clip: padding-box;
-    border-radius: 16px;
-    border: 4px solid transparent;
-    background-color: rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    -webkit-transition: background-color 0.1s ease;
-    transition: background-color 0.1s ease;
-}
 
 
 @font-face{
@@ -77,20 +67,22 @@
 
 .game-list {
     height: inherit;
-    overflow-y: auto;
+    overflow-y: scroll;
+    overflow-y: overlay;
     max-width: 100%;
     overflow-x: hidden;
     -ms-overflow-style: none;
 }
 
-/* .game-list::-webkit-scrollbar {
+.game-list::-webkit-scrollbar {
   display: none;
-} */
+}
 
 .set-game-list {
     height: inherit;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
+    overflow-y: overlay;
     max-width: 100%;
     -ms-overflow-style: none;
 }

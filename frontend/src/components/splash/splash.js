@@ -4,6 +4,7 @@ import LoginContainer from '../session/login_form_container';
 import SignupContainer from '../session/signup_form_container';
 import $ from 'jquery';
 
+
 class Splash extends React.Component {
     constructor(props) {
         super(props);
@@ -50,6 +51,7 @@ class Splash extends React.Component {
     render(){
 
         return (
+            
             <div className="splash">
             <div className="hero">
             </div>
