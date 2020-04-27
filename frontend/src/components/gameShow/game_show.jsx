@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import GameShowPlayer from './game_show_player';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 import MapContainer from '../map/map';
-// import MapContain from '../map/geocoding'
 import './show.css';
 import { teamNames1, teamNames2 } from './team_names'
 import $ from 'jquery'
@@ -25,7 +24,6 @@ class GameShow extends React.Component {
         this.state.teamNames[this.teamKey] = ['team 1', 'team2']
         this.firstTeam = '';
         this.secondTeam = '';
-        this.increment = this.increment.bind(this);
     }
 
     componentDidMount() {
@@ -33,11 +31,9 @@ class GameShow extends React.Component {
         this.props.getGame(this.props.match.params.gameId);
         this.props.getUsers();
         this.props.getUser();
-        // localStorage.removeItem(`${this.state.id}`);
         
 
         let gameId = this.state.id;
-        // let currCount = localStorage.getItem(`${this.state.id}`) || this.state.count[gameId];
         let teams = localStorage.getItem(`${this.state.id}`) ||
          this.state.players[gameId];
         let teamNames = localStorage.getItem(`${this.teamKey}`) || 
@@ -58,13 +54,6 @@ class GameShow extends React.Component {
             this.state.players[this.state.id] = teams;
             this.setState({ players: this.state.players})
         }
-        // if (typeof currCount === "string"){ 
-        //     this.state.count[this.state.id] = JSON.parse(currCount);
-        //     this.setState({ count: this.state.count})
-        // } else {
-        //     this.state.count[this.state.id] = currCount;
-        //     this.setState({ count: this.state.count})
-        // }
     }
 
     addPlayer(e) {
@@ -98,11 +87,11 @@ class GameShow extends React.Component {
     };
 
     startGame(e) {
-     e.preventDefault();
+        e.preventDefault();
         if (this.state.game.players.length === 10) {
-
             if (this.state.game.game_set != undefined) {
                 this.state.game.game_set = true;
+                this.setState({ game: this.state.game })
                 this.props.updateGame(this.state.game);
             }
 
@@ -191,7 +180,10 @@ class GameShow extends React.Component {
             localStorage.setItem(`${this.state.id}`, 
             JSON.stringify(this.state.players[this.state.id]))
             this.setState({ [this.state.id]: this.state.count[this.state.id] })
-            setTimeout(() => { this.props.history.push(`/setgames/${this.state.id}`) }, 1500);
+            
+            
+            this.props.history.push(`/setgames/${this.state.id}`)
+            // setTimeout(() => { this.props.history.push(`/setgames/${this.state.id}`) }, 4500);
             
         }
     }
@@ -206,16 +198,6 @@ class GameShow extends React.Component {
         
     }
 
-    increment (e) {
-        e.preventDefault();
-        // const { count } = this.state;
-        this.state.count[this.state.id]++;
-        // localStorage.setItem(`${this.state.id}`, JSON.stringify(this.state.count[[this.state.id]]))
-        // this.setState({ [this.state.id]: this.state.count[this.state.id]})
-        // this.state.count++;
-        // this.props.updateGame(this.state.count);
-    }
-
 
     render() {
         
@@ -228,27 +210,6 @@ class GameShow extends React.Component {
                 this.state.game = game;
             }
         });
-
-    // if (game.players.length === 10) {
-    //     document.getElementsByClassName("add-player").style.display = "none";
-    //     document.getElementsByClassName("full-game").style.display = "block";
-    //     document.getElementsByClassName("owner-button").style.display = "none";
-    // } 
-    
-    // if (game.players.includes(this.props.player)){
-    //     document.getElementsByClassName("add-player").style.display = "none";
-    //     document.getElementsByClassName("remove-player").style.display = "block";
-    // }
-
-    // if (game.players.first === this.props.player) {
-    //     document.getElementsByClassName("add-player").style.display = "none";
-    //     document.getElementsByClassName("remove-player").style.display = "none";
-    //     document.getElementsByClassName("owner-button").style.display = "block";
-    // } else {
-    //     document.getElementsByClassName("owner-button").style.display = "none";
-    // }
-    
-
         return (
 
             <div className="show">
@@ -256,26 +217,8 @@ class GameShow extends React.Component {
                 <div className="flex-vid">
                     <div className="video-box">
                         <video id="pickup-vid" playsInline autoPlay loop muted>
-                            <source src="pickupBball2.mp4" type="video/mp4" />
+                            <source src='pickupBball2.mp4' type="video/mp4" />
                         </video>
-                        {/* <div className="vid-objects">
-                            <div className="game-info">
-                                <h2>{game.title}</h2>
-                                <h2>{game.location}</h2>
-                                <h2>{game.time}</h2>
-                                <h2>{game.game_date}</h2>
-                            </div>
-                            <div className="players">
-                                <ul id="player-names">
-                                    <h2>Players</h2>
-                                    {
-                                        game.players.map((player) => 
-                                        <GameShowPlayer player={player} />)
-                                    }
-                                </ul>
-
-                            </div>
-                    </div> */}
                     </div>
                     <div className="middle-content">
                         <div className="showbox">
@@ -321,39 +264,12 @@ class GameShow extends React.Component {
                                 </div>
 
                                 <div className="team1">
-                                    {/* <ul>
-                                        <h1>
-                                        {this.state.teamNames[this.teamKey][0]}
-                                        </h1>
-                                        {
-                                        Object.keys(
-                                            this.state.players[this.state.id][0]).map(position =>
-                                            <li>{position} | @
-                                            {this.state.players[this.state.id][0][position]}
-                                            </li>)
-                                        }
-                                    </ul> */}
                                     <h1>Game Set</h1>
                                 </div>
-                                {/* <div className="vs">VS.</div>
-                                <div className="team2">
-                                    <ul>
-                                        <h1>{this.state.teamNames[this.teamKey][1]}</h1>
-                                        {
-                                            Object.keys(
-                                                this.state.players[this.state.id][1]).map(position =>
-                                                    <li>{position} | @
-                                            {this.state.players[this.state.id][1][position]}
-                                                
-                                                    </li>)
-                                        }
-                                    </ul>
-                                </div> */}
                                
                             </div>
                         </div>
                         <div className="buttons">                           
-                                    {/* <button className="full-game">This Game Is Full!</button> */}
                                 <button className="add-player player-button"
                                     onClick={this.addPlayer}>Join This Game</button>
                                 <button className="remove-player player-button"
@@ -365,19 +281,6 @@ class GameShow extends React.Component {
                         </div>
                     </div>
                 </div>
-              
-                {/* <h1>{this.props.games.length}</h1> */}
-                {/* <h1>This is how many people are on each team {this.state.players.length}</h1> */}
-                {/* <div>
-                        <p>You clicked {this.state.count[this.state.id]} times</p>
-                        <button id="boo" onClick={this.increment}>
-                            Click me
-                        </button>
-                </div> */}
-
-                    {/* <div >
-                        <MapContain />
-                    </div> */}
             </div>
         )
     }

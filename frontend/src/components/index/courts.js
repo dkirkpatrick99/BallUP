@@ -20,12 +20,10 @@ class Courts extends Component {
             time: '',
             game_date: '',
             game_set: false,
-            lat: 0,
-            lng: 0
+            video: 'pickupBball2.mp4'
         };
         this.handleSumbit= this.handleSumbit.bind(this);
         this.createGameModal= this.createGameModal.bind(this);
-        this.setCoords= this.setCoords.bind(this);
         
 
     }
@@ -47,8 +45,7 @@ class Courts extends Component {
             game_date: this.state.game_date,
             players: [],
             game_set: false,
-            lat: this.state.lat,
-            lng: this.state.lng 
+            video: 'pickupBball2.mp4'
         };
 
 
@@ -56,27 +53,6 @@ class Courts extends Component {
             .then(() => this.props.history.push('/'));
             // window.location.reload(false);
     }
-
-    setCoords(address) {
-        
-        let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s`;
-
-
-        fetch(url)
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                
-                this.state.lat = data.results[0].geometry.location.lat;
-                this.state.lng = data.results[0].geometry.location.lng;
-                
-                this.setState({ lat: this.state.lat })
-                this.setState({ lng: this.state.lng })
-
-            });
-    }
-
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -176,7 +152,6 @@ class Courts extends Component {
                    <h1>Create a New Game</h1>
                     <form onSubmit={ (e) => {
                         e.preventDefault();
-                        this.setCoords(this.state.location)
                         this.handleSumbit()
                     }}>
                         <input type="text"

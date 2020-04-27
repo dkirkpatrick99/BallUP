@@ -32,11 +32,8 @@ const GameSchema = new Schema({
     game_set: {
       type: Boolean
     },
-    lat: {
-      type: Number
-    },
-    lng: {
-      type: Number
+    video: {
+      type: String
     }
   })
 

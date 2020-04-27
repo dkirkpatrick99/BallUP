@@ -25,7 +25,8 @@ class SetGameShow extends React.Component {
         this.state.teamNames[this.teamKey] = ['team 1', 'team2']
         this.firstTeam = '';
         this.secondTeam = '';
-        this.increment = this.increment.bind(this);
+        this.video = 'tipoff2.mp4';
+        this.changeVideo = this.changeVideo.bind(this);
     }
 
     componentDidMount() {
@@ -33,11 +34,8 @@ class SetGameShow extends React.Component {
         this.props.getGame(this.props.match.params.gameId);
         this.props.getUsers();
         this.props.getUser();
-        // localStorage.removeItem(`${this.state.id}`);
-        
 
         let gameId = this.state.id;
-        // let currCount = localStorage.getItem(`${this.state.id}`) || this.state.count[gameId];
         let teams = localStorage.getItem(`${this.state.id}`) ||
          this.state.players[gameId];
         let teamNames = localStorage.getItem(`${this.teamKey}`) || 
@@ -58,13 +56,6 @@ class SetGameShow extends React.Component {
             this.state.players[this.state.id] = teams;
             this.setState({ players: this.state.players})
         }
-        // if (typeof currCount === "string"){ 
-        //     this.state.count[this.state.id] = JSON.parse(currCount);
-        //     this.setState({ count: this.state.count})
-        // } else {
-        //     this.state.count[this.state.id] = currCount;
-        //     this.setState({ count: this.state.count})
-        // }
     }
 
     addPlayer(e) {
@@ -96,6 +87,11 @@ class SetGameShow extends React.Component {
         this.state.game.players = newPlayers;
         this.props.updateGame(this.state.game);
     };
+
+    changeVideo() {
+        
+        this.video = 'pickupBball2.mp4';
+    }
 
     startGame(e) {
      e.preventDefault();
@@ -190,22 +186,12 @@ class SetGameShow extends React.Component {
 
     endGame(e) {
         e.preventDefault();
-        if (this.props.player.id == this.state.game.players[0]._id) {
+        // if (this.props.player.id == this.state.game.players[0]._id) {
             this.props.removeGame(this.state.game._id)
                 .then(() => this.props.history.push('/'));
-        }
+        // }
         
         
-    }
-
-    increment (e) {
-        e.preventDefault();
-        // const { count } = this.state;
-        this.state.count[this.state.id]++;
-        // localStorage.setItem(`${this.state.id}`, JSON.stringify(this.state.count[[this.state.id]]))
-        // this.setState({ [this.state.id]: this.state.count[this.state.id]})
-        // this.state.count++;
-        // this.props.updateGame(this.state.count);
     }
 
     render() {
@@ -220,25 +206,6 @@ class SetGameShow extends React.Component {
             }
         });
 
-    // if (game.players.length === 10) {
-    //     document.getElementsByClassName("add-player").style.display = "none";
-    //     document.getElementsByClassName("full-game").style.display = "block";
-    //     document.getElementsByClassName("owner-button").style.display = "none";
-    // } 
-    
-    // if (game.players.includes(this.props.player)){
-    //     document.getElementsByClassName("add-player").style.display = "none";
-    //     document.getElementsByClassName("remove-player").style.display = "block";
-    // }
-
-    // if (game.players.first === this.props.player) {
-    //     document.getElementsByClassName("add-player").style.display = "none";
-    //     document.getElementsByClassName("remove-player").style.display = "none";
-    //     document.getElementsByClassName("owner-button").style.display = "block";
-    // } else {
-    //     document.getElementsByClassName("owner-button").style.display = "none";
-    // }
-
 
         return (
 
@@ -246,27 +213,9 @@ class SetGameShow extends React.Component {
 
                 <div className="flex-vid">
                     <div className="video-box">
-                        <video id="pickup-vid" autoPlay loop muted>
-                            <source src="pickupBball2.mp4" type="video/mp4" />
+                        <video id="tipoff-vid" playsInline autoPlay loop muted>
+                            <source src={this.video} type="video/mp4" />
                         </video>
-                        {/* <div className="vid-objects">
-                            <div className="game-info">
-                                <h2>{game.title}</h2>
-                                <h2>{game.location}</h2>
-                                <h2>{game.time}</h2>
-                                <h2>{game.game_date}</h2>
-                            </div>
-                            <div className="players">
-                                <ul id="player-names">
-                                    <h2>Players</h2>
-                                    {
-                                        game.players.map((player) => 
-                                        <GameShowPlayer player={player} />)
-                                    }
-                                </ul>
-
-                            </div>
-                    </div> */}
                     </div>
                     <div className="middle-content">
                         <div className="showbox">
@@ -290,26 +239,6 @@ class SetGameShow extends React.Component {
                             </div>
 
                             <div className="showbox-right">
-                                {/* <div className="grid">
-                                    <div id="playes"><div>
-                                        <div id="p-title">Players</div></div>
-                                        {game.players.map((player) =>
-                                            <div > <div id="player">
-                                                @<GameShowPlayer
-                                                player={player} /></div>
-                                            </div>
-                                        )}
-                                    </div>
-                                    <div><div><div id="r-title">Rating
-                                    </div></div>
-                                        {game.players.map((player) =>
-                                            <div ><div id="rating"><img id="ball"
-                                                src="ball.png" alt="" /><div 
-                                                id="r-num">4.5</div></div>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div> */}
 
                                 <div className="team1-b">
                                     <ul>
@@ -339,26 +268,9 @@ class SetGameShow extends React.Component {
                                         }
                                     </ul>
                                 </div>
-                                {/* <div>
-                                <h1>{this.firstTeam}</h1>
-                                <ul>
-                                    {
-                                        Object.keys(this.state.players[0]).map(position =>
-                                            <li>{this.state.players[0][position]} {position}</li>)
-                                    }
-                                </ul>
-                                <h1>{this.secondTeam}</h1>
-                                <ul>
-                                    {
-                                        Object.keys(this.state.players[1]).map(position =>
-                                            <li>{this.state.players[1][position]} {position}</li>)
-                                    }
-                                </ul>
-                                </div> */}
                             </div>
                         </div>
                         <div className="buttons">                           
-                                    {/* <button className="full-game">This Game Is Full!</button> */}
                                 <button className="add-player player-button"
                                     onClick={this.addPlayer}>Join This Game</button>
                                 <button className="remove-player player-button"
@@ -370,15 +282,6 @@ class SetGameShow extends React.Component {
                         </div>
                     </div>
                 </div>
-              
-                {/* <h1>{this.props.games.length}</h1> */}
-                {/* <h1>This is how many people are on each team {this.state.players.length}</h1> */}
-                {/* <div>
-                        <p>You clicked {this.state.count[this.state.id]} times</p>
-                        <button id="boo" onClick={this.increment}>
-                            Click me
-                        </button>
-                </div> */}
             </div>
         )
     }
