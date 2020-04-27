@@ -88,7 +88,7 @@ class GameShow extends React.Component {
 
     startGame(e) {
         e.preventDefault();
-        if (this.state.game.players.length === 10) {
+        // if (this.state.game.players.length === 10) {
             if (this.state.game.game_set != undefined) {
                 this.state.game.game_set = true;
                 this.setState({ game: this.state.game })
@@ -185,7 +185,7 @@ class GameShow extends React.Component {
             this.props.history.push(`/setgames/${this.state.id}`)
             // setTimeout(() => { this.props.history.push(`/setgames/${this.state.id}`) }, 4500);
             
-        }
+        // }
     }
 
     endGame(e) {

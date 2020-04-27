@@ -26,7 +26,7 @@ class SetGameShow extends React.Component {
         this.firstTeam = '';
         this.secondTeam = '';
         this.video = 'tipoff2.mp4';
-        this.changeVideo = this.changeVideo.bind(this);
+        // this.changeVideo = this.changeVideo.bind(this);
     }
 
     componentDidMount() {
@@ -34,7 +34,6 @@ class SetGameShow extends React.Component {
         this.props.getGame(this.props.match.params.gameId);
         this.props.getUsers();
         this.props.getUser();
-
         let gameId = this.state.id;
         let teams = localStorage.getItem(`${this.state.id}`) ||
          this.state.players[gameId];
@@ -56,6 +55,7 @@ class SetGameShow extends React.Component {
             this.state.players[this.state.id] = teams;
             this.setState({ players: this.state.players})
         }
+
     }
 
     addPlayer(e) {
@@ -88,9 +88,11 @@ class SetGameShow extends React.Component {
         this.props.updateGame(this.state.game);
     };
 
-    changeVideo() {
+    changeVideo(e) {
+        e.preventDefault();
+        $(".video-box").addClass("video-box-b");
+        $(".video-box2").addClass("video-box2-b");
         
-        this.video = 'pickupBball2.mp4';
     }
 
     startGame(e) {
@@ -212,9 +214,14 @@ class SetGameShow extends React.Component {
             <div className="show">
 
                 <div className="flex-vid">
-                    <div className="video-box">
-                        <video id="tipoff-vid" playsInline autoPlay loop muted>
-                            <source src={this.video} type="video/mp4" />
+                    <div className="video-box" id="video-box" onClick={this.changeVideo}>
+                        <video id="tipoff-vid" onEnded={this.changeVideo} playsInline autoPlay  muted>
+                            <source id="vid-src" src='tipoff2.mp4' type="video/mp4" />
+                        </video>
+                    </div>
+                    <div className="video-box2" id="video-box" >
+                        <video id="tipoff-vid" onEnded={this.changeVideo} playsInline autoPlay loop  muted>
+                            <source id="vid-src" src='pickupBball2.mp4' type="video/mp4" />
                         </video>
                     </div>
                     <div className="middle-content">
