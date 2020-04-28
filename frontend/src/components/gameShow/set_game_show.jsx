@@ -39,6 +39,8 @@ class SetGameShow extends React.Component {
          this.state.players[gameId];
         let teamNames = localStorage.getItem(`${this.teamKey}`) || 
         this.state.teamNames;
+        $(".gs-title-a").addClass("gs-title")
+        $(".gs-title-a").removeClass(".gs-title-a")
 
         if (typeof teamNames === "string") {
             this.state.teamNames[this.teamKey] = JSON.parse(teamNames);
@@ -212,6 +214,9 @@ class SetGameShow extends React.Component {
         return (
 
             <div className="show">
+                <div className="title-div">
+                    <h1 className="gs-title">&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0; Game Set &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;</h1>
+                </div>
 
                 <div className="flex-vid">
                     <div className="video-box" id="video-box" onClick={this.changeVideo}>

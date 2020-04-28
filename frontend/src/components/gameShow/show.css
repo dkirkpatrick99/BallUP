@@ -350,6 +350,9 @@
     color: black;
     outline-style: none;
     font-size: 1vw;
+    height: 1.15vw;
+    overflow: hidden;
+    padding: 0%;
 }
 
 .buttons button:hover {
@@ -361,4 +364,49 @@
 #boo {
     z-index: 67;
     position: absolute;
+}
+
+.title-div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 9vh;
+    margin: 0%;
+    position: absolute;
+    z-index: 45;
+}
+.gs-title {
+    background: none;
+    position: absolute;
+    z-index: 3;
+    margin: 0%;
+    font-family: "Berthold Regular";
+    color: white;
+    font-size: 3vw;
+    margin-top: 1.5%;
+    right: 1%;
+    transform: translateX(102%);
+    animation-name: slide;
+    animation-duration: 0.411s;
+    animation-fill-mode: forwards;
+    animation-delay: 2.5s;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(102%);
+        width: 100%;
+        overflow: hidden;
+        }
+    to {
+        transform: translateX(65%);
+        width: 100%;
+        overflow: hidden;
+        }
+}
+
+.btn-1 {
+    object-fit: contain;
 }
