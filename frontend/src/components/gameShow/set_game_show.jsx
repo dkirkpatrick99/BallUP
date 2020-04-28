@@ -26,7 +26,7 @@ class SetGameShow extends React.Component {
         this.firstTeam = '';
         this.secondTeam = '';
         this.video = 'tipoff2.mp4';
-        // this.changeVideo = this.changeVideo.bind(this);
+        this.changeVideo = this.changeVideo.bind(this);
     }
 
     componentDidMount() {
@@ -94,6 +94,10 @@ class SetGameShow extends React.Component {
         e.preventDefault();
         $(".video-box").addClass("video-box-b");
         $(".video-box2").addClass("video-box2-b");
+        $(".team1").addClass("team1-b");
+        $(".vs").addClass("vs-b");
+        $(".team2").addClass("team2-b");
+        $(".sneaks").addClass("sneaks-b");
         
     }
 
@@ -190,10 +194,10 @@ class SetGameShow extends React.Component {
 
     endGame(e) {
         e.preventDefault();
-        // if (this.props.player.id == this.state.game.players[0]._id) {
+        if (this.props.player.id == this.state.game.players[0]._id) {
             this.props.removeGame(this.state.game._id)
                 .then(() => this.props.history.push('/'));
-        // }
+        }
         
         
     }
@@ -251,8 +255,9 @@ class SetGameShow extends React.Component {
                             </div>
 
                             <div className="showbox-right">
+                                <img className="sneaks" src="shoes512.png" alt=""/>
 
-                                <div className="team1-b">
+                                <div className="team1">
                                     <ul>
                                         <h1>
                                         {this.state.teamNames[this.teamKey][0]}
@@ -266,8 +271,8 @@ class SetGameShow extends React.Component {
                                         }
                                     </ul>
                                 </div>
-                                <div className="vs-b">VS.</div>
-                                <div className="team2-b">
+                                <div className="vs">VS.</div>
+                                <div className="team2">
                                     <ul>
                                         <h1>{this.state.teamNames[this.teamKey][1]}</h1>
                                         {
@@ -282,15 +287,32 @@ class SetGameShow extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="buttons">                           
-                                <button className="add-player player-button"
-                                    onClick={this.addPlayer}>Join This Game</button>
-                                <button className="remove-player player-button"
-                                    onClick={this.removePlayer}>Leave This Game</button>
-                                <button className="owner-button start-game"
-                                    onClick={this.startGame}>Select Teams</button>
-                                <button className="owner-button cancel-game"
-                                    onClick={this.endGame}>Cancel Game</button>
+                        <div className="buttons2">                           
+                                <button 
+                                // className="add-player player-button"
+                                // onClick={this.addPlayer}
+                                ><video id="first-rib" playsInline autoPlay muted>
+                                    <source id="vid-src" src='scoreboard-ribbonFinal.mp4' type="video/mp4" />
+                                </video></button>
+                                <button 
+                                // className="remove-player player-button"
+                                // onClick={this.removePlayer}
+                                ><video id="second-rib" playsInline autoPlay muted>
+                                    <source id="vid-src" src='scoreboard-ribbonFinal.mp4' type="video/mp4" />
+                                </video></button>
+                                <button 
+                                // className="owner-button start-game"
+                                // onClick={this.startGame}
+                                ><video id="third-rib" playsInline autoPlay muted>
+                                    <source id="vid-src" src='scoreboard-ribbonFinal.mp4' type="video/mp4" />
+                                </video> </button>
+                                <button 
+                                // className="owner-button cancel-game"
+                                //     onClick={this.endGame}
+                                    >
+                                <video id="bottom-rib"  playsInline autoPlay muted>
+                                    <source id="vid-src" src='scoreboard-ribbonFinal.mp4' type="video/mp4" />
+                                </video> </button>
                         </div>
                     </div>
                 </div>
