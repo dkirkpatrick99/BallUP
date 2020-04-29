@@ -457,7 +457,7 @@
 
 .sneaks {
     width: 100%;
-    opacity: 80%;
+    opacity: 0.8;
     animation-name: scale;
     animation-duration: 10s;
     animation-fill-mode: forwards;
@@ -467,13 +467,11 @@
     from {
         transform: scale(1);
         width: 100%;
-        opacity: 80%;
         overflow: hidden;
         }
     to {
         transform: scale(1.145);
         width: 100%;
-        opacity: 80%;
         overflow: hidden;
         }
 }
