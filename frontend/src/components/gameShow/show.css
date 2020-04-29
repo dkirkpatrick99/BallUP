@@ -457,7 +457,7 @@
 
 .sneaks {
     width: 100%;
-    opacity: 80%;
+    opacity: 100;
     animation-name: scale;
     animation-duration: 10s;
     animation-fill-mode: forwards;
