@@ -17,6 +17,9 @@ class Courts extends Component {
         this.state = {
             title: '',
             location: '',
+            hr: '',
+            min: '',
+            ampm: '',
             time: '',
             game_date: '',
             game_set: false,
@@ -37,6 +40,7 @@ class Courts extends Component {
 
     handleSumbit() {
         
+        this.state.time = `${this.state.hr}${this.state.min} ${this.state.ampm}`
         let game = {
             
             title: this.state.title,
@@ -169,33 +173,39 @@ class Courts extends Component {
                             onChange={this.update('time')}
                             placeholder="Time"
                         /> */}
-                        <select name={this.state.time} onChange={this.update('time')} placeholder="Time">
-                            <option selected disabled>Choose Time</option>
-                            <option value="1:00 pm">1:00 pm</option>
-                            <option value="2:00 pm">2:00 pm</option>
-                            <option value="3:00 pm">3:00 pm</option>
-                            <option value="4:00 pm">4:00 pm</option>
-                            <option value="5:00 pm">5:00 pm</option>
-                            <option value="6:00 pm">6:00 pm</option>
-                            <option value="7:00 pm">7:00 pm</option>
-                            <option value="8:00 pm">8:00 pm</option>
-                            <option value="9:00 pm">9:00 pm</option>
-                            <option value="10:00 pm">10:00 pm</option>
-                            <option value="11:00 pm">11:00 pm</option>
-                            <option value="12:00 pm">12:00 pm</option>
-                            <option value="1:00 am">1:00 am</option>
-                            <option value="2:00 am">2:00 am</option>
-                            <option value="3:00 am">3:00 am</option>
-                            <option value="4:00 am">4:00 am</option>
-                            <option value="5:00 am">5:00 am</option>
-                            <option value="6:00 am">6:00 am</option>
-                            <option value="7:00 am">7:00 am</option>
-                            <option value="8:00 am">8:00 am</option>
-                            <option value="9:00 am">9:00 am</option>
-                            <option value="10:00 am">10:00 am</option>
-                            <option value="11:00 am">11:00 am</option>
-                            <option value="12:00 am">12:00 am</option>
+                        <div className="time-line">
+                        <select name={this.state.time} 
+                            onChange={this.update('hr')}>
+                            <option selected disabled>Hr</option>
+                            <option value="1:">1:</option>
+                            <option value="2:">2:</option>
+                            <option value="3:">3:</option>
+                            <option value="4:">4:</option>
+                            <option value="5:">5:</option>
+                            <option value="6:">6:</option>
+                            <option value="7:">7:</option>
+                            <option value="8:">8:</option>
+                            <option value="9:">9:</option>
+                            <option value="10:">10:</option>
+                            <option value="11:">11:</option>
+                            <option value="12:">12:</option>
                         </select>
+                     
+                            <select name={this.state.time} 
+                                onChange={this.update('min')}>
+                                <option selected disabled>Min</option>
+                                <option value="00">00</option>
+                                <option value="15">15</option>
+                                <option value="30">30</option>
+                                <option value="45">45</option>
+                            </select>
+                        
+                        <select name={this.state.time} onChange={this.update('ampm')} >
+                            <option selected disabled>AM/PM</option>
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                        </div>
                         {/* <input type="text"
                             value={this.state.game_date}
                             onChange={this.update('game_date')}

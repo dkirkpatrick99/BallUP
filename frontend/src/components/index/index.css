@@ -308,7 +308,21 @@
     border-radius: 4px;
     background-color: black;
     color: white;
-} 
+}
+
+
+.time-line {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+}
+
+.time-line select:first-child {
+    width: 40px;
+}
+.time-line select:nth-child(2) {
+    width: 40px;
+}
 
 body {
     max-width: 100%;
