@@ -54,7 +54,9 @@
 
 .games {
     width: 15vw;
-    background-image: linear-gradient( rgb(73, 73, 73),  rgb(73, 73, 73), rgb(73, 73, 73));
+    background-color: rgb(73, 73, 73);
+    background-image: url('../../public/list-background.png');
+    background-size: 100%;
     /* background-color: #a9a471; */
     font-family: "Berthold Regular";
     display: flex;
@@ -245,17 +247,33 @@
 .new-game {
     display: none;
 }
+
+
 .new-game-b {
     display: block;
-    z-index: 1000;
+    z-index: 3;
     background-color: white;
     position: absolute;
     width: 200px;
     height: 138px;
     left: 30vw;
-    transform: translateY(12vh);
+    transform: translateY(18vh);
     padding-top: 2vh;
     padding-bottom: 2vh;
+    animation-name: slide-out;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateY(18vh) translateX(-200px);
+        overflow: hidden;
+        }
+    to {
+        transform: translateY(18vh) translateX(0px);
+        overflow: hidden;
+        }
 }
 
 .new-game-b form {

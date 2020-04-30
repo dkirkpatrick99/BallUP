@@ -194,10 +194,10 @@ class SetGameShow extends React.Component {
 
     endGame(e) {
         e.preventDefault();
-        if (this.props.player.id == this.state.game.players[0]._id) {
+        // if (this.props.player.id == this.state.game.players[0]._id) {
             this.props.removeGame(this.state.game._id)
                 .then(() => this.props.history.push('/'));
-        }
+        // }
         
         
     }

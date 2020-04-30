@@ -183,7 +183,7 @@ class GameShow extends React.Component {
             
             
             this.props.history.push(`/setgames/${this.state.id}`)
-            // setTimeout(() => { this.props.history.push(`/setgames/${this.state.id}`) }, 4500);
+            
             
         }
     }
