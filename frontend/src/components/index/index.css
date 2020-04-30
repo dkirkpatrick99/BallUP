@@ -258,8 +258,8 @@
     height: 138px;
     left: 30vw;
     transform: translateY(18vh);
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+    padding-top: 10px;
+    padding-bottom: 25px;
     animation-name: slide-out;
     animation-duration: .5s;
     animation-fill-mode: forwards;
@@ -310,6 +310,15 @@
     color: white;
 }
 
+#city {
+    font-size: 12px;
+}
+
+#city-div {
+    display: flex;
+    width: 67%;
+    align-items: flex-start;
+}
 
 .time-line {
     display: flex;
@@ -365,3 +374,4 @@ body {
 .scrollbar {
     height: 100vh;
 }
+

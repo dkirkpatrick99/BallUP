@@ -40,7 +40,9 @@ class Courts extends Component {
 
     handleSumbit() {
         
-        this.state.time = `${this.state.hr}${this.state.min} ${this.state.ampm}`
+        this.state.time = `${this.state.hr}${this.state.min} ${this.state.ampm}`;
+        this.state.location = `${this.state.location} San Francisco, CA`
+       
         let game = {
             
             title: this.state.title,
@@ -166,8 +168,12 @@ class Courts extends Component {
                         <input type="text"
                             value={this.state.location}
                             onChange={this.update('location')}
-                            placeholder="location"
+                            placeholder="Street Address"
                         />
+
+                        <div id="city-div">
+                            <label id="city">San Francisco, California</label>
+                        </div>
                         {/* <input type="time"
                             value={this.state.time}
                             onChange={this.update('time')}

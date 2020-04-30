@@ -23,7 +23,18 @@ class ShowMap extends Component {
 
     pushCoords(game) {
 
-        let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${game.location}&key=AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s`;
+        let address = '';
+        for (let i = 0; i < game.location.length; i++) {
+            if (game.location[i] === '&') {
+                address += 'and';
+            } else {
+                address += game.location[i];
+            }
+        }
+
+        address += ' San Francisco, CA';
+
+        let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyA9w4yZlROGaoP6q-a338pBQU2haj_3v6s`;
 
 
         fetch(url)
