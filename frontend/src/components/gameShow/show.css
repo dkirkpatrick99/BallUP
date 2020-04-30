@@ -404,9 +404,11 @@
     align-items: flex-end;
     justify-content: flex-end;
     height: 9vh;
+    padding-bottom: 5vh;
     margin: 0%;
     position: absolute;
     z-index: 45;
+    overflow-x: hidden;
 }
 .gs-title {
     background: none;
@@ -423,6 +425,7 @@
     animation-duration: 0.411s;
     animation-fill-mode: forwards;
     animation-delay: 2.5s;
+    overflow: hidden;
 }
 
 @keyframes slide {
@@ -478,4 +481,9 @@
 
 .sneaks-b {
     display: none;
+}
+
+#root {
+    max-width: 100%;
+    overflow-x: hidden;
 }
