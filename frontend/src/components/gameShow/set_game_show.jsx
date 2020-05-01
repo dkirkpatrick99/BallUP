@@ -197,7 +197,7 @@ class SetGameShow extends React.Component {
         if (this.props.player.id == this.state.game.players[0]._id) {
             this.props.removeGame(this.state.game._id)
                 .then(() => this.props.history.push('/'));
-        }
+         }
         
         
     }
@@ -307,8 +307,8 @@ class SetGameShow extends React.Component {
                                     <source id="vid-src" src='scoreboard-ribbonFinal.mp4' type="video/mp4" />
                                 </video> </button>
                                 <button 
-                                // className="owner-button cancel-game"
-                                //     onClick={this.endGame}
+                                className="owner-button cancel-game"
+                                    onClick={this.endGame}
                                     >
                                 <video id="bottom-rib"  playsInline autoPlay muted>
                                     <source id="vid-src" src='scoreboard-ribbonFinal.mp4' type="video/mp4" />
