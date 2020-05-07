@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/dkirkpatrick99/BallUP#readme",
   "dependencies": {
+    "aws-amplify": "^3.0.10",
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",

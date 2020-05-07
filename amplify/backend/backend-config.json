@@ -1,0 +1,15 @@
+{
+	"auth": {
+		"ballupac4b9a07": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	},
+	"storage": {
+		"balluptest": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}

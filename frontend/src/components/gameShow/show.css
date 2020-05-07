@@ -487,3 +487,7 @@
     max-width: 100%;
     overflow-x: hidden;
 }
+
+#new-test {
+    width: 100%;
+}

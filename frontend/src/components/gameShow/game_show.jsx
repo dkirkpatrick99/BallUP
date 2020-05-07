@@ -4,9 +4,10 @@ import GameShowPlayer from './game_show_player';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 import MapContainer from '../map/map';
 import './show.css';
-import { teamNames1, teamNames2 } from './team_names'
-import $ from 'jquery'
-import ShowMap from '../map/show_map'
+import { teamNames1, teamNames2 } from './team_names';
+import $ from 'jquery';
+import ShowMap from '../map/show_map';
+import { Storage } from 'aws-amplify';
 
 
 class GameShow extends React.Component {
@@ -17,13 +18,14 @@ class GameShow extends React.Component {
         this.endGame = this.endGame.bind(this)
         this.startGame = this.startGame.bind(this)
         this.state = {id: this.props.match.params.gameId, game: {}, 
-        players: {}, count: {}, teamNames: {} };
+        players: {}, count: {}, teamNames: {}, fileUrl: '' };
         this.state.count[this.state.id] = 0;
         this.state.players[this.state.id] = [[], []];
         this.teamKey = `${this.state.id}teamNames`;
         this.state.teamNames[this.teamKey] = ['team 1', 'team2']
         this.firstTeam = '';
         this.secondTeam = '';
+        // this.getAsset = this.getAsset.bind(this);
     }
 
     componentDidMount() {
@@ -217,7 +219,7 @@ class GameShow extends React.Component {
                 <div className="flex-vid">
                     <div className="video-box">
                         <video id="pickup-vid" playsInline autoPlay loop muted>
-                            <source src='pickupBball2.mp4' type="video/mp4" />
+                            <source src='https://ballup-dev.s3-us-west-1.amazonaws.com/pickupBball2.mp4' type="video/mp4" />
                         </video>
                     </div>
                     <div className="middle-content">
