@@ -25,7 +25,7 @@ class SetGameShow extends React.Component {
         this.state.teamNames[this.teamKey] = ['team 1', 'team2']
         this.firstTeam = '';
         this.secondTeam = '';
-        this.video = 'tipoff2.mp4';
+        this.video = 'https://ballup-dev.s3-us-west-1.amazonaws.com/tipoff2.mp4';
         this.changeVideo = this.changeVideo.bind(this);
     }
 
@@ -213,7 +213,9 @@ class SetGameShow extends React.Component {
                 this.state.game = game;
             }
         });
-
+        let scoreboard = 'https://ballup-dev.s3-us-west-1.amazonaws.com/scoreboard-ribbonFinal.mp4';
+        let tipoff = 'https://ballup-dev.s3-us-west-1.amazonaws.com/tipoff2.mp4';
+        let pickup = 'https://ballup-dev.s3-us-west-1.amazonaws.com/pickupBball2.mp4';
 
         return (
 
@@ -225,12 +227,12 @@ class SetGameShow extends React.Component {
                 <div className="flex-vid">
                     <div className="video-box" id="video-box" onClick={this.changeVideo}>
                         <video id="tipoff-vid" onEnded={this.changeVideo} playsInline autoPlay  muted>
-                            <source id="vid-src" src='tipoff2.mp4' type="video/mp4" />
+                            <source id="vid-src" src={tipoff} type="video/mp4" />
                         </video>
                     </div>
                     <div className="video-box2" id="video-box" >
                         <video id="tipoff-vid" onEnded={this.changeVideo} playsInline autoPlay loop  muted>
-                            <source id="vid-src" src='pickupBball2.mp4' type="video/mp4" />
+                            <source id="vid-src" src={pickup} type="video/mp4" />
                         </video>
                     </div>
                     <div className="middle-content">
@@ -292,26 +294,26 @@ class SetGameShow extends React.Component {
                                 // className="add-player player-button"
                                 // onClick={this.addPlayer}
                                 ><video id="first-rib" playsInline autoPlay muted>
-                                    <source id="vid-src" src='scoreboard-ribbonFinal.mp4' type="video/mp4" />
+                                    <source id="vid-src" src={scoreboard} type="video/mp4" />
                                 </video></button>
                                 <button 
                                 // className="remove-player player-button"
                                 // onClick={this.removePlayer}
                                 ><video id="second-rib" playsInline autoPlay muted>
-                                    <source id="vid-src" src='scoreboard-ribbonFinal.mp4' type="video/mp4" />
+                                    <source id="vid-src" src={scoreboard} type="video/mp4" />
                                 </video></button>
                                 <button 
                                 // className="owner-button start-game"
                                 // onClick={this.startGame}
                                 ><video id="third-rib" playsInline autoPlay muted>
-                                    <source id="vid-src" src='scoreboard-ribbonFinal.mp4' type="video/mp4" />
+                                    <source id="vid-src" src={scoreboard} type="video/mp4" />
                                 </video> </button>
                                 <button 
                                 className="owner-button cancel-game"
                                     onClick={this.endGame}
                                     >
                                 <video id="bottom-rib"  playsInline autoPlay muted>
-                                    <source id="vid-src" src='scoreboard-ribbonFinal.mp4' type="video/mp4" />
+                                    <source id="vid-src" src={scoreboard} type="video/mp4" />
                                 </video> </button>
                         </div>
                     </div>
