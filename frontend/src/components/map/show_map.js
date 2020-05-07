@@ -17,8 +17,9 @@ class ShowMap extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        
+        if (nextProps.game.players.length){
             this.pushCoords(nextProps.game);
+        }
     }
 
     pushCoords(game) {
