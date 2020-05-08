@@ -34,6 +34,9 @@ const GameSchema = new Schema({
     },
     teams: {
       type: Array
+    },
+    teamNames: {
+      type: Array
     }
   })
 

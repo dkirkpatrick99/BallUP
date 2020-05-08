@@ -23,7 +23,8 @@ class Courts extends Component {
             time: '',
             game_date: '',
             game_set: false,
-            teams:[]
+            teams:[],
+            teamNames: []
         };
         this.handleSumbit= this.handleSumbit.bind(this);
         this.createGameModal= this.createGameModal.bind(this);
@@ -51,7 +52,8 @@ class Courts extends Component {
             game_date: this.state.game_date,
             players: [],
             game_set: false,
-            teams: []
+            teams: [],
+            teamNames: []
         };
 
 

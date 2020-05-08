@@ -18,11 +18,11 @@ class GameShow extends React.Component {
         this.endGame = this.endGame.bind(this)
         this.startGame = this.startGame.bind(this)
         this.state = {id: this.props.match.params.gameId, game: {}, 
-        players: {}, count: {}, teamNames: {}, fileUrl: '' };
+        players: {}, count: {}, fileUrl: '' };
         this.state.count[this.state.id] = 0;
         this.state.players[this.state.id] = [[], []];
-        this.teamKey = `${this.state.id}teamNames`;
-        this.state.teamNames[this.teamKey] = ['team 1', 'team2']
+        // this.teamKey = `${this.state.id}teamNames`;
+        // this.state.game.teamNames[this.teamKey] = ['team 1', 'team2']
         this.firstTeam = '';
         this.secondTeam = '';
     }
@@ -40,21 +40,21 @@ class GameShow extends React.Component {
         let teamNames = localStorage.getItem(`${this.teamKey}`) || 
         this.state.teamNames;
 
-        if (typeof teamNames === "string") {
-            this.state.teamNames[this.teamKey] = JSON.parse(teamNames);
-            this.setState({ teamNames: this.state.teamNames })
-        } else {
-            this.state.players[this.teamKey] = teamNames;
-            this.setState({ players: this.state.teamNames })
-        }
+        // if (typeof teamNames === "string") {
+        //     this.state.teamNames[this.teamKey] = JSON.parse(teamNames);
+        //     this.setState({ teamNames: this.state.teamNames })
+        // } else {
+        //     this.state.players[this.teamKey] = teamNames;
+        //     this.setState({ players: this.state.teamNames })
+        // }
 
-        if (typeof teams === "string"){ 
-            this.state.players[this.state.id] = JSON.parse(teams);
-            this.setState({ players: this.state.players})
-        } else {
-            this.state.players[this.state.id] = teams;
-            this.setState({ players: this.state.players})
-        }
+        // if (typeof teams === "string"){ 
+        //     this.state.players[this.state.id] = JSON.parse(teams);
+        //     this.setState({ players: this.state.players})
+        // } else {
+        //     this.state.players[this.state.id] = teams;
+        //     this.setState({ players: this.state.players})
+        // }
     }
 
     addPlayer(e) {
@@ -89,7 +89,7 @@ class GameShow extends React.Component {
 
     startGame(e) {
         e.preventDefault();
-        // if (this.state.game.players.length === 10) {
+        if (this.state.game.players.length === 10) {
             if (this.state.game.game_set != undefined) {
                 this.state.game.game_set = true;
                 this.setState({ game: this.state.game })
@@ -171,16 +171,18 @@ class GameShow extends React.Component {
             debugger;
             this.state.game.teams = [team1, team2];
             this.setState({ game: this.state.game })
-            this.props.updateGame(this.state.game);
 
 
             this.firstTeam = teamNames1[Math.floor(Math.random() * 
                 teamNames1.length)];
+                debugger;
           
             this.secondTeam = teamNames2[Math.floor(Math.random() * 
                 teamNames2.length)];
-            this.state.teamNames[this.teamKey] = [this.firstTeam, 
+            this.state.game.teamNames = [this.firstTeam, 
                 this.secondTeam];
+
+            this.props.updateGame(this.state.game);
             
             // localStorage.setItem(`${this.teamKey}`, 
             // JSON.stringify(this.state.teamNames[this.teamKey]))
@@ -194,7 +196,7 @@ class GameShow extends React.Component {
             this.props.history.push(`/setgames/${this.state.id}`)
             
             
-        // }
+        }
     }
 
     endGame(e) {

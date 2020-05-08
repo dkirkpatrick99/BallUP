@@ -18,11 +18,11 @@ class SetGameShow extends React.Component {
         this.endGame = this.endGame.bind(this);
         // this.startGame = this.startGame.bind(this);
         this.state = {id: this.props.match.params.gameId, game: {}, 
-        players: {}, count: {}, teamNames: {} };
+        players: {}, count: {}};
         this.state.count[this.state.id] = 0;
         this.state.players[this.state.id] = [[], []];
-        this.teamKey = `${this.state.id}teamNames`;
-        this.state.teamNames[this.teamKey] = ['team 1', 'team2']
+        // this.teamKey = `${this.state.id}teamNames`;
+        // this.state.teamNames[this.teamKey] = ['team 1', 'team2']
         this.firstTeam = '';
         this.secondTeam = '';
         this.video = 'https://ballup-dev.s3-us-west-1.amazonaws.com/tipoff2.mp4';
@@ -30,33 +30,34 @@ class SetGameShow extends React.Component {
     }
 
     componentDidMount() {
+        debugger;
         this.props.getGames();
         this.props.getGame(this.props.match.params.gameId);
         this.props.getUsers();
         this.props.getUser();
         let gameId = this.state.id;
-        let teams = localStorage.getItem(`${this.state.id}`) ||
-         this.state.players[gameId];
-        let teamNames = localStorage.getItem(`${this.teamKey}`) || 
-        this.state.teamNames;
-        $(".gs-title-a").addClass("gs-title")
-        $(".gs-title-a").removeClass(".gs-title-a")
+        // let teams = localStorage.getItem(`${this.state.id}`) ||
+        //  this.state.players[gameId];
+        // let teamNames = localStorage.getItem(`${this.teamKey}`) || 
+        // this.state.teamNames;
+        // $(".gs-title-a").addClass("gs-title")
+        // $(".gs-title-a").removeClass(".gs-title-a")
 
-        if (typeof teamNames === "string") {
-            this.state.teamNames[this.teamKey] = JSON.parse(teamNames);
-            this.setState({ teamNames: this.state.teamNames })
-        } else {
-            this.state.players[this.teamKey] = teamNames;
-            this.setState({ players: this.state.teamNames })
-        }
+        // if (typeof teamNames === "string") {
+        //     this.state.teamNames[this.teamKey] = JSON.parse(teamNames);
+        //     this.setState({ teamNames: this.state.teamNames })
+        // } else {
+        //     this.state.players[this.teamKey] = teamNames;
+        //     this.setState({ players: this.state.teamNames })
+        // }
 
-        if (typeof teams === "string"){ 
-            this.state.players[this.state.id] = JSON.parse(teams);
-            this.setState({ players: this.state.players})
-        } else {
-            this.state.players[this.state.id] = teams;
-            this.setState({ players: this.state.players})
-        }
+        // if (typeof teams === "string"){ 
+        //     this.state.players[this.state.id] = JSON.parse(teams);
+        //     this.setState({ players: this.state.players})
+        // } else {
+        //     this.state.players[this.state.id] = teams;
+        //     this.setState({ players: this.state.players})
+        // }
 
     }
 
@@ -194,10 +195,10 @@ class SetGameShow extends React.Component {
 
     endGame(e) {
         e.preventDefault();
-        if (this.props.player.id == this.state.game.players[0]._id) {
+        // if (this.props.player.id == this.state.game.players[0]._id) {
             this.props.removeGame(this.state.game._id)
                 .then(() => this.props.history.push('/'));
-         }
+        //  }
         
         
     }
@@ -216,6 +217,10 @@ class SetGameShow extends React.Component {
         let scoreboard = 'https://ballup-dev.s3-us-west-1.amazonaws.com/scoreboard-ribbonFinal.mp4';
         let tipoff = 'https://ballup-dev.s3-us-west-1.amazonaws.com/tipoff2.mp4';
         let pickup = 'https://ballup-dev.s3-us-west-1.amazonaws.com/pickupBball2.mp4';
+
+        debugger;
+        if (!Object.keys(this.state.game).length) return (<div></div>)
+        debugger;
 
         return (
 
@@ -262,7 +267,7 @@ class SetGameShow extends React.Component {
                                 <div className="team1">
                                     <ul>
                                         <h1>
-                                        {this.state.teamNames[this.teamKey][0]}
+                                        {this.state.game.teamNames[0]}
                                         </h1>
                                         {/* {
                                         Object.keys(
@@ -283,7 +288,7 @@ class SetGameShow extends React.Component {
                                 <div className="vs">VS.</div>
                                 <div className="team2">
                                     <ul>
-                                        <h1>{this.state.teamNames[this.teamKey][1]}</h1>
+                                        <h1>{this.state.game.teamNames[1]}</h1>
                                         {/* {
                                             Object.keys(
                                                 this.state.players[this.state.id][1]).map(position =>
@@ -324,7 +329,7 @@ class SetGameShow extends React.Component {
                                 </video> </button>
                                 <button 
                                 className="owner-button cancel-game"
-                                    onClick={this.endGame}
+                                    // onClick={this.endGame}
                                     >
                                 <video id="bottom-rib"  playsInline autoPlay muted>
                                     <source id="vid-src" src={scoreboard} type="video/mp4" />
