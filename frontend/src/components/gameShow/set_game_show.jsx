@@ -13,10 +13,10 @@ import $ from 'jquery'
 class SetGameShow extends React.Component {
     constructor(props) {
         super(props);
-        this.addPlayer = this.addPlayer.bind(this)
-        this.removePlayer = this.removePlayer.bind(this)
-        this.endGame = this.endGame.bind(this)
-        this.startGame = this.startGame.bind(this)
+        this.addPlayer = this.addPlayer.bind(this);
+        this.removePlayer = this.removePlayer.bind(this);
+        this.endGame = this.endGame.bind(this);
+        // this.startGame = this.startGame.bind(this);
         this.state = {id: this.props.match.params.gameId, game: {}, 
         players: {}, count: {}, teamNames: {} };
         this.state.count[this.state.id] = 0;
@@ -101,96 +101,96 @@ class SetGameShow extends React.Component {
         
     }
 
-    startGame(e) {
-     e.preventDefault();
-        if (this.state.game.players.length === 10) {
-            $(".grid").addClass("grid-b");
-            $(".showbox-right").addClass("showbox-right-b");
-            $(".showbox-right").removeClass("showbox-right");
-            $(".team1").addClass("team1-b");
-            $(".vs").addClass("vs-b");
-            $(".team2").addClass("team2-b");
+    // startGame(e) {
+    //  e.preventDefault();
+    //     if (this.state.game.players.length === 10) {
+    //         $(".grid").addClass("grid-b");
+    //         $(".showbox-right").addClass("showbox-right-b");
+    //         $(".showbox-right").removeClass("showbox-right");
+    //         $(".team1").addClass("team1-b");
+    //         $(".vs").addClass("vs-b");
+    //         $(".team2").addClass("team2-b");
 
-            let team1 = {
-                "Point Guard": 0, "Shooting Guard": 0, "Small Forward": 0, 
-                "Power Forward": 0, "Center": 0};
+    //         let team1 = {
+    //             "Point Guard": 0, "Shooting Guard": 0, "Small Forward": 0, 
+    //             "Power Forward": 0, "Center": 0};
 
-            let team2 = {"Point Guard": 0, "Shooting Guard": 0,  
-                "Small Forward": 0, "Power Forward": 0, "Center": 0};
+    //         let team2 = {"Point Guard": 0, "Shooting Guard": 0,  
+    //             "Small Forward": 0, "Power Forward": 0, "Center": 0};
 
-            let mid = Math.floor(this.state.game.players.length / 2);
+    //         let mid = Math.floor(this.state.game.players.length / 2);
             
-            let playersArr1 = this.state.game.players.slice(0, mid);
-            let playersArr2 = this.state.game.players.slice(mid);
+    //         let playersArr1 = this.state.game.players.slice(0, mid);
+    //         let playersArr2 = this.state.game.players.slice(mid);
             
-            let positions = ["Point Guard", "Shooting Guard", "Small Forward", 
-            "Power Forward", "Center"];
+    //         let positions = ["Point Guard", "Shooting Guard", "Small Forward", 
+    //         "Power Forward", "Center"];
 
             
-            playersArr1.forEach((player) => {
-                if (team1[player.first] === 0) {
-                    team1[player.first] = player.handle
-                } else if (team2[player.first] === 0) {
-                    team2[player.first] = player.handle
-                } else if (team1[player.second] === 0) {
-                    team1[player.second] = player.handle 
-                } else if (team2[player.second] === 0) {
-                    team2[player.second] = player.handle 
-                }
-                else if (team1[player.third] === 0) {
-                    team1[player.third] = player.handle 
-                } else {
-                    for (let i = 0; i < positions.length; i ++){
-                        if (team1[positions[i]] === 0){
-                            team1[positions[i]] = player.handle
-                            break;
-                        } else if (team2[positions[i]] === 0) {
-                            team2[positions[i]] = player.handle
-                            break;
-                        }
-                    }
-                }
-            })
+    //         playersArr1.forEach((player) => {
+    //             if (team1[player.first] === 0) {
+    //                 team1[player.first] = player.handle
+    //             } else if (team2[player.first] === 0) {
+    //                 team2[player.first] = player.handle
+    //             } else if (team1[player.second] === 0) {
+    //                 team1[player.second] = player.handle 
+    //             } else if (team2[player.second] === 0) {
+    //                 team2[player.second] = player.handle 
+    //             }
+    //             else if (team1[player.third] === 0) {
+    //                 team1[player.third] = player.handle 
+    //             } else {
+    //                 for (let i = 0; i < positions.length; i ++){
+    //                     if (team1[positions[i]] === 0){
+    //                         team1[positions[i]] = player.handle
+    //                         break;
+    //                     } else if (team2[positions[i]] === 0) {
+    //                         team2[positions[i]] = player.handle
+    //                         break;
+    //                     }
+    //                 }
+    //             }
+    //         })
 
-            playersArr2.forEach((player) => {
-                if (team2[player.first] === 0) {
-                    team2[player.first] = player.handle
-                } else if (team1[player.first] === 0) {
-                    team1[player.first] = player.handle
-                } else if (team2[player.second] === 0) {
-                    team2[player.second] = player.handle 
-                } else if (team1[player.second] === 0) {
-                    team1[player.second] = player.handle
-                } else if (team2[player.third] === 0) {
-                    team2[player.third] = player.handle 
-                } else {
-                    for (let i = 0; i < positions.length; i++) {
-                        if (team2[positions[i]] === 0) {
-                            team2[positions[i]] = player.handle
-                            break;
-                        } else if (team1[positions[i]] === 0) {
-                            team1[positions[i]] = player.handle
-                            break;
-                        }
-                    }
-                }
-            })
-            let teams = [team1, team2];
-            this.firstTeam = teamNames1[Math.floor(Math.random() * 
-                teamNames1.length)];
+    //         playersArr2.forEach((player) => {
+    //             if (team2[player.first] === 0) {
+    //                 team2[player.first] = player.handle
+    //             } else if (team1[player.first] === 0) {
+    //                 team1[player.first] = player.handle
+    //             } else if (team2[player.second] === 0) {
+    //                 team2[player.second] = player.handle 
+    //             } else if (team1[player.second] === 0) {
+    //                 team1[player.second] = player.handle
+    //             } else if (team2[player.third] === 0) {
+    //                 team2[player.third] = player.handle 
+    //             } else {
+    //                 for (let i = 0; i < positions.length; i++) {
+    //                     if (team2[positions[i]] === 0) {
+    //                         team2[positions[i]] = player.handle
+    //                         break;
+    //                     } else if (team1[positions[i]] === 0) {
+    //                         team1[positions[i]] = player.handle
+    //                         break;
+    //                     }
+    //                 }
+    //             }
+    //         })
+    //         let teams = [team1, team2];
+    //         this.firstTeam = teamNames1[Math.floor(Math.random() * 
+    //             teamNames1.length)];
           
-            this.secondTeam = teamNames2[Math.floor(Math.random() * 
-                teamNames2.length)];
-            this.state.teamNames[this.teamKey] = [this.firstTeam, 
-                this.secondTeam];
-            localStorage.setItem(`${this.teamKey}`, 
-            JSON.stringify(this.state.teamNames[this.teamKey]))
-            this.state.players[this.state.id] = teams;
-            localStorage.setItem(`${this.state.id}`, 
-            JSON.stringify(this.state.players[this.state.id]))
-            this.setState({ [this.state.id]: this.state.count[this.state.id] })
-        }
-    }
+    //         this.secondTeam = teamNames2[Math.floor(Math.random() * 
+    //             teamNames2.length)];
+    //         this.state.teamNames[this.teamKey] = [this.firstTeam, 
+    //             this.secondTeam];
+    //         localStorage.setItem(`${this.teamKey}`, 
+    //         JSON.stringify(this.state.teamNames[this.teamKey]))
+    //         this.state.players[this.state.id] = teams;
+    //         localStorage.setItem(`${this.state.id}`, 
+    //         JSON.stringify(this.state.players[this.state.id]))
+    //         this.setState({ [this.state.id]: this.state.count[this.state.id] })
+    //     }
+    // }
 
     endGame(e) {
         e.preventDefault();
@@ -264,11 +264,18 @@ class SetGameShow extends React.Component {
                                         <h1>
                                         {this.state.teamNames[this.teamKey][0]}
                                         </h1>
-                                        {
+                                        {/* {
                                         Object.keys(
                                             this.state.players[this.state.id][0]).map(position =>
                                             <li>{position} | @
                                             {this.state.players[this.state.id][0][position]}
+                                            </li>)
+                                        } */}
+                                        {
+                                        Object.keys(
+                                            this.state.game.teams[0]).map(position =>
+                                            <li>{position} | @
+                                            {this.state.game.teams[0][position]}
                                             </li>)
                                         }
                                     </ul>
@@ -277,12 +284,19 @@ class SetGameShow extends React.Component {
                                 <div className="team2">
                                     <ul>
                                         <h1>{this.state.teamNames[this.teamKey][1]}</h1>
-                                        {
+                                        {/* {
                                             Object.keys(
                                                 this.state.players[this.state.id][1]).map(position =>
                                                     <li>{position} | @
                                             {this.state.players[this.state.id][1][position]}
                                                 
+                                                    </li>)
+                                        } */}
+                                        {
+                                            Object.keys(
+                                                this.state.game.teams[1]).map(position =>
+                                                    <li>{position} | @
+                                            {this.state.game.teams[1][position]}
                                                     </li>)
                                         }
                                     </ul>

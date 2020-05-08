@@ -32,8 +32,8 @@ const GameSchema = new Schema({
     game_set: {
       type: Boolean
     },
-    video: {
-      type: String
+    teams: {
+      type: Array
     }
   })
 

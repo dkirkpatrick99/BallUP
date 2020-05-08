@@ -45,6 +45,17 @@
     align-items: center;
 }
 
+.navbar-left a {
+    text-decoration: none;
+    height: 25px;
+    
+}
+
+.navbar-left a:first-child {
+    height: 80px;
+    z-index: 25;
+}
+
 .navbar-right :last-child{
      margin-left: 12px;
      padding-right: 20px;

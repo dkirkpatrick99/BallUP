@@ -25,7 +25,6 @@ class GameShow extends React.Component {
         this.state.teamNames[this.teamKey] = ['team 1', 'team2']
         this.firstTeam = '';
         this.secondTeam = '';
-        // this.getAsset = this.getAsset.bind(this);
     }
 
     componentDidMount() {
@@ -90,7 +89,7 @@ class GameShow extends React.Component {
 
     startGame(e) {
         e.preventDefault();
-        if (this.state.game.players.length === 10) {
+        // if (this.state.game.players.length === 10) {
             if (this.state.game.game_set != undefined) {
                 this.state.game.game_set = true;
                 this.setState({ game: this.state.game })
@@ -168,7 +167,13 @@ class GameShow extends React.Component {
                     }
                 }
             })
-            let teams = [team1, team2];
+            // let teams = [team1, team2];
+            debugger;
+            this.state.game.teams = [team1, team2];
+            this.setState({ game: this.state.game })
+            this.props.updateGame(this.state.game);
+
+
             this.firstTeam = teamNames1[Math.floor(Math.random() * 
                 teamNames1.length)];
           
@@ -176,18 +181,20 @@ class GameShow extends React.Component {
                 teamNames2.length)];
             this.state.teamNames[this.teamKey] = [this.firstTeam, 
                 this.secondTeam];
-            localStorage.setItem(`${this.teamKey}`, 
-            JSON.stringify(this.state.teamNames[this.teamKey]))
-            this.state.players[this.state.id] = teams;
-            localStorage.setItem(`${this.state.id}`, 
-            JSON.stringify(this.state.players[this.state.id]))
-            this.setState({ [this.state.id]: this.state.count[this.state.id] })
+            
+            // localStorage.setItem(`${this.teamKey}`, 
+            // JSON.stringify(this.state.teamNames[this.teamKey]))
+            // this.state.players[this.state.id] = teams;
+            // localStorage.setItem(`${this.state.id}`, 
+            // JSON.stringify(this.state.players[this.state.id]))
+            // this.setState({ [this.state.id]: this.state.count[this.state.id] })
+
             
             
             this.props.history.push(`/setgames/${this.state.id}`)
             
             
-        }
+        // }
     }
 
     endGame(e) {

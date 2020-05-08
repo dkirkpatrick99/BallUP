@@ -23,7 +23,7 @@ class Courts extends Component {
             time: '',
             game_date: '',
             game_set: false,
-            video: 'pickupBball2.mp4'
+            teams:[]
         };
         this.handleSumbit= this.handleSumbit.bind(this);
         this.createGameModal= this.createGameModal.bind(this);
@@ -51,13 +51,12 @@ class Courts extends Component {
             game_date: this.state.game_date,
             players: [],
             game_set: false,
-            video: 'pickupBball2.mp4'
+            teams: []
         };
 
 
         this.props.createGame(game)
             .then(() => this.props.history.push('/'));
-            // window.location.reload(false);
     }
     update(field) {
         return e => this.setState({
@@ -67,7 +66,6 @@ class Courts extends Component {
 
     createGameModal(e) {
         e.preventDefault();
-        // $(".new-game").addClass(".new-game-b");
         $(".new-game").addClass("new-game-b");
     }
 
@@ -88,149 +86,130 @@ class Courts extends Component {
         let set_game_i = 1;
         let unset_game_i = 1;
         return (
-           
-            <div className="index">
+            <div>
+                <div className="index">
 
-                <div className="top">
-                    
-                    <div className="games">
-                        <h2 id="list-head">Open Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
-                           </h2>
-                    <div className="game-list">
-                        {unset_games.map( game => 
-                            <div className="game-list-item">
-                                <ul className={game._id}><div className="num-circle">
-                                    {unset_game_i}</div>
-                                    <div className="hide-me">
-                                        {unset_game_i++}</div>
-                                    <Link to={`/games/${game._id}`}>
-                                        <GameItem game={game} />
-                                    </Link>
-                                </ul>
-                                
-                            </div> 
-                            )}
-                            <h2 id="list-foot"> &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
-                           </h2>
-                        </div>
-                    </div>
-
-                    <div className="games">
-                        <h2 id="list-head">Set Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;</h2>
-                            <div className="set-game-list">
-                                {set_games.map(game =>
-                                    <div className="game-list-item">
-                                        <ul className={game._id}><div className="num-circle-set">
-                                            {set_game_i}</div>
-                                            <div className="hide-me">
-                                                {set_game_i++}</div>
-                                            <Link to={`/setgames/${game._id}`}>
-                                                <GameItem game={game} />
-                                            </Link>
-
-                                        </ul>
-                                    </div>
+                    <div className="top">
+                        
+                        <div className="games">
+                            <h2 id="list-head">Open Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
+                            </h2>
+                        <div className="game-list">
+                            {unset_games.map( game => 
+                                <div className="game-list-item">
+                                    <ul className={game._id}><div className="num-circle">
+                                        {unset_game_i}</div>
+                                        <div className="hide-me">
+                                            {unset_game_i++}</div>
+                                        <Link to={`/games/${game._id}`}>
+                                            <GameItem game={game} />
+                                        </Link>
+                                    </ul>
+                                    
+                                </div> 
                                 )}
                                 <h2 id="list-foot"> &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
                             </h2>
                             </div>
-                    </div>
-                    
-                    <div className="map">
-                        <IndexMapContainer 
-                        history={this.props.history}
-                        />
-                    </div>
-                    {/* <div className="set-games">
-                        <h2>Set Games</h2>
-                        {set_games.map(game =>
-                            <ul >
-                                <Link to={`/setgames/${game._id}`}>
-                                    <GameItem game={game} />
-                                </Link>
-                            </ul>
-                        )}
-                    </div> */}
-                </div>
-
-                <div className="new-game">
-                  <p className="ng-closeout" onClick={this.closeModal}>&times;</p>
-                   <h1>Create a New Game</h1>
-                    <form onSubmit={ (e) => {
-                        e.preventDefault();
-                        this.handleSumbit()
-                    }}>
-                        <input type="text"
-                            value={this.state.title}
-                            onChange={this.update('title')}
-                            placeholder="Title"
-                        />
-                        <input type="text"
-                            value={this.state.location}
-                            onChange={this.update('location')}
-                            placeholder="Street Address"
-                        />
-
-                        <div id="city-div">
-                            <label id="city">San Francisco, California</label>
                         </div>
-                        {/* <input type="time"
-                            value={this.state.time}
-                            onChange={this.update('time')}
-                            placeholder="Time"
-                        /> */}
-                        <div className="time-line">
-                        <select name={this.state.time} 
-                            onChange={this.update('hr')}>
-                            <option selected disabled>Hr</option>
-                            <option value="1:">1:</option>
-                            <option value="2:">2:</option>
-                            <option value="3:">3:</option>
-                            <option value="4:">4:</option>
-                            <option value="5:">5:</option>
-                            <option value="6:">6:</option>
-                            <option value="7:">7:</option>
-                            <option value="8:">8:</option>
-                            <option value="9:">9:</option>
-                            <option value="10:">10:</option>
-                            <option value="11:">11:</option>
-                            <option value="12:">12:</option>
-                        </select>
-                     
+
+                        <div className="games">
+                            <h2 id="list-head">Set Games &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;</h2>
+                                <div className="set-game-list">
+                                    {set_games.map(game =>
+                                        <div className="game-list-item">
+                                            <ul className={game._id}><div className="num-circle-set">
+                                                {set_game_i}</div>
+                                                <div className="hide-me">
+                                                    {set_game_i++}</div>
+                                                <Link to={`/setgames/${game._id}`}>
+                                                    <GameItem game={game} />
+                                                </Link>
+
+                                            </ul>
+                                        </div>
+                                    )}
+                                    <h2 id="list-foot"> &#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;&#x25a0;
+                                </h2>
+                                </div>
+                        </div>
+                        
+                        <div className="map">
+                            <IndexMapContainer 
+                            history={this.props.history}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="new-game">
+                    <p className="ng-closeout" onClick={this.closeModal}>&times;</p>
+                    <h1>Create a New Game</h1>
+                        <form onSubmit={ (e) => {
+                            e.preventDefault();
+                            this.handleSumbit()
+                        }}>
+                            <input type="text"
+                                value={this.state.title}
+                                onChange={this.update('title')}
+                                placeholder="Title"
+                            />
+                            <input type="text"
+                                value={this.state.location}
+                                onChange={this.update('location')}
+                                placeholder="Street Address"
+                            />
+
+                            <div id="city-div">
+                                <label id="city">San Francisco, California</label>
+                            </div>
+                            <div className="time-line">
                             <select name={this.state.time} 
-                                onChange={this.update('min')}>
-                                <option selected disabled>Min</option>
-                                <option value="00">00</option>
-                                <option value="15">15</option>
-                                <option value="30">30</option>
-                                <option value="45">45</option>
+                                onChange={this.update('hr')}>
+                                <option selected disabled>Hr</option>
+                                <option value="1:">1:</option>
+                                <option value="2:">2:</option>
+                                <option value="3:">3:</option>
+                                <option value="4:">4:</option>
+                                <option value="5:">5:</option>
+                                <option value="6:">6:</option>
+                                <option value="7:">7:</option>
+                                <option value="8:">8:</option>
+                                <option value="9:">9:</option>
+                                <option value="10:">10:</option>
+                                <option value="11:">11:</option>
+                                <option value="12:">12:</option>
                             </select>
                         
-                        <select name={this.state.time} onChange={this.update('ampm')} >
-                            <option selected disabled>AM/PM</option>
-                            <option value="AM">AM</option>
-                            <option value="PM">PM</option>
-                        </select>
-                        </div>
-                        {/* <input type="text"
-                            value={this.state.game_date}
-                            onChange={this.update('game_date')}
-                            placeholder="Game Date"
-                        /> */}
-                        <input type="date" name="Game Date" 
-                            value={this.state.game_date}
-                            onChange={this.update('game_date')}
-                            min="2020-01-01" max="2025-12-31">
-                        </input>
-                        <input type="hidden"
-                            value={this.state.game_set}
-                            onSubmit={this.update('game_set')}
-                        />
-                        <input type="submit" value="Submit" />
-                    </form>
+                                <select name={this.state.time} 
+                                    onChange={this.update('min')}>
+                                    <option selected disabled>Min</option>
+                                    <option value="00">00</option>
+                                    <option value="15">15</option>
+                                    <option value="30">30</option>
+                                    <option value="45">45</option>
+                                </select>
+                            
+                            <select name={this.state.time} onChange={this.update('ampm')} >
+                                <option selected disabled>AM/PM</option>
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                            </div>
+                            <input type="date" name="Game Date" 
+                                value={this.state.game_date}
+                                onChange={this.update('game_date')}
+                                min="2020-01-01" max="2025-12-31">
+                            </input>
+                            <input type="hidden"
+                                value={this.state.game_set}
+                                onSubmit={this.update('game_set')}
+                            />
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                    <p className="ng-btn" onClick={this.createGameModal}>
+                        New Game</p> 
                 </div>
-                <p className="ng-btn" onClick={this.createGameModal}>
-                    New Game</p> 
             </div>
              
         

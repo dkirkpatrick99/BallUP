@@ -47,8 +47,6 @@ class NavBar extends React.Component {
         $('.signup-btn').addClass('signup-btn-b');
     }
 
-   
-
     getLinks() {
         if (this.props.loggedIn) {
             return (
@@ -69,24 +67,32 @@ class NavBar extends React.Component {
         }
     }
 
+    activeLogo() {
+        if (this.props.loggedIn) {
+        return (
+            <div className="navbar-left">
+                <Link to="/games"><img className="nav-shoes" 
+                src="shoes512.png" alt="shoes" /></Link>
+                <Link to="/games"><img className="splash-logo" 
+                src="bu_logo.png" /></Link>
+            </div>
+        )
+        } else {
+            return (
+                
+                <div className="navbar-left">
+                    <img className="nav-shoes" src="shoes512.png" alt="shoes" />
+                    <img className="splash-logo" src="bu_logo.png" />
+                </div>
+            )
+        }
+    }
+
     render() {
         return (
             <div className="navbar">
-                <div className="navbar-left">
-                    <img className="nav-shoes" src="shoes512.png" alt="shoes"/>
-                    <img className="splash-logo" src="bu_logo.png"/>
-                    
-                </div>
+                    {this.activeLogo()}
                     {this.getLinks()}
-                        {/* <div className="hero">
-                        </div>
-                        <div className="tag-container">
-                            <ul className="tag-list">
-                        <li><h1 id="tag">Dope tagline promoting our product</h1></li>
-                        <li><p id="sub-tag">Cool stuff describing why folks should join BallUP, and how clicking the button below will change their lives.</p></li> 
-                            </ul>
-                          <button className="signup-btn">Get Started</button>
-                        </div> */}
             </div>
         );
     }
