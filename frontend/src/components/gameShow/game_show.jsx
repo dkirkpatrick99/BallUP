@@ -208,7 +208,6 @@ class GameShow extends React.Component {
     }
 
     activeButtons() {
-        debugger;
         
         if ((this.props.player !== undefined) && 
         (this.props.player.id === this.state.game.players[0]._id)){
