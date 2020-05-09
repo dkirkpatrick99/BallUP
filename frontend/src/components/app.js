@@ -16,7 +16,7 @@ import { IndexMap } from './map/index_map';
 
 
 const App = () => {
-    debugger;
+  
     return (<div>
         <NavBarContainer />
         

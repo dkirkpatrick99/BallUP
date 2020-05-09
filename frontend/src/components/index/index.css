@@ -257,7 +257,7 @@
     width: 200px;
     height: 138px;
     left: 30vw;
-    transform: translateY(18vh);
+    transform: translateY(24vh);
     padding-top: 10px;
     padding-bottom: 25px;
     animation-name: slide-out;
@@ -267,11 +267,11 @@
 
 @keyframes slide-out {
     from {
-        transform: translateY(18vh) translateX(-200px);
+        transform: translateY(24vh) translateX(-240px) scale(1.2);
         overflow: hidden;
         }
     to {
-        transform: translateY(18vh) translateX(0px);
+        transform: translateY(24vh) translateX(20px) scale(1.2);
         overflow: hidden;
         }
 }

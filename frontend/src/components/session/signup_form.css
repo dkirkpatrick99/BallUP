@@ -2,6 +2,43 @@
     height: 300px;
 }
 
+.su-modal-background {
+    height: 300px;
+    width: 250px;
+    position: fixed;
+    padding-top: 78px;
+    z-index: 78;
+    background-color: white;
+    display: flex; 
+    top: -20%;
+    transform: translateY(37%) scale(1.2);
+}
+
+.su-modal-background h1 {
+    font-family: "Berthold Regular";
+    position: absolute;
+    z-index: 80;
+    left: 10%;
+    transform: translateY(-80px);
+}
+
+.close-su-modal {
+    margin: 0;
+    z-index: 90;
+    position: absolute;
+    width: 20px;
+    transform: translateX(225px) translateY(-74px);
+    font-size: 17px;
+}
+
+.close-su-modal:hover {
+    cursor: pointer;
+}
+
+.su-modal-background-closed {
+    display: none;
+}
+
 .signup-form {
     height: 350px;
     width: 250px;
@@ -32,3 +69,4 @@ select:focus {
     border-radius: 4px;
     border: none;
 }
+

@@ -168,14 +168,14 @@ class GameShow extends React.Component {
                 }
             })
             // let teams = [team1, team2];
-            debugger;
+            
             this.state.game.teams = [team1, team2];
             this.setState({ game: this.state.game })
 
 
             this.firstTeam = teamNames1[Math.floor(Math.random() * 
                 teamNames1.length)];
-                debugger;
+               
           
             this.secondTeam = teamNames2[Math.floor(Math.random() * 
                 teamNames2.length)];
@@ -204,9 +204,39 @@ class GameShow extends React.Component {
         if (this.props.player.id == this.state.game.players[0]._id) {
             this.props.removeGame(this.state.game._id)
                 .then(() => this.props.history.push('/'));
+        }     
+    }
+
+    activeButtons() {
+        debugger;
+        
+        if ((this.props.player !== undefined) && 
+        (this.props.player.id === this.state.game.players[0]._id)){
+        return (
+            <div className="buttons">
+                <button className="add-player player-button"
+                    onClick={this.addPlayer}>Join This Game</button>
+                <button className="gray-out"
+                    >Leave This Game</button>
+                <button className="owner-button start-game"
+                    onClick={this.startGame}>Select Teams</button>
+                <button className="cancel-game"
+                    onClick={this.endGame}>Cancel Game</button>
+            </div>)
+        } else {
+            return (
+                <div className="buttons">
+                    <button className="add-player player-button"
+                        onClick={this.addPlayer}>Join This Game</button>
+                    <button className="remove-player player-button"
+                        onClick={this.removePlayer}>Leave This Game</button>
+                    <button className="owner-button start-game"
+                        onClick={this.startGame}>Select Teams</button>
+                    <button className="gray-out"
+                        >Cancel Game</button>
+                </div>)
         }
-        
-        
+
     }
 
 
@@ -221,6 +251,7 @@ class GameShow extends React.Component {
                 this.state.game = game;
             }
         });
+        if (!Object.keys(this.state.game).length) return (<div></div>)
         return (
 
             <div className="show">
@@ -280,16 +311,7 @@ class GameShow extends React.Component {
                                
                             </div>
                         </div>
-                        <div className="buttons">                           
-                                <button className="add-player player-button"
-                                    onClick={this.addPlayer}>Join This Game</button>
-                                <button className="remove-player player-button"
-                                    onClick={this.removePlayer}>Leave This Game</button>
-                                <button className="owner-button start-game"
-                                    onClick={this.startGame}>Select Teams</button>
-                                <button className="owner-button cancel-game"
-                                    onClick={this.endGame}>Cancel Game</button>
-                        </div>
+                        {this.activeButtons()}
                     </div>
                 </div>
             </div>

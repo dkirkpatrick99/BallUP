@@ -115,6 +115,7 @@
     align-items: center;
     justify-content: space-between;
     top: 20%;
+    transform: scale(1.1);
 }
 
 .showbox {
@@ -490,4 +491,23 @@
 
 #new-test {
     width: 100%;
+}
+
+ .buttons .gray-out {
+    width: 60%;
+    background-color: white;
+    border: none;
+    margin-top: 2px;
+    color: #84857e;
+    outline-style: none;
+    font-size: 1vw;
+    height: 1.15vw;
+    overflow: hidden;
+    padding: 0%;
+}
+
+.buttons .gray-out:hover{
+    cursor: initial;
+    background-color: white;
+    color: #84857e;
 }

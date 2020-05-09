@@ -19,3 +19,39 @@
     border: none;
     outline: none;
 }
+
+.modal-background {
+    height: 200px;
+    width: 250px;
+    position: fixed;
+    z-index: 78;
+    background-color: white;
+    display: flex; 
+    top: -20%;
+    transform: translateY(100%) scale(1.2);
+    padding-bottom: 15px;
+}
+
+.modal-background h1 {
+    font-family: "Berthold Regular";
+    position: absolute;
+    z-index: 80;
+    left: 10%;
+}
+
+.modal-background-closed {
+    display: none;
+}
+
+.close-modal {
+    margin: 0;
+    z-index: 90;
+    position: absolute;
+    width: 250px;
+    transform: translateX(90%) translateY(4px);
+    font-size: 17px;
+}
+
+.close-modal:hover {
+    cursor: pointer;
+}

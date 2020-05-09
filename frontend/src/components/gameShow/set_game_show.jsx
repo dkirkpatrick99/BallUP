@@ -30,7 +30,7 @@ class SetGameShow extends React.Component {
     }
 
     componentDidMount() {
-        debugger;
+       
         this.props.getGames();
         this.props.getGame(this.props.match.params.gameId);
         this.props.getUsers();
@@ -218,9 +218,9 @@ class SetGameShow extends React.Component {
         let tipoff = 'https://ballup-dev.s3-us-west-1.amazonaws.com/tipoff2.mp4';
         let pickup = 'https://ballup-dev.s3-us-west-1.amazonaws.com/pickupBball2.mp4';
 
-        debugger;
+       
         if (!Object.keys(this.state.game).length) return (<div></div>)
-        debugger;
+       
 
         return (
 

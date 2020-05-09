@@ -145,85 +145,12 @@
 }
 
 .signup-btn {
-    transform: translateY(25vh);
+    transform: translateY(25vh) scale(1.2);
 }
 
 .signup-btn:hover {
     cursor: pointer;
     background-color: gray;
-}
-
-.modal-background {
-    height: 200px;
-    width: 250px;
-    position: fixed;
-    z-index: 78;
-    background-color: white;
-    display: flex; 
-    top: -20%;
-    transform: translateY(100%);
-    padding-bottom: 15px;
-}
-
-.modal-background h1 {
-    font-family: "Berthold Regular";
-    position: absolute;
-    z-index: 80;
-    left: 10%;
-}
-
-.modal-background-closed {
-    display: none;
-}
-
-.close-modal {
-    margin: 0;
-    z-index: 90;
-    position: absolute;
-    width: 250px;
-    transform: translateX(90%) translateY(4px);
-    font-size: 17px;
-}
-
-.close-modal:hover {
-    cursor: pointer;
-}
-
-.su-modal-background {
-    height: 300px;
-    width: 250px;
-    position: fixed;
-    padding-top: 78px;
-    z-index: 78;
-    background-color: white;
-    display: flex; 
-    top: -20%;
-    transform: translateY(37%);
-}
-
-.su-modal-background h1 {
-    font-family: "Berthold Regular";
-    position: absolute;
-    z-index: 80;
-    left: 10%;
-    transform: translateY(-80px);
-}
-
-.close-su-modal {
-    margin: 0;
-    z-index: 90;
-    position: absolute;
-    width: 20px;
-    transform: translateX(225px) translateY(-74px);
-    font-size: 17px;
-}
-
-.close-su-modal:hover {
-    cursor: pointer;
-}
-
-.su-modal-background-closed {
-    display: none;
 }
 
 .navbar-right-loggedin {

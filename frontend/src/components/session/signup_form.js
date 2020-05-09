@@ -89,7 +89,7 @@ class SignupForm extends React.Component {
                         <input type="text"
                             value={this.state.handle}
                             onChange={this.update('handle')}
-                            placeholder="Handle"
+                            placeholder="Username"
                         />
                         <br/>
                         <p>Select your 3 preferred positions:</p>
