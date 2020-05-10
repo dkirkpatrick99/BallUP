@@ -42,13 +42,13 @@
     flex-direction: row;
     width: 100vw;
     background-color: gray;
-    height: 100vh;
+    height: 95vh;
 }
 
 .top {
     display: flex;
     width: 100%;
-    height: 90vh;
+    height: 95vh;
 }
 
 
@@ -112,7 +112,9 @@
     /* text-decoration: underline;
     text-decoration-color: rgb(63, 63, 63); */
     /* border: 2px solid black; */
-    background-image: linear-gradient(to right, rgb(41, 40, 40), rgb(36, 36, 36));
+    background-image: url("../../public/gray-stripes.png"), 
+    linear-gradient(to right, rgb(41, 40, 40), rgb(36, 36, 36));
+    background-size: 800%;
 }
 
 #list-foot {
@@ -375,3 +377,46 @@ body {
     height: 100vh;
 }
 
+#color {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    height: 70vh;
+    max-height: 683px;
+}
+
+#color-left {
+    width: 50%;
+    max-height: 683px;
+    overflow: hidden;
+    border-top: gray;
+    display: flex;
+    align-items: flex-end;
+}
+#color-right {
+    width: 50%;
+    border-left: rgb(36, 36, 36) solid 1px;
+    max-height: 683px;
+    overflow: hidden;
+    border-top: gray;
+    border-width: 3px;
+}
+
+#divider {
+    height: 5vh;
+    width: 100%;
+    background-color: rgb(36, 36, 36);
+    background-image: url("../../public/gray-stripes.png"), 
+    linear-gradient(to right, rgb(41, 40, 40), rgb(36, 36, 36));
+    background-size: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+#copyright {
+    color: white;
+    font: .9vw "Berthold Regular";
+    transform: translateX(13%) translateY(-35%);
+    margin: 0%;
+    position: absolute;
+}

@@ -51,36 +51,38 @@ class Splash extends React.Component {
     render(){
 
         return (
-            
-            <div className="splash">
-            <div className="hero">
-            </div>
-            <div className="tag-container">
-                    <div className="modal-background-closed">
-                        <p className="close-modal"
-                            onClick={this.ModalClose}
-                        >&times;</p>
-                        <h1>Login</h1>
-                        <LoginContainer />
-                    </div>
-                    <div className="su-modal-background-closed">
-                        <p className="close-su-modal"
-                            onClick={this.signupModalClose}
-                        >&times;</p>
-                        <h1>Signup</h1>
-                        <SignupContainer />
-                    </div>
-                <ul className="tag-list">
-                    <li><h1 className="tag">It's time for the blacktop to work for 
-                    you</h1></li>
+           
+                <div className="splash">
+                <div className="hero">
+                    <p id="copyright" >BallUp © 2020</p>
+                </div>
+                <div className="tag-container">
+                        <div className="modal-background-closed">
+                            <p className="close-modal"
+                                onClick={this.ModalClose}
+                            >&times;</p>
+                            <h1>Login</h1>
+                            <LoginContainer />
+                        </div>
+                        <div className="su-modal-background-closed">
+                            <p className="close-su-modal"
+                                onClick={this.signupModalClose}
+                            >&times;</p>
+                            <h1>Signup</h1>
+                            <SignupContainer />
+                        </div>
+                    <ul className="tag-list">
+                        <li><h1 className="tag">It's time for the blacktop to work for 
+                        you</h1></li>
+                        
+                            <li><p className="sub-tag">Be a part of the #1 meetup sensation 
+                            for pickup basketball, and take your hoop game to the next 
+                            level.</p></li>
+                    </ul>
+                        <button onClick={this.signupModal} className="signup-btn">Got Next?</button>
+                </div>
                     
-                        <li><p className="sub-tag">Be a part of the #1 meetup sensation 
-                        for pickup basketball, and take your hoop game to the next 
-                        level.</p></li>
-                </ul>
-                    <button onClick={this.signupModal} className="signup-btn">Got Next?</button>
-            </div>
-            </div>
+                </div>
         )
     }
 

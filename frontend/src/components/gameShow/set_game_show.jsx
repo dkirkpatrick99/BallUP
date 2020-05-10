@@ -337,6 +337,16 @@ class SetGameShow extends React.Component {
                         </div>
                     </div>
                 </div>
+                <div id="divider"></div>
+                <div id="color">
+                    <div id="color-left">
+                    <p id="copyright" >BallUp © 2020</p>
+                        <img src="left-court.png" />
+                    </div>
+                    <div id="color-right">
+                        <img src="right-court.png" />
+                    </div>
+                </div>
             </div>
         )
     }

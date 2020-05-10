@@ -121,7 +121,7 @@ export class IndexMap extends Component {
                     styles={mapStyles}
                     style={{
                         width: "100%",
-                        height: "90vh"
+                        height: "95vh"
                     }}
                     disableDefaultUI={true}
                     zoomControl={true}
