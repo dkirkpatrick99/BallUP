@@ -99,6 +99,7 @@ class SignupForm extends React.Component {
                             </option>
                             { postions.map( position => 
                                 <option value={position}
+                                key={""}
                                 >{position}</option>
                             )}
                         </select>

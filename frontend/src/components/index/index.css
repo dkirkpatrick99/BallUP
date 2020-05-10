@@ -1,32 +1,6 @@
 /* gray: #84857e */
 /* gold: #a9a471 */
 
-/* width */
-/* .game-list::-webkit-scrollbar {
-    z-index: 1000;
-    width: 20px;
-    overflow: overlay;
-  } */
-  
-  /* Track */
-  /* ::-webkit-scrollbar-track {
-    position: absolute;
-    z-index: 1000;
-    overflow: overlay;
-  } */
-   
-  /* Handle */
-  /* .game-list::-webkit-scrollbar-thumb {
-    background: #a9a471; 
-    border-radius: 10px;
-  } */
-  
-  /* Handle on hover */
-  /* ::-webkit-scrollbar-thumb:hover {
-    background: #5f5c39; 
-  } */
-
-
 
 @font-face{
     font-family: "Berthold Regular";
