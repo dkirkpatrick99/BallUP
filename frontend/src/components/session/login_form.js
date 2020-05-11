@@ -11,13 +11,14 @@ class LoginForm extends React.Component {
             password: '',
             errors: {}
         };
-
+        
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
         this.demoUser = this.demoUser.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
+        
         if (nextProps.currentUser === true) {
             this.props.history.push('/games'); //navigate to games index
         }
@@ -36,7 +37,9 @@ class LoginForm extends React.Component {
             email: 'guest@guest.com',
             password: '123456'
         };
-        this.props.login(user)
+        this.setState({email: user.email});
+        this.setState({password: user.password});
+        this.props.login(user);
     }
 
     handleSubmit(e) {
@@ -47,28 +50,59 @@ class LoginForm extends React.Component {
             password: this.state.password
         };
 
+        this.setState({ email: user.email });
+        this.setState({ password: user.password });
+
         this.props.login(user);
     }
 
 
 
     renderErrors() {
+
+        if (this.state.errors === undefined) return (<ul ></ul>);
+
+        let emailE = [];
+        let passwordE = [];
+
+        emailE.push(Object.values(this.state.errors).filter((error) => (
+            error.includes("email") || error.includes("Email") || error.includes("user")
+        )));
+            debugger;
+        passwordE.push(Object.values(this.state.errors).filter((error) => (
+            error.includes("password") || error.includes("Password")
+        )));
+
+        debugger;
+        if ((emailE[0].length && passwordE[0].length) || 
+            (emailE[0].length && !passwordE[0].length)){
         return (
-            <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {this.state.errors[error]}
-                    </li>
-                ))}
+            <ul id="li-errors">
+                {emailE.map( (email, i) => 
+                    <li id="email-e" key={i}>{email}</li>  
+                )}
+                {passwordE.map( (password, i) => 
+                    <li id="password-e" key={i}>{password}</li>  
+                )}
             </ul>
-        );
+                );
+        } else if (!emailE[0].length && passwordE[0].length) {
+           return (
+                <ul id="li-errors">
+                    {passwordE.map((password, i) =>
+                        <li id="password-e-b" key={i}>{password}</li>
+                    )}
+                </ul>
+            )
+        }
     }
 
     render() {
+            
         return (
-            <div>
+            <div id="login">
                 <form className="login-form" onSubmit={this.handleSubmit}>
-                        <br />
+                        {/* <br /> */}
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
@@ -84,8 +118,9 @@ class LoginForm extends React.Component {
                         <button>Submit</button>
                         <br/>
                         <button className="demo" onClick={this.demoUser}>Demo User</button>
-                        {this.renderErrors()}
                 </form>
+                    {this.renderErrors()}
+                
             </div>
         );
     }

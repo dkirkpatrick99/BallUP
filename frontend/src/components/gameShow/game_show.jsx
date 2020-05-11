@@ -7,7 +7,6 @@ import './show.css';
 import { teamNames1, teamNames2 } from './team_names';
 import $ from 'jquery';
 import ShowMap from '../map/show_map';
-import { Storage } from 'aws-amplify';
 
 
 class GameShow extends React.Component {

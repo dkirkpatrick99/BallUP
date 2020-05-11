@@ -55,3 +55,32 @@
 .close-modal:hover {
     cursor: pointer;
 }
+
+#li-errors {
+    position: absolute;
+    color: red;
+}
+
+#login {
+    position: absolute;
+}
+
+#email-e {
+    list-style: none;
+    font: 11px "Berthold Regular";
+    letter-spacing: .5px;
+    transform: translateY(-900%);
+}
+
+#password-e {
+    list-style: none;
+    font: 11px "Berthold Regular";
+    letter-spacing: .5px;
+    transform: translateY(-720%);
+}
+#password-e-b {
+    list-style: none;
+    font: 11px "Berthold Regular";
+    letter-spacing: .5px;
+    transform: translateY(-610%);
+}

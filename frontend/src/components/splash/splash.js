@@ -3,6 +3,7 @@ import React from 'react';
 import LoginContainer from '../session/login_form_container';
 import SignupContainer from '../session/signup_form_container';
 import $ from 'jquery';
+import { Link } from 'react-router-dom';
 
 
 class Splash extends React.Component {
@@ -34,6 +35,7 @@ class Splash extends React.Component {
         $('.tag').removeClass('tag-b');
         $('.sub-tag').removeClass('sub-tag-b');
         $('.signup-btn').removeClass('signup-btn-b');
+        window.location.reload(true);
     }
 
     signupModalClose(e) {
@@ -46,10 +48,12 @@ class Splash extends React.Component {
         $('.tag').removeClass('tag-b');
         $('.sub-tag').removeClass('sub-tag-b');
         $('.signup-btn').removeClass('signup-btn-b');
+        window.location.reload(true);
     }
 
     render(){
 
+        
         return (
            
                 <div className="splash">
@@ -60,7 +64,7 @@ class Splash extends React.Component {
                         <div className="modal-background-closed">
                             <p className="close-modal"
                                 onClick={this.ModalClose}
-                            >&times;</p>
+                        >&times;</p>
                             <h1>Login</h1>
                             <LoginContainer />
                         </div>

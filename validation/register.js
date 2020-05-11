@@ -11,11 +11,11 @@ module.exports = function validateRegisterInput(data) {
   data.password2 = validText(data.password2) ? data.password2 : '';
 
   if (!Validator.isLength(data.handle, { min: 2, max: 30 })) {
-    errors.handle = 'Handle must be between 2 and 30 characters';
+    errors.handle = 'Username must be between 2 and 30 characters';
   }
 
   if (Validator.isEmpty(data.handle)) {
-    errors.handle = 'Handle field is required';
+    errors.handle = 'Username is required';
   }
 
   if (Validator.isEmpty(data.email)) {
