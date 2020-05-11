@@ -198,6 +198,23 @@ class GameShow extends React.Component {
         }
     }
 
+    openSpots() {
+      let gameSize = this.state.game.players.length;
+        if (gameSize< 10){
+            return(
+                <div id="open-spots">
+                    {`${10 - gameSize} more spots to be filled.`}
+                </div>
+            )
+        } else {
+            return(
+                <div id="open-spots">
+                    You may select teams!
+                </div>
+            )
+        }
+    }
+
     endGame(e) {
         e.preventDefault();
         if (this.props.player.id == this.state.game.players[0]._id) {
@@ -207,7 +224,8 @@ class GameShow extends React.Component {
     }
 
     activeButtons() {
-        
+        let startGray = "gray-out";
+        if (this.state.game.players.length === 10) startGray = "";
         if ((this.props.player !== undefined) && 
         (this.props.player.id === this.state.game.players[0]._id)){
         return (
@@ -216,7 +234,7 @@ class GameShow extends React.Component {
                     onClick={this.addPlayer}>Join This Game</button>
                 <button className="gray-out"
                     >Leave This Game</button>
-                <button className="owner-button start-game"
+                <button className={startGray}
                     onClick={this.startGame}>Select Teams</button>
                 <button className="cancel-game"
                     onClick={this.endGame}>Cancel Game</button>
@@ -228,7 +246,7 @@ class GameShow extends React.Component {
                         onClick={this.addPlayer}>Join This Game</button>
                     <button className="remove-player player-button"
                         onClick={this.removePlayer}>Leave This Game</button>
-                    <button className="owner-button start-game"
+                    <button className={startGray}
                         onClick={this.startGame}>Select Teams</button>
                     <button className="gray-out"
                         >Cancel Game</button>
@@ -282,6 +300,7 @@ class GameShow extends React.Component {
                             </div>
 
                             <div className="showbox-right">
+                              <div className="grid-length">
                                 <div className="grid">
                                     <div id="playes"><div>
                                         <div id="p-title">Players</div></div>
@@ -302,11 +321,14 @@ class GameShow extends React.Component {
                                         )}
                                     </div>
                                 </div>
+                            </div>
 
                                 <div className="team1">
                                     <h1>Game Set</h1>
                                 </div>
-                               
+                                <div id="os-flex">
+                                    {this.openSpots()}
+                                </div>
                             </div>
                         </div>
                         {this.activeButtons()}

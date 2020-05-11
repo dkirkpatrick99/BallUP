@@ -68,12 +68,12 @@ class LoginForm extends React.Component {
         emailE.push(Object.values(this.state.errors).filter((error) => (
             error.includes("email") || error.includes("Email") || error.includes("user")
         )));
-            debugger;
+            
         passwordE.push(Object.values(this.state.errors).filter((error) => (
             error.includes("password") || error.includes("Password")
         )));
 
-        debugger;
+        
         if ((emailE[0].length && passwordE[0].length) || 
             (emailE[0].length && !passwordE[0].length)){
         return (

@@ -120,6 +120,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    justify-content: space-between;
     overflow: hidden;
 }
 
@@ -221,7 +222,12 @@
     margin: 0%;
 
 }
-
+.grid-length {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .grid {
     display: flex;
@@ -495,4 +501,16 @@
     cursor: initial;
     background-color: white;
     color: #84857e;
+}
+
+#os-flex {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#open-spots {
+    color: white;
+    /* margin-top: 4.2%; */
+    /* transform: translateY(100%); */
+    font: 1.5vw "Berthold Regular"
 }
