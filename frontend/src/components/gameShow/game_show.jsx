@@ -200,12 +200,18 @@ class GameShow extends React.Component {
 
     openSpots() {
       let gameSize = this.state.game.players.length;
-        if (gameSize< 10){
+        if (gameSize < 9){
             return(
                 <div id="open-spots">
                     {`${10 - gameSize} more spots to be filled.`}
                 </div>
             )
+        } else if (gameSize === 9) {
+           return (
+                <div id="open-spots">
+                {`${10 - gameSize} more spot to be filled.`}
+            </div>
+           )
         } else {
             return(
                 <div id="open-spots">
