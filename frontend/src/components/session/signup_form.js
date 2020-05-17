@@ -96,11 +96,11 @@ class SignupForm extends React.Component {
                         />
                         </div>
                         <br/>
-                        <p className="please-select">Favorite positions:</p>
+                        <p className="please-select">Select your favorite positions:</p>
                         <div className="flex-div">
                             <select onChange={this.update('first')} className="three-options">
                             <option value="none" selected disabled hidden>
-                                Select 1st Choice
+                                1st Choice
                             </option>
                             { postions.map( position => 
                                 <option value={position}
@@ -111,7 +111,7 @@ class SignupForm extends React.Component {
                         {/* <br /> */}
                             <select onChange={this.update('second')} className="three-options">
                             <option value="none" selected disabled hidden>
-                                Select 2nd Choice
+                                2nd Choice
                             </option>
                             {secondaryPos.map(position =>
                                 <option value={position}
@@ -121,7 +121,7 @@ class SignupForm extends React.Component {
                         {/* <br/> */}
                         <select onChange={this.update('third')} className="three-options">
                             <option value="none" selected disabled hidden>
-                                Select 3rd Choice
+                                3rd Choice
                             </option>
                             {tertiaryPos.map(position =>
                                 <option value={position}

@@ -60,8 +60,8 @@ class NavBar extends React.Component {
         } else {
             return (
                 <ul className="navbar-right">
-                    <li onClick={this.signupModal}>Signup</li>
-                    <li onClick={this.loginModal}>Login</li> 
+                    <li onClick={this.signupModal}>Sign Up</li>
+                    <li onClick={this.loginModal}>Sign In</li> 
                 </ul>
             );
         }
