@@ -69,10 +69,12 @@ class Splash extends React.Component {
                             <LoginContainer />
                         </div>
                         <div className="su-modal-background-closed">
-                            <p className="close-su-modal"
-                                onClick={this.signupModalClose}
-                            >&times;</p>
-                            <h1>Signup</h1>
+                            <div className="flex-div">
+                                <h1 className="su-text">Signup</h1>
+                                <p className="close-su-modal"
+                                    onClick={this.signupModalClose}
+                                >&times;</p>
+                            </div>  
                             <SignupContainer />
                         </div>
                     <ul className="tag-list">
