@@ -59,8 +59,8 @@
 }
 
 .navbar-right :last-child{
-     margin-left: 12px;
-     padding-right: 20px;
+     margin-left: 70px;
+     padding-right: 70px;
 }
 
 .navbar-right li {
@@ -233,3 +233,6 @@ button:hover {
    transition: .5s;
 }
 
+.flex-div{
+    display: flex;
+}

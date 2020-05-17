@@ -102,7 +102,7 @@ class LoginForm extends React.Component {
         return (
             <div id="login">
                 <form className="login-form" onSubmit={this.handleSubmit}>
-                        {/* <br /> */}
+                    <button className="demo" onClick={this.demoUser}>Demo Login</button>
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
@@ -114,10 +114,10 @@ class LoginForm extends React.Component {
                             onChange={this.update('password')}
                             placeholder="Password"
                         />
+                       
                         <br />
-                        <button>Submit</button>
-                        <br/>
-                        <button className="demo" onClick={this.demoUser}>Demo User</button>
+                        <button className="submit-login">Submit</button>
+                        
                 </form>
                     {this.renderErrors()}
                 

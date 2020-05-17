@@ -1,15 +1,16 @@
-.signup-form-container {
+/* .signup-form-container {
     height: 300px;
-}
+} */
 
 .su-modal-background {
-    height: 300px;
-    width: 250px;
+    height: 45%;
+    width: 40%;
+    border-radius: 5px;
     position: fixed;
     padding-top: 78px;
     z-index: 78;
     background-color: white;
-    display: flex; 
+    /* display: flex;  */
     top: -20%;
     transform: translateY(37%) scale(1.2);
 }
@@ -22,13 +23,19 @@
     transform: translateY(-80px);
 }
 
+.please-select{
+    font-family: "Berthold Regular";
+    font-size: 18px;
+}
+
 .close-su-modal {
-    margin: 0;
     z-index: 90;
-    position: absolute;
-    width: 20px;
-    transform: translateX(225px) translateY(-74px);
-    font-size: 17px;
+    cursor: pointer;
+    border: none;
+    margin-left: 80%;
+    margin-top: -60px;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
 
 .close-su-modal:hover {
@@ -40,17 +47,18 @@
 }
 
 .signup-form {
-    height: 350px;
-    width: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateY(-14%);
+}
+
+.su-text{
+    margin-left: 7%;
 }
 
 input, select, button{
-    width: 70%
+    width: 48%
 }
 
 p {
@@ -68,5 +76,44 @@ select:focus {
     color: white;
     border-radius: 4px;
     border: none;
+    font-size: 16px;
+    width: 25%;
+    margin-top: 7px;
 }
 
+.flex-div{
+    display: flex;
+}
+
+.sign-email{
+    border-radius: 3px;
+    margin-right: 10px;
+    font-size: 18px;
+    /* width: 80%; */
+}
+
+.sign-user{
+    border-radius: 3px;
+    margin-left: 10px;
+    font-size: 18px;
+    /* width: 80%; */
+}
+
+.three-options{
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+.signup-pass1{
+    margin-top: 5px;
+    border-radius: 3px;
+    margin-right: 10px;
+    font-size: 18px;
+}   
+.signup-pass2{
+    margin-top: 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+    font-size: 18px;
+}   

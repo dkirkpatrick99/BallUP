@@ -9,20 +9,30 @@
 }
 
 .login-form > input {
-    width: 70%
+    width: 70%;
+    font-size: 16px;
+    border-radius: 4px;
 }
 
 .demo {
     color: white;
     background-color: black;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
     border: none;
     outline: none;
 }
 
+.submit-login{
+    font-size: 16px;
+    border-radius: 5px;
+}
+
 .modal-background {
-    height: 200px;
+    height: 225px;
     width: 250px;
+    border-radius: 10px;
     position: fixed;
     z-index: 78;
     background-color: white;
@@ -48,7 +58,7 @@
     z-index: 90;
     position: absolute;
     width: 250px;
-    transform: translateX(90%) translateY(4px);
+    transform: translateX(85%) translateY(10px);
     font-size: 17px;
 }
 

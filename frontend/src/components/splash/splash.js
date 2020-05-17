@@ -65,14 +65,16 @@ class Splash extends React.Component {
                             <p className="close-modal"
                                 onClick={this.ModalClose}
                         >&times;</p>
-                            <h1>Login</h1>
+                            <h1>Sign In</h1>
                             <LoginContainer />
                         </div>
                         <div className="su-modal-background-closed">
-                            <p className="close-su-modal"
-                                onClick={this.signupModalClose}
-                            >&times;</p>
-                            <h1>Signup</h1>
+                            <div className="flex-div">
+                                <h1 className="su-text">Sign Up</h1>
+                                <p className="close-su-modal"
+                                    onClick={this.signupModalClose}
+                                >&times;</p>
+                            </div>  
                             <SignupContainer />
                         </div>
                     <ul className="tag-list">
