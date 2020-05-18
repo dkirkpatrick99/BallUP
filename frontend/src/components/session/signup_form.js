@@ -80,27 +80,22 @@ class SignupForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="signup-form">
                         <br />
-                        <div className="flex-div">
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
-                            className="sign-email"
                         />
-                        {/* <br /> */}
+                        <br />
                         <input type="text"
                             value={this.state.handle}
                             onChange={this.update('handle')}
                             placeholder="Username"
-                            className="sign-user"
                         />
-                        </div>
                         <br/>
-                        <p className="please-select">Select your favorite positions:</p>
-                        <div className="flex-div">
-                            <select onChange={this.update('first')} className="three-options">
+                        <p>Select your 3 preferred positions:</p>
+                        <select onChange={this.update('first')}>
                             <option value="none" selected disabled hidden>
-                                1st Choice
+                                Select an Option
                             </option>
                             { postions.map( position => 
                                 <option value={position}
@@ -108,43 +103,38 @@ class SignupForm extends React.Component {
                                 >{position}</option>
                             )}
                         </select>
-                        {/* <br /> */}
-                            <select onChange={this.update('second')} className="three-options">
+                        <br />
+                        <select onChange={this.update('second')}>
                             <option value="none" selected disabled hidden>
-                                2nd Choice
+                                Select an Option
                             </option>
                             {secondaryPos.map(position =>
                                 <option value={position}
                                 >{position}</option>
                             )}
                         </select>
-                        {/* <br/> */}
-                        <select onChange={this.update('third')} className="three-options">
+                        <br/>
+                        <select onChange={this.update('third')}>
                             <option value="none" selected disabled hidden>
-                                3rd Choice
+                                Select an Option
                             </option>
                             {tertiaryPos.map(position =>
                                 <option value={position}
                                 >{position}</option>
                             )}
                         </select>
-                        </div>
                         <br />
-                        <div className="flex-div">
                         <input type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
-                            className="signup-pass1"
                         />
-                        {/* <br /> */}
+                        <br />
                         <input type="password"
                             value={this.state.password2}
                             onChange={this.update('password2')}
                             placeholder="Confirm Password"
-                            className="signup-pass2"
                         />
-                        </div>
                         <br />
                         {/* <input type="submit" value="Submit" /> */}
                         <button className="su-btn">Submit</button>
