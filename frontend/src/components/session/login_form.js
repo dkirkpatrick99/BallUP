@@ -98,7 +98,7 @@ class LoginForm extends React.Component {
     }
 
     render() {
-            
+        console.log(this.renderErrors())
         return (
             <div id="login">
                 <form className="login-form" onSubmit={this.handleSubmit}>

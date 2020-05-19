@@ -12,6 +12,7 @@
     width: 70%;
     font-size: 16px;
     border-radius: 4px;
+    margin-top: 5px;
 }
 
 .demo {
@@ -27,6 +28,7 @@
 .submit-login{
     font-size: 16px;
     border-radius: 5px;
+    transform: translateY(50%);
 }
 
 .modal-background {
@@ -77,20 +79,20 @@
 
 #email-e {
     list-style: none;
-    font: 11px "Berthold Regular";
+    font: 14px "Berthold Regular";
     letter-spacing: .5px;
-    transform: translateY(-900%);
+    transform: translateY(-525%);
 }
 
 #password-e {
     list-style: none;
-    font: 11px "Berthold Regular";
+    font: 14px "Berthold Regular";
     letter-spacing: .5px;
-    transform: translateY(-720%);
+    transform: translateY(-335%);
 }
 #password-e-b {
     list-style: none;
-    font: 11px "Berthold Regular";
+    font: 14px "Berthold Regular";
     letter-spacing: .5px;
-    transform: translateY(-610%);
+    transform: translateY(-250%);
 }
