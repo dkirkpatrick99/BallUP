@@ -95,12 +95,12 @@ class GameShow extends React.Component {
                 this.props.updateGame(this.state.game);
             }
 
-            $(".grid").addClass("grid-b");
-            $(".showbox-right").addClass("showbox-right-b");
-            $(".showbox-right").removeClass("showbox-right");
-            $(".team1").addClass("team1-b");
-            $(".vs").addClass("vs-b");
-            $(".team2").addClass("team2-b");
+            // $(".grid").addClass("grid-b");
+            // $(".showbox-right").addClass("showbox-right-b");
+            // $(".showbox-right").removeClass("showbox-right");
+            // $(".team1").addClass("team1-b");
+            // $(".vs").addClass("vs-b");
+            // $(".team2").addClass("team2-b");
 
             let team1 = {
                 "Point Guard": 0, "Shooting Guard": 0, "Small Forward": 0, 
@@ -181,18 +181,8 @@ class GameShow extends React.Component {
             this.state.game.teamNames = [this.firstTeam, 
                 this.secondTeam];
 
-            this.props.updateGame(this.state.game);
-            
-            // localStorage.setItem(`${this.teamKey}`, 
-            // JSON.stringify(this.state.teamNames[this.teamKey]))
-            // this.state.players[this.state.id] = teams;
-            // localStorage.setItem(`${this.state.id}`, 
-            // JSON.stringify(this.state.players[this.state.id]))
-            // this.setState({ [this.state.id]: this.state.count[this.state.id] })
-
-            
-            
-            this.props.history.push(`/setgames/${this.state.id}`)
+            this.props.updateGame(this.state.game)   
+                .then(() => this.props.history.push(`/setgames/${this.state.id}`))
             
             
         }

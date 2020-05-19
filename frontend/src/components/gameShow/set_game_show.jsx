@@ -329,7 +329,7 @@ class SetGameShow extends React.Component {
                                 </video> </button>
                                 <button 
                                 className="owner-button cancel-game"
-                                    // onClick={this.endGame}
+                                    onClick={this.endGame}
                                     >
                                 <video id="bottom-rib"  playsInline autoPlay muted>
                                     <source id="vid-src" src={scoreboard} type="video/mp4" />
