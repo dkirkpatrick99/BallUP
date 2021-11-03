@@ -41,7 +41,7 @@
     "react-redux": "^7.2.0",
     "react-scroll": "^1.7.16",
     "redux-logger": "^3.0.6",
-    "validator": "^12.2.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@types/google-maps": "^3.2.2",
